@@ -3,7 +3,7 @@ class PostsController < ApplicationController
 
   def show
   end
-  
+
   def index
     @posts = Post.all
   end
@@ -11,6 +11,7 @@ class PostsController < ApplicationController
   def new
     @post = Post.new
   end
+
   def create
     @post = Post.new(post_params)
     if @post.save
@@ -19,13 +20,14 @@ class PostsController < ApplicationController
       render :new, status: :unprocessable_entity
     end
   end
-end
 
-private
+  private
 
-def post_params
-  params.require(:post).permit(:title, :content)
+  def post_params
+    params.require(:post).permit(:title, :content)
+  end
+
+  def set_post
+    @post = Post.find(params[:id])
+  end
 end
- def set_post
-   @set_post = Post.find(params[:id])
- end
