@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   devise_scope :user do
     get "/users/:id/chats", to: "chats#index", as: "chats"
+    get "/users/:id/chats/:id", to: "chats#show", as: "chat"
   end
 
 

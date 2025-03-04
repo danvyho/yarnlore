@@ -22,35 +22,18 @@
                                                 <div class="tab-pane fade show active" id="Open" role="tabpanel" aria-labelledby="Open-tab">
                                                     <!-- chat-list -->
                                                     <div class="chat-list">
-                                                        <a href="#" class="d-flex align-items-center">
+                                                        <% @chats.each do |chat| %>
+                                                        <%= link_to chat_path(chat), class: "d-flex align-items-center" do %>
                                                             <div class="flex-shrink-0">
-                                                                <img class="img-fluid" src="https://mehedihtml.com/chatbox/assets/img/user.png" alt="user img">
                                                                 <span class="active"></span>
                                                             </div>
                                                             <div class="flex-grow-1 ms-3">
-                                                                <h3>Mehedi Hasan</h3>
-                                                                <p>front end developer</p>
+                                                                <h3><%= chat.title %></h3>
+                                                                <p></p>
                                                             </div>
-                                                        </a>
-                                                        <hr>
-                                                        <a href="#" class="d-flex align-items-center">
-                                                            <div class="flex-shrink-0">
-                                                                <img class="img-fluid" src="https://mehedihtml.com/chatbox/assets/img/user.png" alt="user img">
-                                                            </div>
-                                                            <div class="flex-grow-1 ms-3">
-                                                                <h3>Ryhan</h3>
-                                                                <p>front end developer</p>
-                                                            </div>
-                                                        </a>
-                                                        <a href="#" class="d-flex align-items-center">
-                                                            <div class="flex-shrink-0">
-                                                                <img class="img-fluid" src="https://mehedihtml.com/chatbox/assets/img/user.png" alt="user img">
-                                                            </div>
-                                                            <div class="flex-grow-1 ms-3">
-                                                                <h3>Malek Hasan</h3>
-                                                                <p>front end developer</p>
-                                                            </div>
-                                                        </a>
+                                                            <hr>
+                                                        <% end %>
+                                                        <% end %>
                                                     </div>
                                                     <!-- chat-list -->
                                                 </div>
