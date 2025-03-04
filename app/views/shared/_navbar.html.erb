@@ -1,0 +1,42 @@
+<nav class="navbar navbar-lewagon navbar-expand-lg fixed-bottom">
+  <div class="container d-flex justify-content-around">
+    <%= link_to root_path, class: "nav-link" do %>
+      <i class="fa-solid fa-house"></i>
+    <% end %>
+    <%= link_to favorites_path || "#", class: "nav-link" do %>
+      <i class="fa-solid fa-bookmark"></i>
+    <% end %>
+    <%= link_to notifications_path || "#", class: "nav-link" do %>
+      <i class="fa-solid fa-bell"></i>
+    <% end %>
+    <%= link_to profile_path(current_user) || "#", class: "nav-link" do %>
+      <i class="fa-solid fa-user"></i>
+    <% end %>
+    <%= link_to "#", class: "nav-link", id: "navbar-search" do %>
+      <i class="fa-solid fa-magnifying-glass"></i>
+    <% end %>
+    <%= link_to root_path, class: "navbar-brand" %>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <%= link_to "Home", root_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Health", rails_health_check_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <!-- Placeholder: update with the correct path once defined -->
+          <%= link_to "Profile", "#", class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <!-- Placeholder for future route -->
+          <%= link_to "About", "#", class: "nav-link" %>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
