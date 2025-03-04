@@ -114,8 +114,8 @@ usernames = [
 
 Comment.destroy_all
 Post.destroy_all
-Chat.destroy_all
 Membership.destroy_all
+Chat.destroy_all
 Message.destroy_all
 User.destroy_all
 
