@@ -120,7 +120,8 @@ User.destroy_all
 users = 10.times.map do
   User.create!(
     email: Faker::Internet.unique.email,
-    password: "password"
+    password: "password",
+    username: usernames.sample
   )
 end
 
