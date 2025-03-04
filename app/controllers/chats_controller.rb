@@ -1,7 +1,7 @@
 class ChatsController < ApplicationController
 
   def index
-    @chats = Chat.all
+    @chats = User.first.memberships.map(&:chat) # current_user
   end
 
   def show
