@@ -1,18 +1,18 @@
 <nav class="navbar navbar-lewagon navbar-expand-lg fixed-bottom">
   <div class="container d-flex justify-content-around">
-    <%= link_to root_path, class: "nav-link" do %>
+    <%= link_to root_path, class: "nav-link navbar-button" do %>
       <i class="fa-solid fa-house"></i>
     <% end %>
-    <%= link_to "#", class: "nav-link" do %>
+    <%= link_to "#", class: "nav-link navbar-button" do %>
       <i class="fa-solid fa-bookmark"></i>
     <% end %>
-    <%= link_to "#", class: "nav-link", id: "navbar-search" do %>
+    <%= link_to new_post_path, class: "nav-link navbar-button" do %>
       <i class="fa-solid fa-plus"></i>
     <% end %>
-    <%= link_to "#", class: "nav-link" do %>
+    <%= link_to "#", class: "nav-link navbar-button" do %>
       <i class="fa-solid fa-bell"></i>
     <% end %>
-    <%= link_to my_profile_path || "#", class: "nav-link" do %>
+    <%= link_to my_profile_path, class: "nav-link navbar-button" do %>
       <i class="fa-solid fa-user"></i>
     <% end %>
 

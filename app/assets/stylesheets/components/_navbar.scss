@@ -11,6 +11,18 @@
   width: 40px;
 }
 
-#navbar-search .fa-plus {
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+.navbar-button {
+  display: inline-block;
+  padding: 6px 12px;
+  margin: 5px;
+  background-color: rgb(30, 220, 246);
+  border-radius: 24px;
+  font-weight: bold;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.5);
+}
+
+.navbar-button:hover {
+  background-color:  rgb(69, 122, 255);
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
 }
