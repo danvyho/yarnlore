@@ -1,0 +1,4 @@
+<h2>Comments</h2>
+<% comments.each do |comment| %>
+  <%= render partial: "shared/comment", locals: { comment: comment } %>
+<% end %>
