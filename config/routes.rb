@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
-  get 'users/show'
+  # get 'users/show'
   devise_for :users
 
   devise_scope :user do
-    resources :users, only: [:show] do
+    resources :users, only: [:show], as: "user" do
       resources :chats, only: [:index]
     end
   end
@@ -14,8 +14,6 @@ Rails.application.routes.draw do
   get '/posts/new', to: 'posts#new'
   post "posts", to: "posts#create"
   get '/posts/:id/edit', to: 'posts#edit'
-
-  get "/users/:id", to: "users#show", as: "user"
   get "/my_profile", to: "users#my_profile", as: "my_profile"
 
 end
