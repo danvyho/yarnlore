@@ -8,6 +8,14 @@ class UsersController < ApplicationController
     @user = current_user
   end
 
+  def my_bookmarks
+    @user = current_user
+  end
+
+  def my_notifications
+    @user = current_user
+  end
+
   private
 
   def set_user

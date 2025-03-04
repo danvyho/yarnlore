@@ -1,0 +1,25 @@
+<h1>Posts</h1>
+
+<div class="row">
+  <% @posts.each do |post| %>
+    <div class="col-sm-3 mb-4">
+      <%= link_to post_path(post), class: "text-decoration-none" do %>
+        <div class="card" style="width: 18rem; border: none;">
+          <%= cl_image_tag post.image.key, class: "card-img-top", style: "object-fit: cover; height: 200px; width: 100%; border-bottom: 3px solid #f1f1f1;" %>
+          <div class="card-body">
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRU3BgLYS_VDNdQqhEDiDrx5LkZETFxpNc15Q&s" style="width: 40px; height: 40px; border-radius: 50%;">
+              <h5 class="card-title" style="font-size: 1.1rem;"><%= post.user.username %></h5>
+            </div>
+            <p class="card-text" style="font-size: 0.9rem; color: #555;"><%= post.content %></p>
+            <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.9rem;">
+              <span>❤️ </span>
+              <span>💬 comments</span>
+            </div>
+            <a href="#" class="btn btn-link" style="padding: 0; font-size: 0.9rem; color: #007bff;">View comments</a>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+</div>
