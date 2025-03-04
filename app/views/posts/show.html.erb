@@ -1,0 +1,11 @@
+<h1>
+  <%= @post.title %>
+</h1>
+
+<p> We will rend a post here~~~ </p>
+
+<%= turbo_frame_tag "comments" do %>
+  <%= render partial: "shared/comments", locals: { comments: @post.comments } %>
+<% end %>
+
+<%= render 'shared/comment_form' %>

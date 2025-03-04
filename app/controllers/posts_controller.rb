@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show]
-  
+
   def index
     @posts = Post.all
   end
@@ -9,11 +9,9 @@ class PostsController < ApplicationController
     @comments = @post.comments
   end
 
-
   def new
     @post = Post.new
   end
-
 
   def edit
     @post = Post.find(params[:id])
@@ -41,9 +39,7 @@ class PostsController < ApplicationController
     @post.destroy!
     redirect_to posts_path
   end
-
 end
-
 
   private
 
@@ -54,4 +50,3 @@ end
  def set_post
    @post = Post.find(params[:id])
  end
-
