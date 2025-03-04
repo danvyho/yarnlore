@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
   get 'users/show'
   devise_for :users
-  root to: "pages#home"
-
+  root "posts#index"
+  
   get "/posts/:id", to: "posts#show", as: "post"
-
+  get '/posts/new', to: 'posts#new'
+  post "posts", to: "posts#create"
+  
   get "/users/:id", to: "users#show", as: "user"
   get "/my_profile", to: "users#my_profile", as: "my_profile"
 
