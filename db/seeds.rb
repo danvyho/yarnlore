@@ -120,7 +120,8 @@ User.destroy_all
 users = 10.times.map do
   User.create!(
     email: Faker::Internet.unique.email,
-    password: "password"
+    password: "password",
+    username: usernames.sample
   )
 end
 
@@ -135,9 +136,9 @@ end
     content: post_content,
     user: user
   )
-  # to do cloudinary
-  # file = URI.parse(upload_images[i % upload_images.length]).open
-  # post.image.attach(io: file, filename: "post_image_#{i}.jpg", content_type: "image/jpeg")
+
+  file = URI.parse(upload_images[i % upload_images.length]).open
+  post.image.attach(io: file, filename: "post_image_#{i}.jpg", content_type: "image/jpeg")
 
   3.times do
     commenter = users.reject { |u| u == user }.sample

@@ -9,11 +9,9 @@ class PostsController < ApplicationController
     @comments = @post.comments
   end
 
-
   def new
     @post = Post.new
   end
-
 
   def edit
     @post = Post.find(params[:id])
@@ -41,14 +39,12 @@ class PostsController < ApplicationController
     @post.destroy!
     redirect_to posts_path
   end
-
 end
-
 
   private
 
   def post_params
-    params.require(:post).permit(:title, :content, :photo)
+    params.require(:post).permit(:title, :content, :image)
   end
 
  def set_post
