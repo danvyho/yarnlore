@@ -114,6 +114,8 @@ usernames = [
 
 Comment.destroy_all
 Post.destroy_all
+Membership.destroy_all
+Chat.destroy_all
 Message.destroy_all
 User.destroy_all
 
@@ -150,10 +152,13 @@ end
   end
 end
 
-10.times do
-  sender = users.sample
+User.all.each do |user|
+  sender = user
   recipient = users.reject { |u| u == sender }.sample
-  chat = Chat.create
+  chat = Chat.create(title: post_titles.sample)
+
+  membership_sender = Membership.create(user: sender, chat: chat)
+  membership_recipient = Membership.create(user: recipient, chat: chat)
 
   3.times do
     Message.create!(
