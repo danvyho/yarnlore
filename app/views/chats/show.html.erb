@@ -45,7 +45,7 @@
 
                                   <div class="modal-body">
                                       <div class="msg-body">
-                                          <ul>
+                                          <ul id="messages">
                                               <% @messages.each do |message| %>
                                                 <%= render 'message', message: message, user: @user %>
                                               <% end %>
@@ -53,7 +53,8 @@
                                       </div>
                                   </div>
 
-                                  <%= simple_form_for([@chat, @message], html: { class: "" })  do |form| %>
+                                  <%= simple_form_for([@chat, @message],
+                                    html: { class: "", data: { controller: "reset-form", action: "turbo:submit-end->reset-form#reset" } })  do |form| %>
                                     <div class="send-box d-flex mb-3">
                                       <%= form.input :content, placeholder: "Write message…", label: false, wrapper: false  %>
                                       <%= button_tag(type: 'submit', class: 'btn btn-primary') do %>

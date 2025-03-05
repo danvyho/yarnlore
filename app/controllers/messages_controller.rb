@@ -12,7 +12,7 @@ class MessagesController < ApplicationController
           render turbo_stream: turbo_stream.append(:messages, partial: "chats/message",
             locals: { message: @message, user: temp_current_user })
         end
-        format.html { redirect_to booking_path(@chat) }
+        format.html { redirect_to chat_path(@chat) }
       end
     else
       render "chats/show", status: :unprocessable_entity
