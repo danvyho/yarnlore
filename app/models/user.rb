@@ -13,5 +13,9 @@ class User < ApplicationRecord
   has_many :messages
   has_many :memberships
   include PgSearch::Model
-  multisearchable against: :username
+  # multisearchable against: :username
+
+  devise :database_authenticatable, :registerable, :recoverable, :rememberable, :validatable
+
+  validates :username, presence: true, uniqueness: true
 end
