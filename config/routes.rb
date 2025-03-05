@@ -4,8 +4,13 @@ Rails.application.routes.draw do
   root "posts#index"
 
   resources :posts do
-    resources :comments, only: [:create, :update, :destroy]
+    resources :comments, only: %i[create update destroy]
   end
+
+  resources :comments, only: [] do
+    resources :comment_likes, only: %i[create]
+  end
+
   get "/favorites", to: "favorites#index"
   get "/notifications", to: "notifications#index"
   post "/posts/:id/favorites", to: "favorites#create"
