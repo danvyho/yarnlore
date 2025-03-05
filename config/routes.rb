@@ -6,7 +6,8 @@ Rails.application.routes.draw do
   resources :posts do
     resources :comments, only: [:create, :update, :destroy]
   end
-  get "/favorites", to: "favorites#index"
+
+  resources :favorites, only: [:index]
   get "/notifications", to: "notifications#index"
   post "/posts/:id/favorites", to: "favorites#create"
   get "/users/:id", to: "users#show", as: "user"

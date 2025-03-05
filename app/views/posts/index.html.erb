@@ -1,4 +1,3 @@
-<h1>Posts</h1>
 <div class="row justify-content-center">
   <div class="col-sm-8 my-3">
     <%= form_with url: posts_path(@post), method: :get, class: "d-flex" do %>
@@ -11,35 +10,32 @@
     <% end %>
   </div>
 
-<% if !user_signed_in? %>
-    <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-    <% else %>
-     <%= link_to "Sign out", destroy_user_session_path, class: "dropdown-item", data: {turbo_method: :delete} %>
-  <% end %>
-
-
 <div class="row">
   <% @posts.each do |post| %>
     <div class="col-sm-3 mb-4">
-      <%= link_to post_path(post), class: "text-decoration-none" do %>
-        <div class="card" style="width: 18rem; border: none;">
-          <%= cl_image_tag post.image.key, class: "card-img-top", style: "object-fit: cover; height: 200px; width: 100%; border-bottom: 3px solid #f1f1f1;" if post.image.attached? %>
-          <div class="card-body">
-            <h4 class="card-title text-center" style="font-size: 1.2rem; font-weight: bold; color: #444;">
-              <%= post.title %>
-            </h4>
-            <div style="display: flex; align-items: center; gap: 10px;">
-              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRU3BgLYS_VDNdQqhEDiDrx5LkZETFxpNc15Q&s" style="width: 40px; height: 40px; border-radius: 50%;">
-              <h5 style="font-size: 1.1rem;"><%= post.user.username %></h5>
-            </div>
-            <p class="card-text" style="font-size: 0.9rem; color: #555;"><%= post.content %></p>
-            <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.9rem;">
-              <span>❤️ </span>
-              <span>💬 comments</span>
-            </div>
+      <div class="card" style="width: 18rem; border: none;">
+        <%= cl_image_tag post.image.key, class: "card-img-top", style: "object-fit: cover; height: 200px; width: 100%; border-bottom: 3px solid #f1f1f1;" if post.image.attached? %>
+        <div class="card-body">
+          <h4 class="card-title text-center" style="font-size: 1.2rem; font-weight: bold; color: #444;">
+            <%= post.title %>
+          </h4>
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRU3BgLYS_VDNdQqhEDiDrx5LkZETFxpNc15Q&s" style="width: 40px; height: 40px; border-radius: 50%;">
+            <h5 style="font-size: 1.1rem;"><%= post.user.username %></h5>
+          </div>
+          <p class="card-text" style="font-size: 0.9rem; color: #555;"><%= post.content %></p>
+
+          <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.9rem;">
+        <div data-controller="favorites" data-favorites-id-value="<%= post.id %>">
+          <button data-action="click->favorites#toggleFavorite" class="favorites-btn">
+            Favorite
+          </button>
+        </div>
+            <span>❤️ </span>
+            <span>💬 comments</span>
           </div>
         </div>
-      <% end %>
+      </div>
     </div>
   <% end %>
 </div>
