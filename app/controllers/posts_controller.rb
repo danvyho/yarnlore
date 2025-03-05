@@ -5,6 +5,9 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all
+    if params[:query].present?
+      @posts = @posts.where("title ILIKE ?", "%#{params[:query]}%")
+    end
   end
 
   def show
