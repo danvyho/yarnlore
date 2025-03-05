@@ -7,10 +7,15 @@ export default class extends Controller {
   }
   connect() {
   }
-  toggleFavorite() {
+  toggleFavorite(event) {
     fetch(`/posts/${this.idValue}/favorites`,{
-      method: "POST"
+      method: "POST",
+      headers: {
+        "X-CSRF-Token": document.querySelector("meta[name='csrf-token']").content
+      }
     } )
+    event.currentTarget.classList.toggle("fa-solid")
+    event.currentTarget.classList.toggle("fa-regular")
 
   }
 }

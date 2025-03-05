@@ -3,6 +3,6 @@ class FavoritesController < ApplicationController
       @favorite = Favorite.new
       @favorite.user = current_user
       @favorite.post = Post.find(params[:id])
-      @favorite.save
+      @favorite.save!
     end
 end

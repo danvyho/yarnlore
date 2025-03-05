@@ -27,9 +27,11 @@
 
           <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.9rem;">
         <div data-controller="favorites" data-favorites-id-value="<%= post.id %>">
-          <button data-action="click->favorites#toggleFavorite" class="favorites-btn">
-            Favorite
-          </button>
+          <% if post.favorites.where(user: current_user).present?   %>
+            <i class="fa-solid fa-bookmark" data-action="click->favorites#toggleFavorite"></i>
+          <% else%>
+            <i class="fa-regular fa-bookmark" data-action="click->favorites#toggleFavorite"></i>
+            <%end%>
         </div>
             <span>❤️ </span>
             <span>💬 comments</span>
