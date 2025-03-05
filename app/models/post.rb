@@ -6,4 +6,6 @@ class Post < ApplicationRecord
   has_many :post_likes
 
   has_one_attached :image
+  include PgSearch::Model
+  multisearchable against: [:title, :content]
 end
