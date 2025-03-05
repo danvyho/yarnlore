@@ -5,6 +5,14 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all
+    if params[:query].present?
+      sql_subquery = <<~SQL
+        posts.title ILIKE :query
+        OR posts.content ILIKE :query
+        OR users.username ILIKE :query
+      SQL
+      @posts = @posts.joins(:user).where(sql_subquery, query: "%#{params[:query]}%")
+    end
   end
 
   def show

@@ -1,22 +1,48 @@
 <h1>Posts</h1>
+<div class="row justify-content-center">
+  <div class="col-sm-8 my-3">
+    <%= form_with url: posts_path(@post), method: :get, class: "d-flex" do %>
+      <%= text_field_tag :query,
+            params[:query],
+            class: "form-control",
+            placeholder: "Type a keyword"
+        %>
+      <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+
+<% if !user_signed_in? %>
+    <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+    <% else %>
+     <%= link_to "Sign out", destroy_user_session_path, class: "dropdown-item", data: {turbo_method: :delete} %>
+  <% end %>
+
 
 <div class="row">
   <% @posts.each do |post| %>
     <div class="col-sm-3 mb-4">
       <%= link_to post_path(post), class: "text-decoration-none" do %>
         <div class="card" style="width: 18rem; border: none;">
-          <%= cl_image_tag post.image.key, class: "card-img-top", style: "object-fit: cover; height: 200px; width: 100%; border-bottom: 3px solid #f1f1f1;" if post.image.attached?%>
+          <%= cl_image_tag post.image.key, class: "card-img-top", style: "object-fit: cover; height: 200px; width: 100%; border-bottom: 3px solid #f1f1f1;" if post.image.attached? %>
           <div class="card-body">
+            <h4 class="card-title text-center" style="font-size: 1.2rem; font-weight: bold; color: #444;">
+              <%= post.title %>
+            </h4>
             <div style="display: flex; align-items: center; gap: 10px;">
               <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRU3BgLYS_VDNdQqhEDiDrx5LkZETFxpNc15Q&s" style="width: 40px; height: 40px; border-radius: 50%;">
-              <h5 class="card-title" style="font-size: 1.1rem;"><%= post.user.username %></h5>
+              <h5 style="font-size: 1.1rem;"><%= post.user.username %></h5>
             </div>
             <p class="card-text" style="font-size: 0.9rem; color: #555;"><%= post.content %></p>
             <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.9rem;">
-              <span>❤️ </span>
+              <div id="post-<%= post.id %>-likes" class="d-flex align-items-center">
+                <%= link_to '', post_post_likes_path(post),
+                  data: { turbo_method: 'post'},
+                  class: 'far fa-heart mx-2 fa-xs text-body',
+                  style: 'margin-top: -0.16rem;' %>
+                <p class="small text-muted mb-0"><%= post.post_likes.count %></p>
+              </div>
               <span>💬 comments</span>
             </div>
-            <a href="#" class="btn btn-link" style="padding: 0; font-size: 0.9rem; color: #007bff;">View comments</a>
           </div>
         </div>
       <% end %>
