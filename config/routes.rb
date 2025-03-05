@@ -1,21 +1,14 @@
 Rails.application.routes.draw do
+  get 'users/show'
   devise_for :users
-
-  devise_scope :user do
-    get "/users/:id/chats", to: "chats#index", as: "chats"
-    get "/users/:id/chats/:id", to: "chats#show", as: "chat"
-  end
-
-
   root "posts#index"
 
   resources :posts do
-    resources :comments, only: %I[create update destroy]
+    resources :comments, only: [:create, :update, :destroy]
   end
-
+  get "/favorites", to: "favorites#index"
+  get "/notifications", to: "notifications#index"
+  post "/posts/:id/favorites", to: "favorites#create"
   get "/users/:id", to: "users#show", as: "user"
   get "/my_profile", to: "users#my_profile", as: "my_profile"
-  get "/my_bookmarks", to: "users#my_bookmarks", as: "my_bookmarks"
-  get "/my_notifications", to: "users#my_notifications", as: "my_notifications"
-
 end
