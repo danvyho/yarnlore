@@ -5,7 +5,5 @@
 <p> We will rend a post here~~~ </p>
 
 <%= turbo_frame_tag "comments" do %>
-  <%= render partial: "shared/comments", locals: { comments: @post.comments } %>
+  <%= render partial: "shared/comments", locals: { comments: @post.comments, post: @post } %>
 <% end %>
-
-<%= render 'shared/comment_form' %>
