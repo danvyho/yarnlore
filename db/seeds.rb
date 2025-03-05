@@ -120,10 +120,17 @@ Message.destroy_all
 User.destroy_all
 
 users = 10.times.map do
+
+  list = []
+  new_username = usernames.sample
+  while list.include?(new_username)
+    new_username = usernames.sample
+  end
+  list << new_username
   User.create!(
     email: Faker::Internet.unique.email,
     password: "password",
-    username: usernames.sample
+    username: new_username
   )
 end
 
@@ -164,6 +171,11 @@ User.all.each do |user|
     Message.create!(
       content: messages.sample,
       user: sender,
+      chat: chat
+    )
+    Message.create!(
+      content: messages.sample,
+      user: recipient,
       chat: chat
     )
   end
