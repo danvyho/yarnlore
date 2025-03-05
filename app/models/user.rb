@@ -12,4 +12,6 @@ class User < ApplicationRecord
   has_many :followings
   has_many :messages
   has_many :memberships
+  include PgSearch::Model
+  multisearchable against: :username
 end
