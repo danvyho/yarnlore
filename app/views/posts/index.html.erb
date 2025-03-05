@@ -6,9 +6,10 @@
             class: "form-control",
             placeholder: "Type a keyword"
         %>
-      <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
+      <%= submit_tag "Search", class: "btn btn-primary" %>
     <% end %>
   </div>
+</div>
 
 <div class="row">
   <% @posts.each do |post| %>
@@ -20,20 +21,26 @@
             <%= post.title %>
           </h4>
           <div style="display: flex; align-items: center; gap: 10px;">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRU3BgLYS_VDNdQqhEDiDrx5LkZETFxpNc15Q&s" style="width: 40px; height: 40px; border-radius: 50%;">
+            <%= image_tag post.user.avatar.url, style: "width: 40px; height: 40px; border-radius: 50%;" if post.user.avatar.attached? %>
             <h5 style="font-size: 1.1rem;"><%= post.user.username %></h5>
           </div>
           <p class="card-text" style="font-size: 0.9rem; color: #555;"><%= post.content %></p>
 
           <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.9rem;">
-        <div data-controller="favorites" data-favorites-id-value="<%= post.id %>">
-          <% if post.favorites.where(user: current_user).present?   %>
-            <i class="fa-solid fa-bookmark" data-action="click->favorites#toggleFavorite"></i>
-          <% else%>
-            <i class="fa-regular fa-bookmark" data-action="click->favorites#toggleFavorite"></i>
-            <%end%>
-        </div>
-            <span>❤️ </span>
+            <div data-controller="favorites" data-favorites-id-value="<%= post.id %>">
+              <% if post.favorites.where(user: current_user).present? %>
+                <i class="fa-solid fa-bookmark" data-action="click->favorites#toggleFavorite"></i>
+              <% else %>
+                <i class="fa-regular fa-bookmark" data-action="click->favorites#toggleFavorite"></i>
+              <% end %>
+            </div>
+            <div id="post-<%= post.id %>-likes" class="d-flex align-items-center">
+              <%= link_to '', post_post_likes_path(post),
+                data: { turbo_method: 'post'},
+                class: 'far fa-heart mx-2 fa-xs text-body',
+                style: 'margin-top: -0.16rem;' %>
+              <p class="small text-muted mb-0"><%= post.post_likes.count %></p>
+            </div>
             <span>💬 comments</span>
           </div>
         </div>
@@ -41,3 +48,4 @@
     </div>
   <% end %>
 </div>
+
