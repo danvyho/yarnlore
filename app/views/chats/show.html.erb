@@ -47,32 +47,21 @@
                                       <div class="msg-body">
                                           <ul>
                                               <% @messages.each do |message| %>
-                                                <li class="reply">
-                                                    <p><%= message.content %></p>
-                                                    <span class="time"><%= message.created_at.strftime("%I:%M %p") %></span>
-                                                </li>
+                                                <%= render 'message', message: message, user: @user %>
                                               <% end %>
                                           </ul>
                                       </div>
                                   </div>
 
+                                  <%= simple_form_for([@chat, @message], html: { class: "" })  do |form| %>
+                                    <div class="send-box d-flex mb-3">
+                                      <%= form.input :content, placeholder: "Write message…", label: false, wrapper: false  %>
+                                      <%= button_tag(type: 'submit', class: 'btn btn-primary') do %>
+                                        <i class="fas fa-paper-plane"></i> Send
+                                      <% end %>
+                                    </div>
 
-                                  <div class="send-box">
-                                      <form action="">
-                                          <input type="text" class="form-control" aria-label="message…" placeholder="Write message…">
-
-                                          <button type="button"><i class="fa fa-paper-plane" aria-hidden="true"></i> Send</button>
-                                      </form>
-
-                                      <div class="send-btns">
-                                          <div class="attach">
-                                              <div class="button-wrapper">
-                                                  <span class="label">
-                                                      <img class="img-fluid" src="https://mehedihtml.com/chatbox/assets/img/upload.svg" alt="image title"> attached file
-                                                  </span><input type="file" name="upload" id="upload" class="upload-box" placeholder="Upload File" aria-label="Upload File">
-                                              </div>
-                                          </div>
-                                      </div>
+                                  <% end %>
 
                                   </div>
                               </div>
