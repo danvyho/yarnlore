@@ -21,7 +21,6 @@
             <%= post.title %>
           </h4>
           <div style="display: flex; align-items: center; gap: 10px;">
-            <%= image_tag post.user.avatar.url, style: "width: 40px; height: 40px; border-radius: 50%;" if post.user.avatar.attached? %>
             <h5 style="font-size: 1.1rem;"><%= post.user.username %></h5>
           </div>
           <p class="card-text" style="font-size: 0.9rem; color: #555;"><%= post.content %></p>
@@ -48,4 +47,3 @@
     </div>
   <% end %>
 </div>
-
