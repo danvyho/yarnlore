@@ -1,4 +1,9 @@
 <h1>Posts</h1>
+<% if !user_signed_in? %>
+    <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+    <% else %>
+     <%= link_to "Sign out", destroy_user_session_path, class: "dropdown-item", data: {turbo_method: :delete} %>
+  <% end %>
 
 <div class="row">
   <% @posts.each do |post| %>
