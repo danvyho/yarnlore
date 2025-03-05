@@ -1,9 +1,0 @@
-<%= turbo_stream.replace "comment-#{@comment.id}-likes" do %>
-  <div id="comment-<%= @comment.id %>-likes" class="d-flex align-items-center">
-    <%= link_to '', comment_comment_likes_path(@comment),
-          data: { turbo_method: 'post' },
-          class: 'far fa-heart mx-2 fa-xs text-body',
-          style: 'margin-top: -0.16rem;' %>
-    <p class="small text-muted mb-0"><%= @comment.comment_likes.count %></p>
-  </div>
-<% end %>

@@ -34,7 +34,13 @@
             </div>
             <p class="card-text" style="font-size: 0.9rem; color: #555;"><%= post.content %></p>
             <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.9rem;">
-              <span>❤️ </span>
+              <div id="post-<%= post.id %>-likes" class="d-flex align-items-center">
+                <%= link_to '', post_post_likes_path(post),
+                  data: { turbo_method: 'post'},
+                  class: 'far fa-heart mx-2 fa-xs text-body',
+                  style: 'margin-top: -0.16rem;' %>
+                <p class="small text-muted mb-0"><%= post.post_likes.count %></p>
+              </div>
               <span>💬 comments</span>
             </div>
           </div>

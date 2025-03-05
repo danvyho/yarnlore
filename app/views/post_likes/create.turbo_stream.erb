@@ -1,0 +1,6 @@
+<%= turbo_stream.replace "post-#{@post.id}-likes" do %>
+  <div id="post-<%= @post.id %>-likes" class="d-flex align-items-center">
+    <%= link_to '', post_post_likes_path(@post), data: { turbo_method: 'post' }, class: 'far fa-heart mx-2 fa-xs text-body', style: 'margin-top: -0.16rem;' %>
+    <p class="small text-muted mb-0"><%= @post.post_likes.count %></p>
+  </div>
+<% end %>
