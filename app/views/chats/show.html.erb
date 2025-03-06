@@ -45,9 +45,10 @@
 
                                   <div class="modal-body">
                                       <div class="msg-body">
+                                      <%= turbo_stream_from "chat_#{@chat.id}_messages" %>
                                           <ul id="messages">
                                               <% @messages.each do |message| %>
-                                                <%= render 'message', message: message, user: @user %>
+                                                <%= render 'message', message: message, user: current_user %>
                                               <% end %>
                                           </ul>
                                       </div>
