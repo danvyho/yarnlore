@@ -11,6 +11,23 @@ require "faker"
 require "open-uri"
 require "json"
 
+User.destroy_all
+Post.destroy_all
+Comment.destroy_all
+PostLike.destroy_all
+Chat.destroy_all
+Membership.destroy_all
+Message.destroy_all
+
+ActiveRecord::Base.connection.reset_pk_sequence!('users')
+ActiveRecord::Base.connection.reset_pk_sequence!('posts')
+ActiveRecord::Base.connection.reset_pk_sequence!('comments')
+ActiveRecord::Base.connection.reset_pk_sequence!('chats')
+ActiveRecord::Base.connection.reset_pk_sequence!('messages')
+ActiveRecord::Base.connection.reset_pk_sequence!('comment_likes')
+ActiveRecord::Base.connection.reset_pk_sequence!('post_likes')
+ActiveRecord::Base.connection.reset_pk_sequence!('memberships')
+
 upload_images = [
   "https://res.cloudinary.com/ducax2ucs/image/upload/v1741104604/pexels-pavel-danilyuk-5788198_boq8ad.jpg",
   "https://res.cloudinary.com/ducax2ucs/image/upload/v1741104601/pexels-anete-lusina-6354079_xvsptu.jpg",
@@ -127,18 +144,11 @@ usernames = [
     "This knitted sweater pattern is perfect for layering. It's comfortable, stylish, and versatile, making it a wardrobe essential for any season."
   ]
 
-  Comment.destroy_all
-  Post.destroy_all
-  Message.destroy_all
-  Chat.destroy_all
-  Membership.destroy_all
-  User.destroy_all
-
-  users = 10.times.map do
-    user = User.create!(
+  users = usernames.shuffle.take(14).map do |username|
+    User.create!(
       email: Faker::Internet.unique.email,
       password: "password",
-      username: usernames.sample
+      username: username
     )
   end
 
