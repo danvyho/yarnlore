@@ -9,6 +9,7 @@ class CommentsController < ApplicationController
   def create
     @comment = @post.comments.new(comment_params)
     @comment.user_id = current_user.id
+    @comment.parent_id = params[:parent_id] if params[:parent_id].present?
     if @comment.save
       respond_to do |format|
         format.turbo_stream do
