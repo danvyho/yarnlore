@@ -16,7 +16,6 @@
 
 <body data-current-user-id="<%= current_user ? current_user.id : "" %>">
   <body>
-    <%= render 'shared/navbar_top' %>
     <%= yield %>
     <%= render 'shared/navbar' %>
     <the-script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.1/dist/sweetalert2.all.min.js"></the-script>
