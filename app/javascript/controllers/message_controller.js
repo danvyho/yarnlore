@@ -2,11 +2,14 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="message"
 export default class extends Controller {
-  static values = { messageUserId: Number }
+  static values = { userId: Number }
   connect() {
     // triggered when a new message is added to the page
     const currentUserId = parseInt(document.body.dataset.currentUserId, 10);
-    if (this.messageUserId === currentUserId) {
+    console.log('currentUserId', currentUserId);
+    console.log('userId', this.userIdValue);
+
+    if (this.userId === currentUserId) {
       this.element.classList.add('reply');
       this.element.classList.remove('sender');
     } else {
