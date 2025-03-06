@@ -158,7 +158,7 @@ usernames = [
     post_title = post_titles.sample
     post_content = post_contents.sample
 
-    post = Post.create!(
+    post = Post.new(
       title: post_title,
       content: post_content,
       user: user
@@ -166,6 +166,7 @@ usernames = [
 
     file = URI.parse(upload_images[i % upload_images.length]).open
     post.image.attach(io: file, filename: "post_image_#{i}.jpg", content_type: "image/jpeg")
+    post.save
 
     3.times do
       commenter = users.reject { |u| u == user }.sample
