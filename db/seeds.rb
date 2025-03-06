@@ -11,13 +11,14 @@ require "faker"
 require "open-uri"
 require "json"
 
-User.destroy_all
+Favorite.destroy_all
+PostLike.destroy_all
 Post.destroy_all
 Comment.destroy_all
-PostLike.destroy_all
 Message.destroy_all
-Chat.destroy_all
 Membership.destroy_all
+Chat.destroy_all
+User.destroy_all
 
 
 ActiveRecord::Base.connection.reset_pk_sequence!('users')
