@@ -1,0 +1,17 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center" href="#">
+      <img src="/path/to/logo.png" alt="Logo" style="height: 40px;" class="me-2">
+      <span>Yarnlore</span>
+    </a>
+
+    <div class="ms-auto d-flex align-items-center">
+      <%= link_to notifications_path, class: "nav-link" do %>
+        <i class="fa-regular fa-bell fa-lg px-4"></i>
+      <% end %>
+      <%= link_to chats_path, class: "nav-link" do %>
+        <i class="fa-regular fa-comment fa-lg px-2"></i>
+      <% end %>
+    </div>
+  </div>
+</nav>
