@@ -37,7 +37,7 @@
                                                             <span class="active"></span>
                                                         </div>
                                                         <div class="flex-grow-1 ms-3">
-                                                            <h3><%= chat.title %></h3>
+                                                            <h3><%= User.find(chat.memberships.reject { |m| m.user_id == current_user.id }[0].user_id).username %></h3>
                                                             <p></p>
                                                         </div>
                                                         <hr>
