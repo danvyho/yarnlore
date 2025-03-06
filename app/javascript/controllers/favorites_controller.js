@@ -5,9 +5,13 @@ export default class extends Controller {
   static values = {
     id: Number
   }
+
   connect() {
+    console.log("Favorites controller connected with idValue:", this.idValue);
   }
+
   toggleFavorite(event) {
+    event.preventDefault()
     fetch(`/posts/${this.idValue}/favorites`,{
       method: "POST",
       headers: {
