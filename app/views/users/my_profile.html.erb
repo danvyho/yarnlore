@@ -1,12 +1,18 @@
-
 <ul class="navbar-nav flex">
   <li class="nav-item align-self-end">
-    <% if !user_signed_in? %>
-      <%= link_to "Login", new_user_session_path,  class: "nav-link navbar-button" %>
-    <% else %>
+    <% if user_signed_in? %>
       <%= link_to "Sign out", destroy_user_session_path,  class: "nav-link navbar-button", class: "dropdown-item", data: { turbo_method: :delete } %>
     <% end %>
   </li>
 </ul>
 
-<h1>It's my profile yata!!!</h1>
+
+<% if user_signed_in? %>
+  <% if @user.avatar.attached? %>
+    <%= image_tag @user.avatar,  class: "rounded-circle me-3", style: "width: 150px; height: 150px;" %>
+  <% else %>
+    <% basic_avatar = 'blank-profile.jpeg' %>
+    <%= image_tag basic_avatar,  class: "rounded-circle me-3", style: "width: 150px; height: 150px;" %>
+  <% end %>
+  <span class="h2"><%= @user.username %></span>
+<% end %>

@@ -1,3 +1,11 @@
+<ul class="navbar-nav flex">
+  <li class="nav-item align-self-end">
+    <% if !user_signed_in? %>
+      <%= link_to "Login", new_user_session_path,  class: "nav-link navbar-button" %>
+    <% end %>
+  </li>
+</ul>
+
 <div class="row justify-content-center">
   <div class="col-sm-8 my-3">
     <%= form_with url: posts_path(@post), method: :get, class: "d-flex" do %>

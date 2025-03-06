@@ -3,6 +3,7 @@
     <%= link_to root_path, class: "nav-link" do %>
       <i class="fa-solid fa-house"></i>
     <% end %>
+<% if user_signed_in? %>
     <%= link_to favorites_path || "#", class: "nav-link" do %>
       <i class="fa-solid fa-bookmark"></i>
     <% end %>
@@ -15,6 +16,22 @@
     <%= link_to my_profile_path || "#", class: "nav-link" do %>
       <i class="fa-solid fa-user"></i>
     <% end %>
+
+    <% else %>
+    <%= link_to new_user_session_path,  class: "nav-link navbar-button" || "#", class: "nav-link" do %>
+      <i class="fa-solid fa-bookmark"></i>
+    <% end %>
+    <%= link_to new_user_session_path,  class: "nav-link navbar-button" || "#", class: "nav-link", id: "navbar-search" do %>
+      <i class="fa-solid fa-plus"></i>
+    <% end %>
+    <%= link_to new_user_session_path,  class: "nav-link navbar-button" || "#", class: "nav-link" do %>
+      <i class="fa-solid fa-bell"></i>
+    <% end %>
+    <%= link_to new_user_session_path,  class: "nav-link navbar-button" || "#", class: "nav-link" do %>
+      <i class="fa-solid fa-user"></i>
+    <% end %>
+<% end %>
+
 
   </div>
 </nav>

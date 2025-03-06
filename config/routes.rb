@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'my_profile/index'
   get 'users/show'
   devise_for :users
 
@@ -8,20 +9,20 @@ Rails.application.routes.draw do
     post "/chats/:id", to: "messages#create", as: "chat_messages"
   end
 
-
   root "posts#index"
 
   resources :posts do
     resources :comments, only: %i[create update destroy]
     resources :post_likes, only: %i[create]
   end
+  resources :users, only: [:index]
 
   resources :favorites, only: [:index]
   resources :comments, only: [] do
     resources :comment_likes, only: %i[create]
   end
+  get "/users/my_profile", to: "users#my_profile", as: "my_profile"
   get "/notifications", to: "notifications#index"
-  post "/posts/:id/favorites", to: "favorites#create"
   get "/users/:id", to: "users#show", as: "user"
-  get "/my_profile", to: "users#my_profile", as: "my_profile"
+  post "/posts/:id/favorites", to: "favorites#create"
 end
