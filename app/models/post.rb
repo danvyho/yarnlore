@@ -7,4 +7,10 @@ class Post < ApplicationRecord
   has_one_attached :image
   include PgSearch::Model
   multisearchable against: %i[title content]
+  validates :title, presence: true
+  validates :content, presence: true
+  validates :image, presence: true
+
+
+
 end
