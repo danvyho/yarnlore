@@ -32,7 +32,6 @@
                                                 <% if @chats.any? %>
                                                   <% @chats.each do |chat| %>
                                                     <%= link_to chat_path(chat),
-                                                      data: { turbo_frame: :chat_details },
                                                       class: "d-flex align-items-center" do %>
                                                         <div class="flex-shrink-0">
                                                             <span class="active"></span>
