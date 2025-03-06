@@ -5,6 +5,7 @@ class Post < ApplicationRecord
   has_many :favorites
   has_many :post_likes, dependent: :destroy
   has_one_attached :image
+  has_one_attached :video
   include PgSearch::Model
   multisearchable against: %i[title content]
   validates :title, presence: true

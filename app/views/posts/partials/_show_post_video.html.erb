@@ -1,0 +1,10 @@
+<% if post.video.attached? %>
+  <%= cl_video_tag post.video.key,
+      loop: true, controls: true,
+      transformation: [
+        height: 360, width: 480, crop: "pad",
+        quality: 70, duration: "10"],
+      fallback_content: "Your browser does not support HTML5 video tags.",
+      class: "card-img-top",
+      style: "object-fit: cover; height: 200px; width: 100%; border-bottom: 3px solid #f1f1f1; border-top-left-radius: 1rem; border-top-right-radius: 1rem;" %>
+<% end %>
