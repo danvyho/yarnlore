@@ -219,7 +219,11 @@ notifications = [
     end
 
     3.times do
-      Notification.create!(content: notifications.sample)
+      Notification.create!(
+        user:  user,
+        post: Post.first,
+        content: notifications.sample,
+      )
     end
   end
 
