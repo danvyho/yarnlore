@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+  before_action :configure_permitted_parameters, if: :devise_controller?
   after_action :store_action
 
   def store_action
@@ -12,5 +13,12 @@ class ApplicationController < ActionController::Base
         !request.xhr?)
       store_location_for(:user, root_path)
     end
+  end
+
+  protected
+
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:username])
+    devise_parameter_sanitizer.permit(:account_update, keys: [:username])
   end
 end

@@ -16,11 +16,10 @@ Rails.application.routes.draw do
     resources :post_likes, only: %i[create]
   end
 
+  resources :favorites, only: [:index]
   resources :comments, only: [] do
     resources :comment_likes, only: %i[create]
   end
-
-  get "/favorites", to: "favorites#index"
   get "/notifications", to: "notifications#index"
   post "/posts/:id/favorites", to: "favorites#create"
   get "/users/:id", to: "users#show", as: "user"

@@ -48,6 +48,16 @@ ActiveRecord::Schema[7.1].define(version: 2025_03_05_214028) do
     t.string "title"
   end
 
+  create_table "collections", force: :cascade do |t|
+    t.string "title"
+    t.bigint "user_id", null: false
+    t.bigint "favorite_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["favorite_id"], name: "index_collections_on_favorite_id"
+    t.index ["user_id"], name: "index_collections_on_user_id"
+  end
+
   create_table "comment_likes", force: :cascade do |t|
     t.bigint "comment_id", null: false
     t.bigint "user_id", null: false
@@ -166,6 +176,8 @@ ActiveRecord::Schema[7.1].define(version: 2025_03_05_214028) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "collections", "favorites"
+  add_foreign_key "collections", "users"
   add_foreign_key "comment_likes", "comments"
   add_foreign_key "comment_likes", "users"
   add_foreign_key "comments", "posts"
