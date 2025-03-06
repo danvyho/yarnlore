@@ -1,12 +1,63 @@
-
 <ul class="navbar-nav flex">
   <li class="nav-item align-self-end">
-    <% if !user_signed_in? %>
-      <%= link_to "Login", new_user_session_path,  class: "nav-link navbar-button" %>
-    <% else %>
+    <% if user_signed_in? %>
       <%= link_to "Sign out", destroy_user_session_path,  class: "nav-link navbar-button", class: "dropdown-item", data: { turbo_method: :delete } %>
     <% end %>
   </li>
 </ul>
 
-<h1>It's my profile yata!!!</h1>
+
+<% if user_signed_in? %>
+  <div style="display: flex; align-items: center;">
+
+    <% if @user.avatar.attached? %>
+      <%= image_tag @user.avatar,  class: "rounded-circle me-3", style: "width: 150px; height: 150px;" %>
+    <% else %>
+      <% basic_avatar = 'blank-profile.jpeg' %>
+      <%= image_tag basic_avatar,  class: "rounded-circle me-3", style: "width: 150px; height: 150px;" %>
+    <% end %>
+    <div style="display: flex; flex-direction: column;">
+      <span class = "h3"><%= @user.username %></span>
+      <span class = "h5"><%= "Followers 48    Following 55"%></span>
+      <% if @user.bio.present? %>
+        <p>"<%= @user.bio %>"</p>
+        <% end %>
+
+    </div>
+  </div>
+<% end %>
+        <hr>
+    <%@user.posts.each do |post|  %>
+  <div class="col-sm-3 mb-4" style="display: flex; align-items: center; width: 18rem; border: none;">
+        <%= cl_image_tag post.image.key, class: "card-img-top", style: "object-fit: cover; height: 200px; width: 100%; border-bottom: 3px solid #f1f1f1;" if post.image.attached? %>
+      <div  style="display: flex; flex-direction: column;">
+            <span ><%= post.title %></span>
+      <div style="display: flex; align-items: center; gap: 10px;">
+            <span style="font-size: 1.1rem;"><%= post.user.username %></span>
+          </div>
+          <div class="col-12 ">
+          <p  style="font-size: 0.9rem; color: #555;"><%= post.content %></p>
+          </div>
+
+          <div style="justify-content: space-between; font-size: 0.9rem;">
+            <div data-controller="favorites" data-favorites-id-value="<%= post.id %>">
+              <% if post.favorites.where(user: current_user).present? %>
+                <i class="fa-solid fa-bookmark" data-action="click->favorites#toggleFavorite"></i>
+              <% else %>
+                <i class="fa-regular fa-bookmark" data-action="click->favorites#toggleFavorite"></i>
+              <% end %>
+            </div>
+            <div id="post-<%= post.id %>-likes" class="d-flex align-items-center">
+              <%= link_to '', post_post_likes_path(post),
+                data: { turbo_method: 'post'},
+                class: 'far fa-heart mx-2 fa-xs text-body'
+                 %>
+              <span>      💬 </span>
+            </div>
+
+              <span class="small text-muted mb-0"><%= post.post_likes.count %></span>
+          </div>
+        </div>
+      </div>
+    </div>
+<% end %>
