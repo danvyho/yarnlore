@@ -1,0 +1,16 @@
+<li
+  class="<%= user && message.user == user ? 'reply' : 'sender' %>"
+  id="message-<%= message.id %>"
+  data-controller="message"
+  data-chat-target="message-content"
+  data-message-user-id-value="<%= message.user.id %>"
+  >
+  <div>
+   <small class="message-info">
+    <strong><%= message.user.username %></strong>
+    <i><%= message.created_at.strftime("%a %b %e at %l:%M %p") %></i>
+  </small>
+
+  </div>
+  <p><%= message.content %></p>
+</li>

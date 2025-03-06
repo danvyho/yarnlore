@@ -11,6 +11,25 @@ require "faker"
 require "open-uri"
 require "json"
 
+Favorite.destroy_all
+PostLike.destroy_all
+Post.destroy_all
+Comment.destroy_all
+Message.destroy_all
+Membership.destroy_all
+Chat.destroy_all
+User.destroy_all
+
+
+ActiveRecord::Base.connection.reset_pk_sequence!('users')
+ActiveRecord::Base.connection.reset_pk_sequence!('posts')
+ActiveRecord::Base.connection.reset_pk_sequence!('comments')
+ActiveRecord::Base.connection.reset_pk_sequence!('chats')
+ActiveRecord::Base.connection.reset_pk_sequence!('messages')
+ActiveRecord::Base.connection.reset_pk_sequence!('comment_likes')
+ActiveRecord::Base.connection.reset_pk_sequence!('post_likes')
+ActiveRecord::Base.connection.reset_pk_sequence!('memberships')
+
 upload_images = [
   "https://res.cloudinary.com/ducax2ucs/image/upload/v1741104604/pexels-pavel-danilyuk-5788198_boq8ad.jpg",
   "https://res.cloudinary.com/ducax2ucs/image/upload/v1741104601/pexels-anete-lusina-6354079_xvsptu.jpg",
@@ -77,6 +96,21 @@ usernames = [
     "I just got my package! Can’t wait to start this new project!",
     "You HAVE to try this new stitch technique I just learned!"
   ]
+  collection_titles = [
+    "Knitting Patterns",
+    "Crochet Patterns",
+    "Yarn Types",
+    "Knitting Techniques",
+    "Crochet Techniques",
+    "Free Patterns",
+    "Advanced Patterns",
+    "Beginner Patterns",
+    "Seasonal Projects",
+    "Accessories",
+    "Garments",
+    "Home Decor",
+    "Amigurumi",
+    "Gift Ideas"]
 
   post_titles = [
     "Cozy Knit Sweater for Chilly Days",
@@ -112,55 +146,62 @@ usernames = [
     "This knitted sweater pattern is perfect for layering. It's comfortable, stylish, and versatile, making it a wardrobe essential for any season."
   ]
 
-Comment.destroy_all
-Post.destroy_all
-Message.destroy_all
-User.destroy_all
-
-users = 10.times.map do
-  User.create!(
-    email: Faker::Internet.unique.email,
-    password: "password"
-  )
-end
-
-10.times do |i|
-  user = users.sample
-
-  post_title = post_titles.sample
-  post_content = post_contents.sample
-
-  post = Post.create!(
-    title: post_title,
-    content: post_content,
-    user: user
-  )
-  # to do cloudinary
-  # file = URI.parse(upload_images[i % upload_images.length]).open
-  # post.image.attach(io: file, filename: "post_image_#{i}.jpg", content_type: "image/jpeg")
-
-  3.times do
-    commenter = users.reject { |u| u == user }.sample
-    Comment.create!(
-      content: comment.sample,
-      user: commenter,
-      post: post
+  users = usernames.shuffle.take(14).map do |username|
+    User.create!(
+      email: Faker::Internet.unique.email,
+      password: "password",
+      username: username
     )
   end
-end
 
-10.times do
-  sender = users.sample
-  recipient = users.reject { |u| u == sender }.sample
-  chat = Chat.create
+  10.times do |i|
+    user = users.sample
 
-  3.times do
-    Message.create!(
+    post_title = post_titles.sample
+    post_content = post_contents.sample
+
+    post = Post.new(
+      title: post_title,
+      content: post_content,
+      user: user
+    )
+
+    file = URI.parse(upload_images[i % upload_images.length]).open
+    post.image.attach(io: file, filename: "post_image_#{i}.jpg", content_type: "image/jpeg")
+    post.save
+
+    3.times do
+      commenter = users.reject { |u| u == user }.sample
+      Comment.create!(
+        content: comment.sample,
+        user: commenter,
+        post: post
+      )
+    end
+  end
+
+  # Create chats and messages
+  User.all.each do |user|
+    sender = user
+    recipient = users.reject { |u| u == sender }.sample
+    chat = Chat.create(title: post_titles.sample)
+
+    Membership.create(user: sender, chat: chat)
+    Membership.create(user: recipient, chat: chat)
+
+    # Create messages in each chat
+    3.times do
+      Message.create!(
+        content: messages.sample,
+        user: sender,
+        chat: chat
+      )
+      Message.create!(
       content: messages.sample,
-      user: sender,
+      user: recipient,
       chat: chat
     )
+    end
   end
-end
 
-puts "Database seeded successfully!"
+  puts "Database seeded successfully!"

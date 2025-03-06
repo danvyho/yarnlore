@@ -225,6 +225,9 @@ GEM
     orm_adapter (0.5.0)
     ostruct (0.6.1)
     pg (1.5.9)
+    pg_search (2.3.7)
+      activerecord (>= 6.1)
+      activesupport (>= 6.1)
     popper_js (2.11.8)
     pp (0.6.2)
       prettyprint
@@ -299,6 +302,8 @@ GEM
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
+    solid_cable (1.0.3)
+      rails (< 9)
     sprockets (4.2.1)
       concurrent-ruby (~> 1.0)
       rack (>= 2.2.4, < 4)
@@ -363,11 +368,13 @@ DEPENDENCIES
   jbuilder
   open-uri
   pg (~> 1.1)
+  pg_search
   puma (>= 5.0)
   rails (~> 7.1.5, >= 7.1.5.1)
   sassc-rails
   selenium-webdriver
   simple_form!
+  solid_cable (~> 1.0)
   sprockets-rails
   stimulus-rails
   turbo-rails

@@ -1,10 +1,15 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show]
 
+
   def show
   end
 
   def my_profile
+    @user = current_user
+  end
+
+  def my_notifications
     @user = current_user
   end
 

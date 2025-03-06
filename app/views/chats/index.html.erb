@@ -1,0 +1,65 @@
+<section class="message-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="chat-area">
+                    <!-- chatlist -->
+                    <div class="chatlist">
+                        <div class="modal-dialog-scrollable">
+                            <div class="modal-content">
+                                <div class="chat-header">
+                                    <div class="msg-search">
+
+                                    <%= form_with url: chats_path, method: :get, class: "search-form d-flex" do %>
+                                      <%= text_field_tag :query,
+                                            params[:query],
+                                            class: "form-control",
+                                            placeholder: "Search by chat title, message content, or user name"
+                                        %>
+                                      <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
+                                    <% end %>
+
+                                    </div>
+                                </div>
+
+                                <div class="modal-body">
+                                    <!-- chat-list -->
+                                    <div class="chat-lists">
+                                        <div class="tab-content" id="myTabContent">
+                                            <div class="tab-pane fade show active" id="Open" role="tabpanel" aria-labelledby="Open-tab">
+                                                <!-- chat-list -->
+                                                <div class="chat-list mt-4">
+                                                <% if @chats.any? %>
+                                                  <% @chats.each do |chat| %>
+                                                    <%= link_to chat_path(chat),
+                                                      class: "d-flex align-items-center" do %>
+                                                        <div class="flex-shrink-0">
+                                                            <span class="active"></span>
+                                                        </div>
+                                                        <div class="flex-grow-1 ms-3">
+                                                            <h3><%= User.find(chat.memberships.reject { |m| m.user_id == current_user.id }[0].user_id).username %></h3>
+                                                            <p></p>
+                                                        </div>
+                                                        <hr>
+                                                    <% end %>
+                                                  <% end %>
+                                                <% else %>
+                                                    <p>No chats found</p>
+                                                <% end %>
+                                                </div>
+                                                <!-- chat-list -->
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <!-- chat-list -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- chatlist -->
+            </div>
+        </div>
+    </div>
+    </div>
+</section>

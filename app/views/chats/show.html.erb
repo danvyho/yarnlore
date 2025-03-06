@@ -1,0 +1,73 @@
+<section class="message-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="chat-area">
+                    <!-- chatbox -->
+                    <div class="chatbox">
+                        <div class="modal-dialog-scrollable">
+                            <div class="modal-content">
+                                <div class="msg-head">
+                                    <div class="row">
+                                        <div class="col-8">
+                                            <div class="d-flex align-items-center">
+                                            <%= link_to chats_path, class: "d-flex align-items-center" do %>
+                                                <span class="chat-icon"><img class="img-fluid" src="https://mehedihtml.com/chatbox/assets/img/arroleftt.svg" alt="image title"></span>
+                                            <% end %>
+                                                <%# <div class="flex-shrink-0"> %>
+                                                <%#   <img class="img-fluid" src="" alt="user img"> %>
+                                                <%# </div> %>
+                                                <div class="flex-grow-1 ms-3">
+                                                    <h3><%= @chat.title %></h3>
+                                                    <p></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-4">
+                                            <ul class="moreoption">
+                                                <li class="navbar nav-item dropdown">
+                                                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v" aria-hidden="true"></i></a>
+                                                    <ul class="dropdown-menu">
+                                                        <li><a class="dropdown-item" href="#">Action</a></li>
+                                                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                                                        <li>
+                                                            <hr class="dropdown-divider">
+                                                        </li>
+                                                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="modal-body">
+                                    <div class="msg-body">
+                                    <%= turbo_stream_from "chat_#{@chat.id}_messages" %>
+                                        <ul id="messages">
+                                            <% @messages.each do |message| %>
+                                              <%= render 'message', message: message, user: current_user %>
+                                            <% end %>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <%= simple_form_for([@chat, @message],
+                                  html: { class: "", data: { controller: "reset-form", action: "turbo:submit-end->reset-form#reset" } })  do |form| %>
+                                  <div class="send-box d-flex mb-3">
+                                    <%= form.input :content, placeholder: "Write message…", label: false, wrapper: false  %>
+                                    <%= button_tag(type: 'submit', class: 'btn btn-primary') do %>
+                                      <i class="fas fa-paper-plane"></i> Send
+                                    <% end %>
+                                  </div>
+                                <% end %>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

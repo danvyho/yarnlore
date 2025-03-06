@@ -1,25 +1,24 @@
-<h1>Posts</h1>
+<%= render 'posts/partials/navbar_top_index' %>
+
+<div class="row justify-content-center">
+  <div class="col-sm-8 my-3">
+    <%= form_with url: posts_path(@post), method: :get, class: "d-flex" do %>
+      <%= text_field_tag :query,
+            params[:query],
+            class: "form-control",
+            placeholder: "Type a keyword"
+        %>
+      <%= submit_tag "Search", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
 
 <div class="row">
   <% @posts.each do |post| %>
     <div class="col-sm-3 mb-4">
-      <%= link_to post_path(post), class: "text-decoration-none" do %>
-        <div class="card" style="width: 18rem; border: none;">
-          <img class="card-img-top" src="https://media.istockphoto.com/id/1060599978/photo/woman-hands-knitting-crochet-hobby-crafts-things-top-view-horizontal-composition.jpg?s=612x612&w=0&k=20&c=p85Xqf4hn6m_96lDwQWmA6OzHxwUE-_suLAWtrZBD0E=" alt="Post image" style="border-radius: 15px; height: 200px; object-fit: cover;">
-          <div class="card-body">
-            <div style="display: flex; align-items: center; gap: 10px;">
-              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRU3BgLYS_VDNdQqhEDiDrx5LkZETFxpNc15Q&s" style="width: 40px; height: 40px; border-radius: 50%;">
-              <h5 class="card-title" style="font-size: 1.1rem;"><%= post.user.email %></h5> <!-- Updated to reference the user of the post -->
-            </div>
-            <p class="card-text" style="font-size: 0.9rem; color: #555;"><%= post.content %></p>
-            <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.9rem;">
-              <span>❤️ </span>
-              <span>💬 comments</span>
-            </div>
-            <a href="#" class="btn btn-link" style="padding: 0; font-size: 0.9rem; color: #007bff;">View comments</a>
-          </div>
-        </div>
-      <% end %>
-    </div>
+      <a href="<%= post_path(post) %>" style="text-decoration: none; color: inherit;">
+        <%= render 'posts/partials/post_card', post: post, current_user: current_user %>
+        </a>
   <% end %>
+</div>
 </div>

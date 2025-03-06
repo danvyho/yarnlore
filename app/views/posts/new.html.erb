@@ -1,5 +1,7 @@
 <%= simple_form_for @post do |f| %>
-  <%= f.input :title %>
-  <%= f.input :content %>
+  <%= f.input :title, required: true %>
+  <%= f.input :content, required: true %>
+  <%= f.input :image, as: :file, required: true %>
   <%= f.submit %>
+  <%  %>
 <% end %>
