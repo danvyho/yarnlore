@@ -12,11 +12,22 @@ class User < ApplicationRecord
   has_many :followings
   has_many :messages
   has_many :memberships
-  has_many :collections
+  has_one_attached :avatar
   include PgSearch::Model
   # multisearchable against: :username
 
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :validatable
 
   validates :username, presence: true, uniqueness: true
+  validate :avatar_validation
+
+  private
+
+  def avatar_validation
+    if avatar.attached? && !avatar.content_type.in?(%w(image/jpeg image/png))
+      errors.add(:avatar, 'must be a JPEG or PNG')
+    elsif avatar.attached? && avatar.byte_size > 5.megabytes
+      errors.add(:avatar, 'size should be less than 5MB')
+    end
+  end
 end

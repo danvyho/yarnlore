@@ -20,6 +20,10 @@
     <%= f.input :password_confirmation,
                 required: true,
                 input_html: { autocomplete: "new-password" } %>
+                <div class="field">
+    <%= f.label :avatar %>
+    <%= f.file_field :avatar %>
+</div>
   </div>
 
   <div class="form-actions">

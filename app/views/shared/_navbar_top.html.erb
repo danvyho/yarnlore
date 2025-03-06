@@ -1,9 +1,0 @@
-<ul class="navbar-nav flex">
-  <li class="nav-item align-self-end">
-    <% if !user_signed_in? %>
-      <%= link_to "Login", new_user_session_path,  class: "nav-link navbar-button" %>
-    <% else %>
-      <%= link_to "Sign out", destroy_user_session_path,  class: "nav-link navbar-button", class: "dropdown-item", data: { turbo_method: :delete } %>
-    <% end %>
-  </li>
-</ul>
