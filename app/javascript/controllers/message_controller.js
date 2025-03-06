@@ -6,10 +6,8 @@ export default class extends Controller {
   connect() {
     // triggered when a new message is added to the page
     const currentUserId = parseInt(document.body.dataset.currentUserId, 10);
-    console.log('currentUserId', currentUserId);
-    console.log('userId', this.userIdValue);
 
-    if (this.userId === currentUserId) {
+    if (this.userIdValue === currentUserId) {
       this.element.classList.add('reply');
       this.element.classList.remove('sender');
     } else {
@@ -17,7 +15,5 @@ export default class extends Controller {
       this.element.classList.remove('reply');
     }
     this.element.scrollIntoView({ behavior: 'smooth' }); // scroll to the bottom of the page
-    console.log('Message connected', this.element);
-
   }
 }
