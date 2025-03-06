@@ -4,7 +4,6 @@ class Post < ApplicationRecord
   has_many :notifications
   has_many :favorites
   has_many :post_likes
-
   has_one_attached :image
   include PgSearch::Model
   multisearchable against: %i[title content]
