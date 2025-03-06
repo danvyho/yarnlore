@@ -6,7 +6,11 @@ class UsersController < ApplicationController
   end
 
   def my_profile
-    @user = current_user
+    if params[:id]
+      @user = User.find(params[:id])
+    else
+      @user = current_user
+    end
   end
 
   def my_notifications

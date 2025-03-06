@@ -1,6 +1,8 @@
 <h4 class="card-title text-center text-nowrap" style="font-size: 1.2rem; font-weight: bold; color: #444;">
   <%= post.title %>
 </h4>
-<div class="d-flex justify-content-center align-items-center" style="gap: 10px;">
-  <h5 style="font-size: 1.1rem;"><%= post.user.username %></h5>
-</div>
+<%= link_to profile_path(post.user) do %>
+  <div class="d-flex justify-content-center align-items-center" style="gap: 10px;">
+    <h5 style="font-size: 1.1rem;"><%= post.user.username %></h5>
+  </div>
+<% end %>

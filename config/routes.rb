@@ -22,6 +22,7 @@ Rails.application.routes.draw do
     resources :comment_likes, only: %i[create]
   end
   get "/users/my_profile", to: "users#my_profile", as: "my_profile"
+  get "/users/:id/profile", to: "users#my_profile", as: "profile"
   get "/notifications", to: "notifications#index"
   get "/users/:id", to: "users#show", as: "user"
   post "/posts/:id/favorites", to: "favorites#create"
