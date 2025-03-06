@@ -14,6 +14,7 @@
 
   </head>
 
+<body data-current-user-id="<%= current_user ? current_user.id : "" %>">
   <body>
     <%= render 'shared/navbar_top' %>
     <%= yield %>

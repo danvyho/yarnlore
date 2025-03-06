@@ -1,7 +1,8 @@
 class ChatsController < ApplicationController
+  before_action :authenticate_user!
 
   def index
-    user = User.first # current_user
+    user = current_user
     @chats = Chat.joins(:memberships).where(memberships: { user_id: user.id })
 
     if params[:query].present?
@@ -19,7 +20,7 @@ class ChatsController < ApplicationController
     @chat = Chat.find(params[:id])
     @messages = @chat.messages
     @message = Message.new
-    @user = User.first # current_user
+    @user = current_user
   end
 
 end
