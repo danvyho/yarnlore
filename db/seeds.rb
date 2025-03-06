@@ -15,9 +15,10 @@ User.destroy_all
 Post.destroy_all
 Comment.destroy_all
 PostLike.destroy_all
+Message.destroy_all
 Chat.destroy_all
 Membership.destroy_all
-Message.destroy_all
+
 
 ActiveRecord::Base.connection.reset_pk_sequence!('users')
 ActiveRecord::Base.connection.reset_pk_sequence!('posts')
@@ -194,6 +195,11 @@ usernames = [
         user: sender,
         chat: chat
       )
+      Message.create!(
+      content: messages.sample,
+      user: recipient,
+      chat: chat
+    )
     end
   end
 
