@@ -9,8 +9,16 @@
                             <div class="modal-content">
                                 <div class="chat-header">
                                     <div class="msg-search">
-                                        <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Search" aria-label="search">
-                                        <a class="add" href="#"><img class="img-fluid" src="https://mehedihtml.com/chatbox/assets/img/add.svg" alt="add"></a>
+
+                                    <%= form_with url: chats_path, method: :get, class: "search-form d-flex" do %>
+                                      <%= text_field_tag :query,
+                                            params[:query],
+                                            class: "form-control",
+                                            placeholder: "Search by chat title, message content, or user name"
+                                        %>
+                                      <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
+                                    <% end %>
+
                                     </div>
                                 </div>
 
@@ -20,8 +28,9 @@
                                         <div class="tab-content" id="myTabContent">
                                             <div class="tab-pane fade show active" id="Open" role="tabpanel" aria-labelledby="Open-tab">
                                                 <!-- chat-list -->
-                                                <div class="chat-list">
-                                                    <% @chats.each do |chat| %>
+                                                <div class="chat-list mt-4">
+                                                <% if @chats.any? %>
+                                                  <% @chats.each do |chat| %>
                                                     <%= link_to chat_path(chat),
                                                       data: { turbo_frame: :chat_details },
                                                       class: "d-flex align-items-center" do %>
@@ -34,7 +43,10 @@
                                                         </div>
                                                         <hr>
                                                     <% end %>
-                                                    <% end %>
+                                                  <% end %>
+                                                <% else %>
+                                                    <p>No chats found</p>
+                                                <% end %>
                                                 </div>
                                                 <!-- chat-list -->
                                             </div>
