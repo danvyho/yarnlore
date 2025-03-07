@@ -21,6 +21,8 @@ Rails.application.routes.draw do
   resources :comments, only: [] do
     resources :comment_likes, only: %i[create]
   end
+  get "/patterns", to: "posts#patterns"
+  post "/patterns", to: "posts#new_patterns"
   get "/users/my_profile", to: "users#my_profile", as: "my_profile"
   get "/notifications", to: "notifications#index"
   get "/users/:id", to: "users#show", as: "user"

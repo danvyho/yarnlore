@@ -38,6 +38,10 @@ class PostsController < ApplicationController
     end
   end
 
+  def patterns
+    @patterns = Pattern.all
+  end
+
   def update
     if @post.update(post_params)
       redirect_to posts_path
