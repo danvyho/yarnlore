@@ -2,7 +2,6 @@ class PostsController < ApplicationController
   before_action :set_post, only: [:show]
   before_action :authenticate_user!, except: [:index]
 
-
   def index
     @posts = Post.all
     if params[:query].present?
@@ -16,7 +15,8 @@ class PostsController < ApplicationController
   end
 
   def show
-    @comments = @post.comments
+    @post = Post.find(params[:id])
+    @comments = @post.comments.order(created_at: :desc)  # Ensure comments are loaded
   end
 
   def new

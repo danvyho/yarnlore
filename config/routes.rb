@@ -26,5 +26,10 @@ Rails.application.routes.draw do
   post "/users/:id/", to: "followings#follow_unfollow", as: "follow_unfollow"
   get "/notifications", to: "notifications#index"
   get "/users/:id", to: "users#show", as: "user"
+  resources :notifications, only: [:index] do
+    member do
+      post :mark_as_read
+    end
+  end
   post "/posts/:id/favorites", to: "favorites#create"
 end

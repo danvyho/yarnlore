@@ -7,7 +7,7 @@ class UsersController < ApplicationController
 
   def my_profile
     @is_following = false
-    if params[:id]
+    if params[:id] && current_user != nil
       @user = User.find(params[:id])
       @is_following = Following.where(follower_id: current_user.id, followee_id: @user.id).size == 1
     else

@@ -1,4 +1,5 @@
 <div class="d-flex justify-content-between align-items-center" style="font-size: 0.9rem;">
+
   <div data-controller="favorites" data-favorites-id-value="<%= post.id %>">
     <% if post.favorites.where(user: current_user).present? %>
       <i class="fa-solid fa-bookmark" data-action="click->favorites#toggleFavorite"></i>
@@ -6,6 +7,7 @@
       <i class="fa-regular fa-bookmark" data-action="click->favorites#toggleFavorite"></i>
     <% end %>
   </div>
+
   <div id="post-<%= post.id %>-likes" class="d-flex align-items-center">
     <%= link_to '', post_post_likes_path(post),
           data: { turbo_method: 'post'},
@@ -13,4 +15,5 @@
           style: 'margin-top: -0.16rem;' %>
     <p class="small text-muted mb-0"><%= post.post_likes.count %></p>
   </div>
+
 </div>
