@@ -47,10 +47,16 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    @post.destroy!
-    redirect_to posts_path
+    raise
+    if @post.user_id == current_user.id
+      @post.destroy
+      respond_to do |format|
+        format.html { redirect_to @post, notice: 'Post was successfully destroyed.' }
+        format.turbo_stream
+      end
+    end
+    # redirect_to posts_path
   end
-end
 
   private
 
@@ -58,6 +64,7 @@ end
     params.require(:post).permit(:title, :content, :image)
   end
 
- def set_post
-   @post = Post.find(params[:id])
- end
+  def set_post
+    @post = Post.find(params[:id])
+  end
+end

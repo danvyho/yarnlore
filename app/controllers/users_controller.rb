@@ -18,5 +18,8 @@ class UsersController < ApplicationController
   def set_user
     @user = User.find(params[:id])
   end
+  def set_post
+    @post = Post.find(params[:id])
+  end
 
 end
