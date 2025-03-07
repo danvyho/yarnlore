@@ -7,7 +7,7 @@
 </ul>
 
 
-<% if user_signed_in? %>
+<% if @user != nil %>
   <div style="display: flex; align-items: center;">
 
     <% if @user.avatar.attached? %>
@@ -22,7 +22,7 @@
       <% if @user.bio.present? %>
         <p>"<%= @user.bio %>"</p>
         <% end %>
-      <% if @user != current_user %>
+      <% if user_signed_in? && @user != current_user %>
           <%= simple_form_for @user, url: follow_unfollow_path(@user), html: { method: :post } do |f| %>
             <%= f.button :submit, @is_following ? "Unfollow" : "Follow", class: @is_following ? "btn btn-secondary" : "btn btn-primary" %>
           <% end %>
@@ -32,4 +32,4 @@
 
 <% end %>
         <hr>
-  <%= render 'users/partials/profile_posts' %>
+  <%= render 'users/partials/profile_posts', user: @user %>

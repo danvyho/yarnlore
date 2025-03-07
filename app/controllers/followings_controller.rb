@@ -9,7 +9,7 @@ class FollowingsController < ApplicationController
       Following.create(follower_id: current_user.id, followee_id: @user.id)
     end
 
-    redirect_to profile_path(@user)
+    redirect_to user_path(@user)
   end
 
   def index

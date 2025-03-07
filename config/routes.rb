@@ -22,10 +22,9 @@ Rails.application.routes.draw do
     resources :comment_likes, only: %i[create]
   end
   get "/users/my_profile", to: "users#my_profile", as: "my_profile"
-  get "/users/:id/profile", to: "users#my_profile", as: "profile"
   post "/users/:id/", to: "followings#follow_unfollow", as: "follow_unfollow"
   get "/notifications", to: "notifications#index"
-  get "/users/:id", to: "users#show", as: "user"
+  get "/users/:id", to: "users#my_profile", as: "user"
   resources :notifications, only: [:index] do
     member do
       post :mark_as_read
