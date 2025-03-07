@@ -24,8 +24,9 @@ Rails.application.routes.draw do
   get "/patterns", to: "posts#patterns"
   post "/patterns", to: "posts#new_patterns"
   get "/users/my_profile", to: "users#my_profile", as: "my_profile"
+  post "/users/:id/", to: "followings#follow_unfollow", as: "follow_unfollow"
   get "/notifications", to: "notifications#index"
-  get "/users/:id", to: "users#show", as: "user"
+  get "/users/:id", to: "users#my_profile", as: "user"
   resources :notifications, only: [:index] do
     member do
       post :mark_as_read
