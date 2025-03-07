@@ -165,6 +165,12 @@ notifications = [
     "This knitted sweater pattern is perfect for layering. It's comfortable, stylish, and versatile, making it a wardrobe essential for any season."
   ]
 
+User.create(
+  email: 'a@a.a',
+  password: "123456",
+  username: 'jasper'
+)
+
   users = usernames.shuffle.take(14).map do |username|
     User.create!(
       email: Faker::Internet.unique.email,
