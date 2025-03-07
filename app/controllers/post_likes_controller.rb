@@ -4,16 +4,17 @@ class PostLikesController < ApplicationController
     @post_like = PostLike.new
   end
 
-  def create
+  def toggle
     @post = Post.find(params[:post_id])
-    @post_likes = @post.post_likes.new(user_id: current_user.id)
+    @post_like = @post.post_likes.find_by(user: current_user)
+    if @post_like
+      @post_like.destroy
+    else
+      @post_like = @post.post_likes.create(user_id: current_user.id)
+    end
     respond_to do |format|
-      if @post_likes.save
-        format.turbo_stream
-        format.html { redirect_to @post }
-      else
-        format.html { redirect_to @post }
-      end
+      format.turbo_stream
+      format.html { redirect_to @post }
     end
   end
 
