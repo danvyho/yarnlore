@@ -1,0 +1,18 @@
+<div class="container mt-3">
+  <div style="display: flex; align-items: center;">
+
+    <% if @user.avatar.attached? %>
+      <%= image_tag @user.avatar,  class: "rounded-circle me-3", style: "width: 100px; height: 100px;" %>
+    <% else %>
+      <% basic_avatar = 'blank-profile.jpeg' %>
+      <%= image_tag basic_avatar,  class: "rounded-circle me-3", style: "width: 100px; height: 100px;" %>
+    <% end %>
+    <div style="display: flex; flex-direction: column;">
+      <span class = "h3"><%= @user.username %></span>
+      <span class = "h5"><%= "Followers 48    Following 55"%></span>
+      <% if @user.bio.present? %>
+        <p>"<%= @user.bio %>"</p>
+        <% end %>
+    </div>
+  </div>
+</div>
