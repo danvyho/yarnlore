@@ -8,14 +8,6 @@ class PostsController < ApplicationController
     else
       @posts = Post.all
     end
-    if params[:query].present?
-      sql_subquery = <<~SQL
-        posts.title ILIKE :query
-        OR posts.content ILIKE :query
-        OR users.username ILIKE :query
-      SQL
-      @posts = @posts.joins(:user).where(sql_subquery, query: "%#{params[:query]}%")
-    end
   end
 
   def show
@@ -43,6 +35,15 @@ class PostsController < ApplicationController
   end
 
   def patterns
+    @posts = Post.all
+    if params[:query].present?
+      sql_subquery = <<~SQL
+        posts.title ILIKE :query
+        OR posts.content ILIKE :query
+        OR users.username ILIKE :query
+      SQL
+      @posts = @posts.joins(:user).where(sql_subquery, query: "%#{params[:query]}%")
+    end
   end
 
   def update
