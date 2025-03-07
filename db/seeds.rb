@@ -11,6 +11,7 @@ require "faker"
 require "open-uri"
 require "json"
 
+Notification.destroy_all
 Favorite.destroy_all
 PostLike.destroy_all
 Post.destroy_all
