@@ -11,6 +11,7 @@ require "faker"
 require "open-uri"
 require "json"
 
+Notification.destroy_all
 Favorite.destroy_all
 PostLike.destroy_all
 Post.destroy_all
@@ -202,6 +203,7 @@ notifications = [
     recipient = users.reject { |u| u == sender }.sample
     chat = Chat.create(title: post_titles.sample)
 
+
     Membership.create(user: sender, chat: chat)
     Membership.create(user: recipient, chat: chat)
 
@@ -227,4 +229,8 @@ notifications = [
     end
   end
 
+  Following.create(
+    follower: User.first,
+    followee: User.second
+  )
   puts "Database seeded successfully!"

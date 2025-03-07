@@ -36,7 +36,13 @@
                                                         <div class="flex-shrink-0">
                                                             <span class="active"></span>
                                                         </div>
-                                                        <div class="flex-grow-1 ms-3">
+                                                        <div class="d-flex align-items-center ms-3">
+                                                            <% if User.find(chat.memberships.reject { |m| m.user_id == current_user.id }[0].user_id).avatar.attached? %>
+                                                              <%= image_tag User.find(chat.memberships.reject { |m| m.user_id == current_user.id }[0].user_id).avatar,  class: "rounded-circle me-3", style: "width: 150px; height: 150px;" %>
+                                                            <% else %>
+                                                              <% basic_avatar = 'blank-profile.jpeg' %>
+                                                              <%= image_tag basic_avatar,  class: "rounded-circle me-3", style: "width: 50px; height: 50px;" %>
+                                                            <% end %>
                                                             <h3><%= User.find(chat.memberships.reject { |m| m.user_id == current_user.id }[0].user_id).username %></h3>
                                                             <p></p>
                                                         </div>

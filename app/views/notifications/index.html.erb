@@ -1,6 +1,6 @@
 <h2>Notification</h2>
 <% @notifications.each do |notification|%>
   <div class="card">
-     <%= notification.content %>
+     <%= link_to notification.content, post_path(notification.post) %>
   </div>
 <% end %>

@@ -16,6 +16,11 @@ class PostLikesController < ApplicationController
       format.turbo_stream
       format.html { redirect_to @post }
     end
+    Notification.create!(
+      user: @post.user,
+      post: @post,
+      content: "#{current_user.username} liked your post!"
+    )
   end
 
   private

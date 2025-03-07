@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   # devise_scope :user do
     get "/chats", to: "chats#index", as: "chats"
     get "/chats/:id", to: "chats#show", as: "chat"
+    post "/chats", to: "chats#create", as: "chat_create"
     post "chats/:id", to: "messages#create", as: "chat_messages"
   # end
 
@@ -25,9 +26,12 @@ Rails.application.routes.draw do
   resources :comments, only: [] do
     resources :comment_likes, only: %i[create destroy]
   end
+  get "/patterns", to: "posts#patterns"
+  post "/patterns", to: "posts#new_patterns"
   get "/users/my_profile", to: "users#my_profile", as: "my_profile"
+  post "/users/:id/", to: "followings#follow_unfollow", as: "follow_unfollow"
   get "/notifications", to: "notifications#index"
-  get "/users/:id", to: "users#show", as: "user"
+  get "/users/:id", to: "users#my_profile", as: "user"
   resources :notifications, only: [:index] do
     member do
       post :mark_as_read

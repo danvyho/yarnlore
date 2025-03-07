@@ -1,9 +1,13 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: [:show]
+  before_action :set_post, only: [:show, :destroy]
   before_action :authenticate_user!, except: [:index]
 
   def index
-    @posts = Post.all
+    if current_user
+    @posts = current_user.followees.map(&:posts).flatten
+    else
+      @posts = Post.all
+    end
     if params[:query].present?
       sql_subquery = <<~SQL
         posts.title ILIKE :query
@@ -38,6 +42,9 @@ class PostsController < ApplicationController
     end
   end
 
+  def patterns
+  end
+
   def update
     if @post.update(post_params)
       redirect_to posts_path
@@ -47,10 +54,12 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    @post.destroy!
-    redirect_to posts_path
+    if @post.user_id == current_user.id
+      @post.destroy
+
+    end
+    redirect_to my_profile_path
   end
-end
 
   private
 
@@ -58,6 +67,8 @@ end
     params.require(:post).permit(:title, :content, :image)
   end
 
- def set_post
-   @post = Post.find(params[:id])
- end
+  def set_post
+    @post = Post.find(params[:id])
+  end
+
+end

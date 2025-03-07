@@ -1,30 +1,54 @@
 <ul class="navbar-nav flex">
   <li class="nav-item align-self-end">
     <% if user_signed_in? %>
-      <%= link_to "Sign out", destroy_user_session_path,  class: "nav-link navbar-button", class: "dropdown-item", data: { turbo_method: :delete } %>
+      <%= link_to "Sign out", destroy_user_session_path, class: "nav-link navbar-button dropdown-item", data: { turbo_method: :delete } %>
     <% end %>
   </li>
 </ul>
 
-
 <% if user_signed_in? %>
   <div style="display: flex; align-items: center;">
-
     <% if @user.avatar.attached? %>
-      <%= image_tag @user.avatar,  class: "rounded-circle me-3", style: "width: 150px; height: 150px;" %>
+      <%= image_tag @user.avatar, class: "rounded-circle me-3", style: "width: 150px; height: 150px;" %>
     <% else %>
       <% basic_avatar = 'blank-profile.jpeg' %>
-      <%= image_tag basic_avatar,  class: "rounded-circle me-3", style: "width: 150px; height: 150px;" %>
+      <%= image_tag basic_avatar, class: "rounded-circle me-3", style: "width: 150px; height: 150px;" %>
     <% end %>
     <div style="display: flex; flex-direction: column;">
-      <span class = "h3"><%= @user.username %></span>
-      <span class = "h5"><%= "Followers 48    Following 55"%></span>
+      <span class="h3"><%= @user.username %></span>
+      <span class="h5"><%= "Followers 48    Following 55" %></span>
       <% if @user.bio.present? %>
         <p>"<%= @user.bio %>"</p>
         <% end %>
-
+      <% if user_signed_in? && @user != current_user %>
+          <div class="d-flex align-items-center justify-content-between">
+            <%= simple_form_for @user, url: follow_unfollow_path(@user), html: { method: :post } do |f| %>
+              <%= f.button :submit, @is_following ? "Unfollow" : "Follow", class: @is_following ? "btn btn-secondary" : "btn btn-primary" %>
+            <% end %>
+            <%= simple_form_for @chat, url: chat_create_path, html: { method: :post } do |f| %>
+              <%= f.input :user_id, as: :hidden, input_html: { value: @user.id }, wrapper: false %>
+              <%= f.button :submit, "Message", class: "btn btn-primary" %>
+            <% end %>
+          </div>
+        <% end %>
     </div>
   </div>
 <% end %>
-        <hr>
-  <%= render 'users/partials/profile_posts' %>
+
+<hr>
+
+<% @user.posts.each do |post| %>
+  <%= render 'my_profile_card', post: post, user: @user %>
+
+  <% if post.user_id == @user.id %>
+    <%= link_to "Delete", post_path(post), data: { turbo_method: :delete } %>
+  <% end %>
+
+  <% if user_signed_in? && @user != current_user %>
+    <%= simple_form_for @user, url: follow_unfollow_path(@user), html: { method: :post } do |f| %>
+      <%= f.button :submit, @is_following ? "Unfollow" : "Follow", class: @is_following ? "btn btn-secondary" : "btn btn-primary" %>
+    <% end %>
+  <% end %>
+
+  <hr>
+<% end %>
