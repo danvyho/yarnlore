@@ -27,37 +27,4 @@
   </div>
 <% end %>
         <hr>
-    <%@user.posts.each do |post|  %>
-  <div class="col-sm-3 mb-4" style="display: flex; align-items: center; width: 18rem; border: none;">
-        <%= cl_image_tag post.image.key, class: "card-img-top", style: "object-fit: cover; height: 200px; width: 100%; border-bottom: 3px solid #f1f1f1;" if post.image.attached? %>
-      <div  style="display: flex; flex-direction: column;">
-            <span ><%= post.title %></span>
-      <div style="display: flex; align-items: center; gap: 10px;">
-            <span style="font-size: 1.1rem;"><%= post.user.username %></span>
-          </div>
-          <div class="col-12 ">
-          <p  style="font-size: 0.9rem; color: #555;"><%= post.content %></p>
-          </div>
-
-          <div style="justify-content: space-between; font-size: 0.9rem;">
-            <div data-controller="favorites" data-favorites-id-value="<%= post.id %>">
-              <% if post.favorites.where(user: current_user).present? %>
-                <i class="fa-solid fa-bookmark" data-action="click->favorites#toggleFavorite"></i>
-              <% else %>
-                <i class="fa-regular fa-bookmark" data-action="click->favorites#toggleFavorite"></i>
-              <% end %>
-            </div>
-            <div id="post-<%= post.id %>-likes" class="d-flex align-items-center">
-              <%= link_to '', post_post_likes_path(post),
-                data: { turbo_method: 'post'},
-                class: 'far fa-heart mx-2 fa-xs text-body'
-                 %>
-              <span>      💬 </span>
-            </div>
-
-              <span class="small text-muted mb-0"><%= post.post_likes.count %></span>
-          </div>
-        </div>
-      </div>
-    </div>
-<% end %>
+  <%= render 'users/partials/profile_posts' %>

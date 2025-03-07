@@ -1,0 +1,63 @@
+<div class="container">
+  <div class="row">
+    <% @user.posts.each do |post| %>
+      <div class="col-12 col-md-6 mb-4">
+        <!-- Card with fixed height equal to the image height (125px) -->
+        <div class="card mx-auto rounded-top border border-secondary shadow-sm" style="width: 100%;">
+          <div class="d-flex h-100">
+            <!-- Left Column: Image -->
+            <% if post.image.attached? %>
+              <div class="flex-shrink-0">
+                <%= cl_image_tag post.image.key,
+                      class: "img-fluid",
+                      style: "object-fit: cover; height: 110px; width: 110px; border-right: 3px solid #f1f1f1; border-radius: 0.75rem;" %>
+              </div>
+            <% end %>
+            <!-- Right Column: Text & Icons -->
+            <div class="flex-grow-1 px-2 d-flex flex-column justify-content-between" style="height: 113px; overflow: hidden;">
+              <!-- Top Section: Title & Content -->
+              <div>
+                <!-- Title with ellipsis for overflow -->
+                <h4 class="card-title text-start"
+                    style="font-size: 1.1rem; font-weight: bold; color: #444; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                  <%= post.title %>
+                </h4>
+                <!-- Content with ellipsis for overflow -->
+                <p class="card-text text-start"
+                  style="font-size: 0.9rem; color: #555;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 3; /* number of lines before truncation */
+                    -webkit-box-orient: vertical;
+                    overflow: hidden;">
+                  <%= post.content %>
+                </p>
+              </div>
+              <!-- Bottom Section: Icons -->
+              <div class="d-flex align-items-center">
+                <!-- Favorites Icon -->
+                <div data-controller="favorites" data-favorites-id-value="<%= post.id %>">
+                  <% if post.favorites.where(user: current_user).present? %>
+                    <i class="fa-solid fa-bookmark" data-action="click->favorites#toggleFavorite"></i>
+                  <% else %>
+                    <i class="fa-regular fa-bookmark" data-action="click->favorites#toggleFavorite"></i>
+                  <% end %>
+                </div>
+                <!-- Likes -->
+                <div id="post-<%= post.id %>-likes" class="d-flex align-items-center ms-3">
+                  <%= link_to '', post_post_likes_path(post),
+                        data: { turbo_method: 'post' },
+                        class: 'far fa-heart fa-xs text-body me-2',
+                        style: 'margin-top: -0.16rem;' %>
+                  <span class="small text-muted"><%= post.post_likes.count %></span>
+                </div>
+                <div class="ms-3">
+                  <span>💬 comments</span>
+                </div>
+              </div>
+            </div>
+          </div> <!-- end d-flex h-100 -->
+        </div> <!-- end card -->
+      </div>
+    <% end %>
+  </div>
+</div>
