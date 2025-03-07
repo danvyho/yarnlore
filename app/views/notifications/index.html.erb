@@ -1,12 +1,6 @@
-<h2>Notifications</h2>
-<div id="notifications-list">
-  <% @notifications.each do |notification| %>
-    <div class="alert alert-info d-flex justify-content-between align-items-center">
-      <%= notification_message(notification) %>
-      <%= button_to "Mark as Read", mark_as_read_notification_path(notification), method: :post, class: "btn btn-sm btn-primary" %>
-    </div>
-  <% end %>
-  <div data-controller="notifications" data-notifications-url-value="<%= notifications_path(format: :turbo_stream) %>">
-    <%= render @notifications %>
+<h2>Notification</h2>
+<% @notifications.each do |notification|%>
+  <div class="card">
+     <%= notification.content %>
   </div>
-</div>
+<% end %>

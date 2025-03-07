@@ -113,20 +113,20 @@ usernames = [
     "Gift Ideas"]
 
 notifications = [
-"Alex liked your post. 👍",
-"Emma just gave your post a thumbs up!",
-"You’ve got a new like! Chris enjoyed your post.",
-"Wow! Taylor liked your post. Keep sharing great content!",
-"Your post caught Jordan’s eye – they liked it!",
-"A new fan of your post! Sam just hit like.",
-"Nice! Riley liked what you shared.",
-"Liam thinks your post is awesome! They gave it a like.",
-"Your post is getting attention! Avery just liked it.",
-"Another like for you! Casey appreciates your post.",
-"Morgan liked your post. Looks like it’s a hit!",
-"Dylan enjoyed your content – they just liked your post!",
-"Your post got some love! Jamie hit the like button.",
-"Keep it up! Cameron liked your post.",
+  "Alex liked your post. 👍",
+  "Emma just gave your post a thumbs up!",
+  "You’ve got a new like! Chris enjoyed your post.",
+  "Wow! Taylor liked your post. Keep sharing great content!",
+  "Your post caught Jordan’s eye – they liked it!",
+  "A new fan of your post! Sam just hit like.",
+  "Nice! Riley liked what you shared.",
+  "Liam thinks your post is awesome! They gave it a like.",
+  "Your post is getting attention! Avery just liked it.",
+  "Another like for you! Casey appreciates your post.",
+  "Morgan liked your post. Looks like it’s a hit!",
+  "Dylan enjoyed your content – they just liked your post!",
+  "Your post got some love! Jamie hit the like button.",
+  "Keep it up! Cameron liked your post.",
 ]
 
   post_titles = [
@@ -220,9 +220,9 @@ notifications = [
 
     3.times do
       Notification.create!(
-        user:  user,
+        user: user,
         post: Post.first,
-        content: notifications.sample,
+        content: notifications.sample
       )
     end
   end
