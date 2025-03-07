@@ -15,6 +15,11 @@ class CommentLikesController < ApplicationController
         format.html { redirect_to @comment.post }
       end
     end
+    Notification.create!(
+      user: @comment.user,
+      post: @comment.post,
+      content: "#{current_user.username} liked your comment!"
+    )
   end
 
   private
