@@ -23,6 +23,7 @@ Rails.application.routes.draw do
   end
   get "/users/my_profile", to: "users#my_profile", as: "my_profile"
   get "/users/:id/profile", to: "users#my_profile", as: "profile"
+  post "/users/:id/", to: "followings#follow_unfollow", as: "follow_unfollow"
   get "/notifications", to: "notifications#index"
   get "/users/:id", to: "users#show", as: "user"
   post "/posts/:id/favorites", to: "favorites#create"
