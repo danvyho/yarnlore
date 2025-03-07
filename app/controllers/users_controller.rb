@@ -3,6 +3,7 @@ class UsersController < ApplicationController
 
   def my_profile
     @is_following = false
+    @chat = Chat.new
     if params[:id]
       @user = User.find(params[:id])
       @is_following = Following.where(follower_id: current_user.id, followee_id: @user.id).size == 1 if current_user != nil

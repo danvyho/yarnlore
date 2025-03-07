@@ -23,4 +23,19 @@ class ChatsController < ApplicationController
     @user = current_user
   end
 
+  def create
+    @chat_with = User.find(chat_params["user_id"])
+    @chat = Chat.new(title: @chat_with.username)
+    @chat.save
+    Membership.create(chat: @chat, user: current_user)
+    Membership.create(chat: @chat, user: @chat_with)
+    redirect_to chat_path(@chat)
+  end
+
+  private
+
+  def chat_params
+    params.require(:chat).permit(:user_id)
+  end
+
 end
