@@ -1,6 +1,17 @@
 class NotificationsController < ApplicationController
+  before_action :authenticate_user!
+
   def index
-    # @notifications = Notification.all
+    @notifications = current_user.notifications.unread.order(created_at: :desc)
   end
 
+  def mark_as_read
+    notification = current_user.notifications.find(params[:id])
+    notification.update(read: true)
+
+    respond_to do |format|
+      format.html { redirect_to notifications_path }
+      format.turbo_stream { render turbo_stream: turbo_stream.remove("notification_#{notification.id}") }
+    end
+  end
 end
