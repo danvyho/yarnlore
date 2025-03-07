@@ -3,7 +3,11 @@ class PostsController < ApplicationController
   before_action :authenticate_user!, except: [:index]
 
   def index
-    @posts = Post.all
+    if current_user
+    @posts = current_user.followees.map(&:posts).flatten
+    else
+      @posts = Post.all
+    end
     if params[:query].present?
       sql_subquery = <<~SQL
         posts.title ILIKE :query
@@ -38,6 +42,9 @@ class PostsController < ApplicationController
     end
   end
 
+  def patterns
+  end
+
   def update
     if @post.update(post_params)
       redirect_to posts_path
@@ -58,6 +65,6 @@ end
     params.require(:post).permit(:title, :content, :image)
   end
 
- def set_post
-   @post = Post.find(params[:id])
- end
+def set_post
+  @post = Post.find(params[:id])
+end
