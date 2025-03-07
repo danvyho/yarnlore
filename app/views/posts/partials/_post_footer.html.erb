@@ -1,18 +1,31 @@
 <div class="d-flex justify-content-between align-items-center" style="font-size: 0.9rem;">
-  <div data-controller="favorites" data-favorites-id-value="<%= post.id %>">
-    <% if post.favorites.where(user: current_user).present? %>
-      <i class="fa-solid fa-bookmark" data-action="click->favorites#toggleFavorite"></i>
+  <div id="favorite-<%= post.id %>">
+    <% if post.favorites.where(user: current_user).exists? %>
+      <%= link_to '', toggle_favorites_path(post_id: post.id),
+            data: { turbo_method: 'post', turbo_confirm: 'Are you sure?' },
+            class: 'fas fa-bookmark mx-2 text-body text-decoration-none',
+            style: 'margin-top: -0.16rem;' %>
     <% else %>
-      <i class="fa-regular fa-bookmark" data-action="click->favorites#toggleFavorite"></i>
+      <%= link_to '', toggle_favorites_path(post_id: post.id),
+            data: { turbo_method: 'post' },
+            class: 'far fa-bookmark mx-2 text-body text-decoration-none',
+            style: 'margin-top: -0.16rem;' %>
     <% end %>
   </div>
-<div id="post-<%= post.id %>-likes" class="d-flex align-items-center" class="p-2 bd-highlight">
-  <%= link_to '', post_post_likes_path(post),
-    data: { turbo_method: 'post' },
-    class: 'far fa-heart mx-2 fa-xs text-body',
-    style: 'margin-top: -0.16rem;' %>
-  <p class="small text-muted mb-0"><%= post.post_likes.count %></p>
+<div id="post-<%= post.id %>-likes" class="d-flex align-items-center p-2 bd-highlight">
+  <% if post.post_likes.where(user: current_user).exists? %>
+    <%= link_to '', toggle_post_post_likes_path(post),
+          data: { turbo_method: 'post' },
+          class: 'fas fa-heart mx-2 fa-xs text-body text-decoration-none',
+          style: 'margin-top: -0.16rem;' %>
+  <% else %>
+    <%= link_to '', toggle_post_post_likes_path(post),
+          data: { turbo_method: 'post' },
+          class: 'far fa-heart mx-2 fa-xs text-body text-decoration-none',
+          style: 'margin-top: -0.16rem;' %>
+  <% end %>
   </div>
-<div class="p-2 bd-highlight">
-    <span>💬 comments</span>
+  <div class="p-2 bd-highlight">
+      <span>💬 comments</span>
+  </div>
 </div>

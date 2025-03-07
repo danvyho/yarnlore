@@ -14,13 +14,17 @@ Rails.application.routes.draw do
 
   resources :posts do
     resources :comments, only: %i[create update destroy]
-    resources :post_likes, only: %i[create]
+    resources :post_likes, only: [] do
+      post 'toggle', on: :collection
+    end
   end
   resources :users, only: [:index]
 
-  resources :favorites, only: [:index]
+  resources :favorites, only: [:index] do
+    post 'toggle', on: :collection
+  end
   resources :comments, only: [] do
-    resources :comment_likes, only: %i[create]
+    resources :comment_likes, only: %i[create destroy]
   end
   get "/patterns", to: "posts#patterns"
   post "/patterns", to: "posts#new_patterns"
