@@ -24,5 +24,10 @@ Rails.application.routes.draw do
   get "/users/my_profile", to: "users#my_profile", as: "my_profile"
   get "/notifications", to: "notifications#index"
   get "/users/:id", to: "users#show", as: "user"
+  resources :notifications, only: [:index] do
+    member do
+      post :mark_as_read
+    end
+  end
   post "/posts/:id/favorites", to: "favorites#create"
 end
