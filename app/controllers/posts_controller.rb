@@ -5,7 +5,6 @@ class PostsController < ApplicationController
   def index
     if current_user
     @posts = current_user.followees.map(&:posts).flatten
-    raise
     else
       @posts = Post.all
     end
