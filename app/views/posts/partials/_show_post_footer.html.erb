@@ -9,7 +9,7 @@
   </div>
 
   <div id="post-<%= post.id %>-likes" class="d-flex align-items-center">
-    <%= link_to '', post_post_likes_path(post),
+    <%= link_to '', toggle_post_post_likes_path(post),
           data: { turbo_method: 'post'},
           class: 'far fa-heart mx-2 fa-xs text-body',
           style: 'margin-top: -0.16rem;' %>
