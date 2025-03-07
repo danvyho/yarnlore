@@ -19,7 +19,6 @@
       <span class="h5"><%= "Followers 48    Following 55" %></span>
       <% if @user.bio.present? %>
         <p>"<%= @user.bio %>"</p>
-
       <% end %>
     </div>
   </div>
@@ -29,16 +28,16 @@
 
 <% @user.posts.each do |post| %>
   <%= render 'my_profile_card', post: post, user: @user %>
-   <% if post.user_id == @user.id %>
-  <%= link_to "Delete", post_path(post),
-   data: {turbo_method: :delete} %>
+
+  <% if post.user_id == @user.id %>
+    <%= link_to "Delete", post_path(post), data: { turbo_method: :delete } %>
+  <% end %>
+
+  <% if user_signed_in? && @user != current_user %>
+    <%= simple_form_for @user, url: follow_unfollow_path(@user), html: { method: :post } do |f| %>
+      <%= f.button :submit, @is_following ? "Unfollow" : "Follow", class: @is_following ? "btn btn-secondary" : "btn btn-primary" %>
+    <% end %>
+  <% end %>
+
+  <hr>
 <% end %>
-      <% if user_signed_in? && @user != current_user %>
-          <%= simple_form_for @user, url: follow_unfollow_path(@user), html: { method: :post } do |f| %>
-            <%= f.button :submit, @is_following ? "Unfollow" : "Follow", class: @is_following ? "btn btn-secondary" : "btn btn-primary" %>
-          <% end %>
-        <% end %>
-    </div>
-  </div>
-        <hr>
-  <%= render 'users/partials/profile_posts', user: @user %>
