@@ -121,8 +121,8 @@ ActiveRecord::Schema[7.1].define(version: 2025_03_07_165542) do
     t.boolean "read", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.text "content"
     t.integer "notification_type"
+    t.text "content"
     t.index ["post_id"], name: "index_notifications_on_post_id"
     t.index ["user_id"], name: "index_notifications_on_user_id"
   end
