@@ -9,7 +9,6 @@ class User < ApplicationRecord
   has_many :favorites
   has_many :posts, dependent: :destroy
   has_many :post_likes
-  has_many :followings
   has_many :messages
   has_many :memberships
   has_one_attached :avatar
@@ -21,6 +20,9 @@ class User < ApplicationRecord
   validates :username, presence: true, uniqueness: true
   validate :avatar_validation
 
+  def followees
+    Following.where(follower: self).map(&:followee)
+  end
   private
 
   def avatar_validation

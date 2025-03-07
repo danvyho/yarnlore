@@ -2,9 +2,12 @@ class PostsController < ApplicationController
   before_action :set_post, only: [:show, :destroy]
   before_action :authenticate_user!, except: [:index]
 
-
   def index
-    @posts = Post.all
+    if current_user
+    @posts = current_user.followees.map(&:posts).flatten
+    else
+      @posts = Post.all
+    end
     if params[:query].present?
       sql_subquery = <<~SQL
         posts.title ILIKE :query
@@ -16,7 +19,8 @@ class PostsController < ApplicationController
   end
 
   def show
-    @comments = @post.comments
+    @post = Post.find(params[:id])
+    @comments = @post.comments.order(created_at: :desc)  # Ensure comments are loaded
   end
 
   def new
@@ -38,6 +42,9 @@ class PostsController < ApplicationController
     end
   end
 
+  def patterns
+  end
+
   def update
     if @post.update(post_params)
       redirect_to posts_path
@@ -47,7 +54,6 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    # raise
     if @post.user_id == current_user.id
       @post.destroy
 
@@ -64,4 +70,5 @@ class PostsController < ApplicationController
   def set_post
     @post = Post.find(params[:id])
   end
+
 end
