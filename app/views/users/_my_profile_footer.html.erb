@@ -1,4 +1,3 @@
-<div class="d-flex justify-content-between align-items-center" style="font-size: 0.9rem;">
   <div data-controller="favorites" data-favorites-id-value="<%= post.id %>">
     <% if post.favorites.where(user: current_user).present? %>
       <i class="fa-solid fa-bookmark" data-action="click->favorites#toggleFavorite"></i>
@@ -14,5 +13,5 @@
   <p class="small text-muted mb-0"><%= post.post_likes.count %></p>
   </div>
 <div class="p-2 bd-highlight">
-    <span>💬 comments</span>
+    <span>💬 </span>
 </div>
