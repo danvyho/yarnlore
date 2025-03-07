@@ -23,9 +23,15 @@
         <p>"<%= @user.bio %>"</p>
         <% end %>
       <% if user_signed_in? && @user != current_user %>
-          <%= simple_form_for @user, url: follow_unfollow_path(@user), html: { method: :post } do |f| %>
-            <%= f.button :submit, @is_following ? "Unfollow" : "Follow", class: @is_following ? "btn btn-secondary" : "btn btn-primary" %>
-          <% end %>
+          <div class="d-flex align-items-center justify-content-between">
+            <%= simple_form_for @user, url: follow_unfollow_path(@user), html: { method: :post } do |f| %>
+              <%= f.button :submit, @is_following ? "Unfollow" : "Follow", class: @is_following ? "btn btn-secondary" : "btn btn-primary" %>
+            <% end %>
+            <%= simple_form_for @chat, url: chat_create_path, html: { method: :post } do |f| %>
+              <%= f.input :user_id, as: :hidden, input_html: { value: @user.id }, wrapper: false %>
+              <%= f.button :submit, "Message", class: "btn btn-primary" %>
+            <% end %>
+          </div>
         <% end %>
     </div>
   </div>
