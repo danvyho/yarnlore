@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: [:show]
+  before_action :set_post, only: [:show, :destroy]
   before_action :authenticate_user!, except: [:index]
 
 
@@ -47,15 +47,12 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    raise
+    # raise
     if @post.user_id == current_user.id
       @post.destroy
-      respond_to do |format|
-        format.html { redirect_to @post, notice: 'Post was successfully destroyed.' }
-        format.turbo_stream
-      end
+
     end
-    # redirect_to posts_path
+    redirect_to my_profile_path
   end
 
   private

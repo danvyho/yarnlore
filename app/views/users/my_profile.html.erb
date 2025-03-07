@@ -30,6 +30,6 @@
   <%= render 'my_profile_card', post: post, user: @user %>
    <% if post.user_id == @user.id %>
   <%= link_to "Delete", post_path(post),
-   data: {method: :delete} %>
+   data: {turbo_method: :delete} %>
 <% end %>
 <% end %>
