@@ -1,12 +1,12 @@
-  <div class="col-sm-3 mb-4" style="display: flex; align-items: center; width: 18rem; border: none;">
-    <%= render 'my_profile_image', post: post %>
-    <div class="container">
-      <div class="row">
-    <%= render 'my_profile_header', post: post %>
-        <%= render 'my_profile_content', post: post %>
-        <div class="d-flex justify-content-between align-items-center" style="font-size: 0.9rem;">
-          <%= render 'my_profile_footer', post: post, user: user %>
-        </div>
+<div class="col-12 col-md-6 mb-4">
+  <div class="card mx-auto rounded-top border border-secondary shadow-sm" style="width: 100%;">
+    <div class="d-flex h-100">
+      <%= render 'users/partials/my_profile_image', post: post %>
+
+      <div class="flex-grow-1 px-2 d-flex flex-column justify-content-between" style="height: 113px; overflow: hidden;">
+        <%= render 'users/partials/my_profile_content', post: post %>
+        <%= render 'users/partials/my_profile_footer', post: post, current_user: current_user %>
       </div>
     </div>
   </div>
+</div>
