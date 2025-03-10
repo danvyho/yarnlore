@@ -50,14 +50,14 @@ upload_images = [
 ]
 
 avatar_images = [
-  https://res.cloudinary.com/ducax2ucs/image/upload/v1741615237/woman_xn7owh.png
-  https://res.cloudinary.com/ducax2ucs/image/upload/v1741615236/boy_xhwf6m.png
-  https://res.cloudinary.com/ducax2ucs/image/upload/v1741615237/man_ia2qlg.png
-  https://res.cloudinary.com/ducax2ucs/image/upload/v1741615236/man_1_fhxhdb.png
-  https://res.cloudinary.com/ducax2ucs/image/upload/v1741615236/man_2_zvdqyw.png
-  https://res.cloudinary.com/ducax2ucs/image/upload/v1741615630/woman_2_jtn0xn.png
-  https://res.cloudinary.com/ducax2ucs/image/upload/v1741615630/avatar_uuvbnh.png
-  https://res.cloudinary.com/ducax2ucs/image/upload/v1741615629/teacher_u8b5df.png
+  "https://res.cloudinary.com/ducax2ucs/image/upload/v1741615237/woman_xn7owh.png",
+  "https://res.cloudinary.com/ducax2ucs/image/upload/v1741615236/boy_xhwf6m.png",
+  "https://res.cloudinary.com/ducax2ucs/image/upload/v1741615237/man_ia2qlg.png",
+  "https://res.cloudinary.com/ducax2ucs/image/upload/v1741615236/man_1_fhxhdb.png",
+  "https://res.cloudinary.com/ducax2ucs/image/upload/v1741615236/man_2_zvdqyw.png",
+  "https://res.cloudinary.com/ducax2ucs/image/upload/v1741615630/woman_2_jtn0xn.png",
+  "https://res.cloudinary.com/ducax2ucs/image/upload/v1741615630/avatar_uuvbnh.png",
+  "https://res.cloudinary.com/ducax2ucs/image/upload/v1741615629/teacher_u8b5df.png"
 ]
 usernames = [
   "KnitterQueen",

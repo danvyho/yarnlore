@@ -26,8 +26,7 @@
 <hr>
 
 <% @user.posts.each do |post| %>
-  <%= render '/users/partials/my_profile_card', post: post, user: @user %>
-
-
-  <hr>
+  <%= link_to post_path(post) do %>
+    <%= render '/users/partials/my_profile_card', post: post, user: @user %>
+  <% end %>
 <% end %>
