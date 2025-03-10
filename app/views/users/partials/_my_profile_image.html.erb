@@ -1,0 +1,8 @@
+<% if post.image.attached? %>
+  <div class="flex-shrink-0">
+    <%= cl_image_tag post.image.key,
+          class: "img-fluid",
+          style: "object-fit: cover; height: 110px; width: 110px; border-right: 3px solid #f1f1f1; border-radius: 0.75rem;" %>
+  </div>
+<% end %>
+
