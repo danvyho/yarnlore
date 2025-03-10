@@ -3,7 +3,7 @@
     <div class="card shadow-0 border" style="background-color: #f0f2f5;">
       <div class="card-body p-4">
         <% comments.each do |comment| %>
-          <%= render partial: "shared/comment", locals: { comment: comment } %>
+          <%= render "shared/comment", comment: comment %>
         <% end %>
       <%= form_with(model: [post, post.comments.new], local: false, html: { class: "form-outline mb-4", id: "new-comment-form" }) do |f| %>
         <div class="field">

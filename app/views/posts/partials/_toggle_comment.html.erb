@@ -1,0 +1,36 @@
+<div class="card mb-3 position-relative" id="comment-<%= comment.id %>">
+    <div class="card-body p-3">
+      <div class="d-flex">
+        <% if comment.user.avatar.attached? %>
+          <%= image_tag comment.user.avatar, alt: "", width: 30, height: 30, class: "rounded-circle me-2" %>
+        <% else %>
+        <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(4).webp" alt="avatar" width="30" height="30" class="rounded-circle me-2">
+        <% end %>
+        <div class="w-100">
+          <strong class="text-primary"><%= comment.user.username %></strong>
+          <p class="mb-1"><%= comment.content %></p>
+        </div>
+      </div>
+      <% if comment.user_id == current_user&.id %>
+        <div class="position-absolute" style="top: 5px; right: 5px;">
+          <%= link_to '', post_comment_path(comment.post, comment),
+                data: { turbo_method: 'delete' },
+                class: 'text-danger fas fa-trash',
+                title: 'Delete Comment' %>
+        </div>
+      <% end %>
+        <div class="d-flex flex-row align-items-center">
+          <%= comment.user_id == current_user&.id ? link_to('', post_comment_path(comment.post, comment),
+            data: { turbo_method: 'delete' },
+            class: 'fas fa-trash mx-2 fa-xs text-body position-absolute',
+            style: 'margin-top: -0.16rem; top: 30px; right: 10px') : '' %>
+          <div id="comment-<%= comment.id %>-likes" class="d-flex align-items-center">
+            <%= link_to '', comment_comment_likes_path(comment),
+              data: { turbo_method: 'post'},
+              class: 'far fa-heart mx-2 fa-xs text-body',
+              style: 'margin-top: -0.16rem;' %>
+          <p class="small text-muted mb-0"><%= comment.comment_likes.count %></p>
+          </div>
+        </div>
+  </div>
+</div>
