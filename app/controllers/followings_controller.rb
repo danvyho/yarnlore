@@ -12,7 +12,8 @@ class FollowingsController < ApplicationController
     redirect_to user_path(@user)
   end
 
-  def index
+  def index_followers
+    @followers = User.where
   end
 
   private
