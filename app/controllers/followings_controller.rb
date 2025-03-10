@@ -7,6 +7,11 @@ class FollowingsController < ApplicationController
       Following.where(follower_id: current_user.id, followee_id: @user.id).destroy_all
     else
       Following.create(follower_id: current_user.id, followee_id: @user.id)
+      Notification.create!(
+        user: @user,
+        post: current_user.posts.first || Post.first,
+        content: "#{current_user.username} started following you!"
+      )
     end
 
     redirect_to user_path(@user)
