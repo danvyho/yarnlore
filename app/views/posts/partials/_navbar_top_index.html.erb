@@ -5,11 +5,16 @@
     </a>
 
     <div class="ms-auto d-flex align-items-center">
-      <%= link_to notifications_path, class: "nav-link" do %>
-        <i class="fa-regular fa-bell fa-lg px-4"></i>
-      <% end %>
-      <%= link_to chats_path, class: "nav-link" do %>
-        <i class="fa-regular fa-comment fa-lg px-2"></i>
+      <% if user_signed_in? %>
+        <%= link_to notifications_path, class: "nav-link" do %>
+          <i class="fa-regular fa-bell fa-lg px-4"></i>
+        <% end %>
+        <%= link_to chats_path, class: "nav-link" do %>
+          <i class="fa-regular fa-comment fa-lg px-2"></i>
+        <% end %>
+        <%= link_to "Sign out", destroy_user_session_path, class: "nav-link", data: { turbo_method: :delete }, style: "padding: 0 20px"  %>
+      <% else %>
+        <%= link_to "Sign in", new_user_session_path, class: "nav-link", style: "padding: 0 20px" %>
       <% end %>
     </div>
   </div>
