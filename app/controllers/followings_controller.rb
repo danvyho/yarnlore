@@ -1,5 +1,5 @@
 class FollowingsController < ApplicationController
-  before_action :set_user, only: [:follow_unfollow]
+  before_action :set_user, only: [:follow_unfollow, :index_followers]
 
   def follow_unfollow # followings#create && followings#delete
     @is_following = Following.where(follower_id: current_user.id, followee_id: @user.id).size == 1
@@ -13,7 +13,7 @@ class FollowingsController < ApplicationController
   end
 
   def index_followers
-    @followers = User.where
+    @followers = Following.where(followee_id: @user.id).map(&:follower)
   end
 
   private

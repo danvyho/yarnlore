@@ -9,7 +9,7 @@
     <% end %>
     <div style="display: flex; flex-direction: column;">
       <span class = "h3"><%= @user.username %></span>
-      <span class = "h5"><%= "Followers 48    Following 55"%></span>
+      <span class = "h5"><%= link_to "Followers", followers_path(@user)%> Following 55</span>
       <% if @user.bio.present? %>
         <p>"<%= @user.bio %>"</p>
         <% end %>
