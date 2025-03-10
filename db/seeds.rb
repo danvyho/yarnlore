@@ -51,18 +51,18 @@ upload_images = [
 ]
 
 avatar_images = [
-"https://res.cloudinary.com/ducax2ucs/image/upload/v1741615237/woman_xn7owh.png",
- "https://res.cloudinary.com/ducax2ucs/image/upload/v1741615236/boy_xhwf6m.png",
- "https://res.cloudinary.com/ducax2ucs/image/upload/v1741615236/man_1_fhxhdb.png",
- "https://res.cloudinary.com/ducax2ucs/image/upload/v1741615236/man_2_zvdqyw.png",
- "https://res.cloudinary.com/ducax2ucs/image/upload/v1741615630/woman_2_jtn0xn.png",
- "https://res.cloudinary.com/ducax2ucs/image/upload/v1741615630/avatar_uuvbnh.png",
- "https://res.cloudinary.com/ducax2ucs/image/upload/v1741615629/teacher_u8b5df.png",
- "https://res.cloudinary.com/ducax2ucs/image/upload/v1741615235/chicken_qe1kib.png",
- "https://res.cloudinary.com/ducax2ucs/image/upload/v1741615235/woman_1_rxlwra.png",
- "https://res.cloudinary.com/ducax2ucs/image/upload/v1741615630/cat_yapnbh.png",
- "https://res.cloudinary.com/ducax2ucs/image/upload/v1741615629/empathy_kehgo9.png"
- ]
+  "https://res.cloudinary.com/ducax2ucs/image/upload/v1741615237/woman_xn7owh.png",
+  "https://res.cloudinary.com/ducax2ucs/image/upload/v1741615236/boy_xhwf6m.png",
+  "https://res.cloudinary.com/ducax2ucs/image/upload/v1741615236/man_1_fhxhdb.png",
+  "https://res.cloudinary.com/ducax2ucs/image/upload/v1741615236/man_2_zvdqyw.png",
+  "https://res.cloudinary.com/ducax2ucs/image/upload/v1741615630/woman_2_jtn0xn.png",
+  "https://res.cloudinary.com/ducax2ucs/image/upload/v1741615630/avatar_uuvbnh.png",
+  "https://res.cloudinary.com/ducax2ucs/image/upload/v1741615629/teacher_u8b5df.png",
+  "https://res.cloudinary.com/ducax2ucs/image/upload/v1741615235/chicken_qe1kib.png",
+  "https://res.cloudinary.com/ducax2ucs/image/upload/v1741615235/woman_1_rxlwra.png",
+  "https://res.cloudinary.com/ducax2ucs/image/upload/v1741615630/cat_yapnbh.png",
+  "https://res.cloudinary.com/ducax2ucs/image/upload/v1741615629/empathy_kehgo9.png"
+  ]
 
 
 usernames = [
@@ -221,7 +221,7 @@ notifications = [
     ]
 
     pattern_images = [
-      "https://res.cloudinary.com/ducax2ucs/image/upload/v1741631793/Eloisa-Vest-06a-Craftrebella_small2_xi3poz.jpg",
+"https://res.cloudinary.com/ducax2ucs/image/upload/v1741631793/Eloisa-Vest-06a-Craftrebella_small2_xi3poz.jpg",
 "https://res.cloudinary.com/ducax2ucs/image/upload/v1741631792/story_1698165303805_edit_699012711724586_small2_pbnzdo.jpg",
 "https://res.cloudinary.com/ducax2ucs/image/upload/v1741631791/IMG_4294_small2_hsgiow.jpg",
 "https://res.cloudinary.com/ducax2ucs/image/upload/v1741631791/2_small2_dmjyfp.png",
