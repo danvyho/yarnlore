@@ -288,6 +288,7 @@ User.create(
     end
   end
   for i in 0..14
+    user = users.sample
     pattern = Post.new(
       title: pattern_title[i],
       content: "Content AI soon...",
@@ -297,7 +298,7 @@ User.create(
       yarn_weight: pattern_weight[i],
       needle_size: needle_size[i],
       pattern: true,
-      user: User.first
+      user: user
     )
 
     file = URI.parse(pattern_images[i % pattern_images.length]).open
