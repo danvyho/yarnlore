@@ -36,7 +36,7 @@
       Comments
     </button>
     <div data-comments-section-target="section" class="mt-2 d-none">
-      <%= render "posts/partials/toggle_comment_container", comments: post.comments, post: post %>
+      <%= render "shared/comments", comments: post.comments, post: post %>
     </div>
   </div>
 </div>

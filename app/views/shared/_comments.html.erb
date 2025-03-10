@@ -2,10 +2,10 @@
   <div class="col-md-8 col-lg-6">
     <div class="card shadow-0 border" style="background-color: #f0f2f5;">
       <div class="card-body p-4">
-        <% comments.each do |comment| %>
-          <%= render "shared/comment", comment: comment %>
-        <% end %>
-      <%= form_with(model: [post, post.comments.new], local: false, html: { class: "form-outline mb-4", id: "new-comment-form" }) do |f| %>
+    <% comments.where(parent_id: nil).each do |comment| %>
+      <%= render "posts/partials/toggle_comment", comment: comment %>
+    <% end %>
+      <%= form_with(model: [post, Comment.new], local: false, html: { class: "form-outline mb-4", id: "new-comment-form" }) do |f| %>
         <div class="field">
           <%= f.label :content, "", class: "visually-hidden" %>
           <%= f.text_area :content, rows: 3, class: "form-control" %>

@@ -9,7 +9,7 @@ class CommentsController < ApplicationController
 
   def create
     @comment = @post.comments.new(comment_params)
-    @comment.user = current_user
+    @comment.user_id = current_user
     if @comment.save
       respond_to do |format|
         format.turbo_stream do

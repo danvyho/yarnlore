@@ -5,6 +5,7 @@ export default class extends Controller {
 
   toggle(event) {
     event.preventDefault();
+    console.log("Reply toggle clicked!");
     this.formTarget.classList.toggle("d-none");
   }
 }
