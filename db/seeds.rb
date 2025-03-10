@@ -50,16 +50,16 @@ upload_images = [
   "https://res.cloudinary.com/ducax2ucs/image/upload/v1741104555/pexels-yankrukov-6615584_b6zapm.jpg",
 ]
 
-# avatar_images = [
-#   https://res.cloudinary.com/ducax2ucs/image/upload/v1741615237/woman_xn7owh.png
-#   https://res.cloudinary.com/ducax2ucs/image/upload/v1741615236/boy_xhwf6m.png
-#   https://res.cloudinary.com/ducax2ucs/image/upload/v1741615237/man_ia2qlg.png
-#   https://res.cloudinary.com/ducax2ucs/image/upload/v1741615236/man_1_fhxhdb.png
-#   https://res.cloudinary.com/ducax2ucs/image/upload/v1741615236/man_2_zvdqyw.png
-#   https://res.cloudinary.com/ducax2ucs/image/upload/v1741615630/woman_2_jtn0xn.png
-#   https://res.cloudinary.com/ducax2ucs/image/upload/v1741615630/avatar_uuvbnh.png
-#   https://res.cloudinary.com/ducax2ucs/image/upload/v1741615629/teacher_u8b5df.png
-# ]
+avatar_images = [
+"https://res.cloudinary.com/ducax2ucs/image/upload/v1741615237/woman_xn7owh.png",
+ "https://res.cloudinary.com/ducax2ucs/image/upload/v1741615236/boy_xhwf6m.png",
+  "https://res.cloudinary.com/ducax2ucs/image/upload/v1741615237/man_ia2qlg.png",
+  "https://res.cloudinary.com/ducax2ucs/image/upload/v1741615236/man_1_fhxhdb.png",
+  "https://res.cloudinary.com/ducax2ucs/image/upload/v1741615236/man_2_zvdqyw.png",
+  "https://res.cloudinary.com/ducax2ucs/image/upload/v1741615630/woman_2_jtn0xn.png",
+  "https://res.cloudinary.com/ducax2ucs/image/upload/v1741615630/avatar_uuvbnh.png",
+  "https://res.cloudinary.com/ducax2ucs/image/upload/v1741615629/teacher_u8b5df.png"
+]
 
 usernames = [
   "KnitterQueen",
@@ -217,21 +217,21 @@ notifications = [
     ]
 
     pattern_images = [
-      "https://res.cloudinary.com/ducax2ucs/image/upload/v1741631793/Eloisa-Vest-06a-Craftrebella_small2_xi3poz.jpg",
-"https://res.cloudinary.com/ducax2ucs/image/upload/v1741631792/story_1698165303805_edit_699012711724586_small2_pbnzdo.jpg",
-"https://res.cloudinary.com/ducax2ucs/image/upload/v1741631791/IMG_4294_small2_hsgiow.jpg",
-"https://res.cloudinary.com/ducax2ucs/image/upload/v1741631791/2_small2_dmjyfp.png",
-"https://res.cloudinary.com/ducax2ucs/image/upload/v1741631790/IMG_9379_small2_vtvgpv.jpg",
-"https://res.cloudinary.com/ducax2ucs/image/upload/v1741625024/MainView_small_m5aaw2.jpg",
-"https://res.cloudinary.com/ducax2ucs/image/upload/v1741624934/20250213_112603_small2_vgmrzw.jpg",
+      "https://res.cloudinary.com/ducax2ucs/image/upload/v1741624934/20250213_112603_small2_vgmrzw.jpg",
 "https://res.cloudinary.com/ducax2ucs/image/upload/v1741624931/IMG_9446_small2_tfe7vq.jpg",
-"https://res.cloudinary.com/ducax2ucs/image/upload/v1741624925/Image_2__small2_k0hryo.jpg",
 "https://res.cloudinary.com/ducax2ucs/image/upload/v1741624928/IMG_8900-2_small2_yobdqq.jpg",
+"https://res.cloudinary.com/ducax2ucs/image/upload/v1741624925/Image_2__small2_k0hryo.jpg",
 "https://res.cloudinary.com/ducax2ucs/image/upload/v1741624922/MDK-FG29-Mosaic-WafflePullover-Modeled-1-800_small2_hci8w7.jpg",
 "https://res.cloudinary.com/ducax2ucs/image/upload/v1741624918/15_small2_bnv0jh.jpg",
 "https://res.cloudinary.com/ducax2ucs/image/upload/v1741624915/6090_FR_small2_rqorh6.jpg",
 "https://res.cloudinary.com/ducax2ucs/image/upload/v1741624912/IMG_3102_small2_ytbbbf.png",
-"https://res.cloudinary.com/ducax2ucs/image/upload/v1741624909/Carousel_Jumper_Front_Jo_Davies_small_llrcry.jpg"
+"https://res.cloudinary.com/ducax2ucs/image/upload/v1741625024/MainView_small_m5aaw2.jpg",
+"https://res.cloudinary.com/ducax2ucs/image/upload/v1741624909/Carousel_Jumper_Front_Jo_Davies_small_llrcry.jpg",
+"https://res.cloudinary.com/ducax2ucs/image/upload/v1741631793/Eloisa-Vest-06a-Craftrebella_small2_xi3poz.jpg",
+"https://res.cloudinary.com/ducax2ucs/image/upload/v1741631792/story_1698165303805_edit_699012711724586_small2_pbnzdo.jpg",
+"https://res.cloudinary.com/ducax2ucs/image/upload/v1741631791/IMG_4294_small2_hsgiow.jpg",
+"https://res.cloudinary.com/ducax2ucs/image/upload/v1741631791/2_small2_dmjyfp.png",
+"https://res.cloudinary.com/ducax2ucs/image/upload/v1741631790/IMG_9379_small2_vtvgpv.jpg"
     ]
 
 
@@ -278,6 +278,7 @@ User.create(
     end
   end
   for i in 0..14
+    # user = users.sample
     pattern = Post.new(
       title: pattern_title[i],
       content: "Content AI soon...",
