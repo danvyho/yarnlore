@@ -11,6 +11,7 @@ require "faker"
 require "open-uri"
 require "json"
 
+Following.destroy_all
 Notification.destroy_all
 Favorite.destroy_all
 PostLike.destroy_all
@@ -48,6 +49,16 @@ upload_images = [
   "https://res.cloudinary.com/ducax2ucs/image/upload/v1741104555/pexels-yankrukov-6615584_b6zapm.jpg",
 ]
 
+avatar_images = [
+  https://res.cloudinary.com/ducax2ucs/image/upload/v1741615237/woman_xn7owh.png
+  https://res.cloudinary.com/ducax2ucs/image/upload/v1741615236/boy_xhwf6m.png
+  https://res.cloudinary.com/ducax2ucs/image/upload/v1741615237/man_ia2qlg.png
+  https://res.cloudinary.com/ducax2ucs/image/upload/v1741615236/man_1_fhxhdb.png
+  https://res.cloudinary.com/ducax2ucs/image/upload/v1741615236/man_2_zvdqyw.png
+  https://res.cloudinary.com/ducax2ucs/image/upload/v1741615630/woman_2_jtn0xn.png
+  https://res.cloudinary.com/ducax2ucs/image/upload/v1741615630/avatar_uuvbnh.png
+  https://res.cloudinary.com/ducax2ucs/image/upload/v1741615629/teacher_u8b5df.png
+]
 usernames = [
   "KnitterQueen",
   "YarnMaster",
@@ -163,6 +174,12 @@ notifications = [
     "These soft crochet baby booties are a perfect gift for a newborn. The pattern is simple and works up quickly, making it a perfect project for beginners.",
     "This knitted sweater pattern is perfect for layering. It's comfortable, stylish, and versatile, making it a wardrobe essential for any season."
   ]
+
+User.create(
+  email: 'a@a.a',
+  password: "123456",
+  username: 'jasper'
+)
 
   users = usernames.shuffle.take(14).map do |username|
     User.create!(

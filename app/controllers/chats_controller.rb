@@ -24,11 +24,26 @@ class ChatsController < ApplicationController
   end
 
   def create
+    @chat = nil
     @chat_with = User.find(chat_params["user_id"])
-    @chat = Chat.new(title: @chat_with.username)
-    @chat.save
-    Membership.create(chat: @chat, user: current_user)
-    Membership.create(chat: @chat, user: @chat_with)
+    @current_user_memberships = current_user.memberships
+
+    if @current_user_memberships.size > 0
+      @current_user_memberships.each do |membership|
+        @existing_membership = Membership.where(chat_id: membership.chat_id).where(user_id: @chat_with.id)[0]
+        if @existing_membership
+          @chat= Chat.find(@existing_membership.chat_id)
+        end
+      end
+    end
+
+    if @chat == nil
+      @chat = Chat.new(title: @chat_with.username)
+      @chat.save
+      Membership.create(chat: @chat, user: current_user)
+      Membership.create(chat: @chat, user: @chat_with)
+    end
+
     redirect_to chat_path(@chat)
   end
 
