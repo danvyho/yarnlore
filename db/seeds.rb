@@ -7,6 +7,7 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
 require "faker"
 require "open-uri"
 require "json"
@@ -61,7 +62,8 @@ avatar_images = [
   "https://res.cloudinary.com/ducax2ucs/image/upload/v1741615235/woman_1_rxlwra.png",
   "https://res.cloudinary.com/ducax2ucs/image/upload/v1741615630/cat_yapnbh.png",
   "https://res.cloudinary.com/ducax2ucs/image/upload/v1741615629/empathy_kehgo9.png"
-]
+  ]
+
 
 usernames = [
   "KnitterQueen",
@@ -77,7 +79,8 @@ usernames = [
   "CraftyThreads",
   "YarnVoyager",
   "TwistAndKnit",
-  "LoopedIn"]
+  "LoopedIn"
+]
 
   comment = [
     "Beautiful and easy-to-follow pattern! The instructions were clear, and my project turned out great.",
@@ -162,6 +165,8 @@ notifications = [
     "Knitted Sweater Perfect for Layering"
   ]
 
+
+
   post_contents = [
     "This cozy knit sweater pattern is perfect for chilly days. It’s warm, stylish, and easy to follow. Perfect for beginners and seasoned crafters alike!",
     "This simple yet stylish knit beanie pattern is a must-try. It’s quick, easy, and perfect for those last-minute gift ideas!",
@@ -178,6 +183,62 @@ notifications = [
     "These soft crochet baby booties are a perfect gift for a newborn. The pattern is simple and works up quickly, making it a perfect project for beginners.",
     "This knitted sweater pattern is perfect for layering. It's comfortable, stylish, and versatile, making it a wardrobe essential for any season."
   ]
+
+
+    pattern_title = [
+      "Basic sweater", "After school sweater", "Djo", "Step by Step Sweater", "Waffle Pullover", "Bee Leaf Hat",
+      "6090 Sweater and Jacket", "Blushing Frog", "Round Raccoon", "Unfair Carousel", "Eloisa Vest", "Collin Scarf",
+      "Embers Shawl", "Bow Square", "Baby Chick Mini Palm Plushie"
+    ]
+    pattern_craft = [
+      "Knitting", "Knitting", "Knitting", "Knitting", "Knitting", "Knitting",
+      "Knitting", "Crochet", "Crochet", "Knitting", "Knitting", "Knitting", "Knitting", "Crochet", "Crochet"
+    ]
+
+    pattern_category = [
+      "Sweater/Pullover", "Sweater/Pullover", "Sweater/Pullover", "Sweater/Pullover", "Sweater/Pullover",
+      "Hat/Beanie/Toque", "Sweater/Pullover", "Softies/Animals", "Softies/Animals", "Sweater/Pullover",
+      "Vest", "Neck/Torso/Scarf", "Neck/Torso", "Afghan Block", "Softies/Animals"
+    ]
+
+    pattern_weight = [
+      "Worsted (9 wpi)", "Worsted (9 wpi)", "Sport (12 wpi)", "Aran (8wpi)", "DK (11 wpi)", "Worsted (9wpi)",
+      "DK (11 wpi)", "Bulky (7 wpi)", "Aran (9 wpi)", "DK (11 wpi)", "DK (11 wpi)", "Sport (12 wpi)",
+      "Fingering (14 wpi)", "Aran (8 wpi)", "Super Bulky (5-6 wpi)"
+    ]
+
+    pattern_gauge  = [
+      "21 stitches and 30 rows = 10 cm in 21x30", "18 stitches and 26 rows = 10 cm
+      in stockinette stitch", "20 stitches and 26 rows = 10 cm in Colourwork",
+      "16 stitches and 20 rows = 10 cm", "21 stitches and 40 rows = 10 cm in mosaic pattern",
+      "24 stitches and 30 rows = 10 cm in Rib 1x1", "22 stitches and 28 rows = 10 cm in stocking stitch",
+      "/", "15 stitches and 15 rows = 10 cm", "21 stitches and 28 rows = 10 cm", "18 stitches and 30 rows = 10 cm",
+      "22 stitches and 37 rows = 10 cm in Garter stitch", "22 stitches and 32 rows = 10 cm", "/", "/"
+    ]
+    needle_size = [
+      "US 6 - 4.0 mm", "US 6 - 4.0 mm", "US 6 - 4.0 mm", "US 9 - 5.5 mm", "US 7 - 4.5 mm", "US 6 - 4.0 mm",
+      "US 6 - 4.0 mm", "/", "US 000 - 1.5 mm", "US 6 - 4.0 mm", "US 4 - 3.5 mm", "US 6 - 4.0 mm", "US 5 - 3.75 mm", "/", "/"
+    ]
+
+    pattern_images = [
+"https://res.cloudinary.com/ducax2ucs/image/upload/v1741631793/Eloisa-Vest-06a-Craftrebella_small2_xi3poz.jpg",
+"https://res.cloudinary.com/ducax2ucs/image/upload/v1741631792/story_1698165303805_edit_699012711724586_small2_pbnzdo.jpg",
+"https://res.cloudinary.com/ducax2ucs/image/upload/v1741631791/IMG_4294_small2_hsgiow.jpg",
+"https://res.cloudinary.com/ducax2ucs/image/upload/v1741631791/2_small2_dmjyfp.png",
+"https://res.cloudinary.com/ducax2ucs/image/upload/v1741631790/IMG_9379_small2_vtvgpv.jpg",
+"https://res.cloudinary.com/ducax2ucs/image/upload/v1741625024/MainView_small_m5aaw2.jpg",
+"https://res.cloudinary.com/ducax2ucs/image/upload/v1741624934/20250213_112603_small2_vgmrzw.jpg",
+"https://res.cloudinary.com/ducax2ucs/image/upload/v1741624931/IMG_9446_small2_tfe7vq.jpg",
+"https://res.cloudinary.com/ducax2ucs/image/upload/v1741624925/Image_2__small2_k0hryo.jpg",
+"https://res.cloudinary.com/ducax2ucs/image/upload/v1741624928/IMG_8900-2_small2_yobdqq.jpg",
+"https://res.cloudinary.com/ducax2ucs/image/upload/v1741624922/MDK-FG29-Mosaic-WafflePullover-Modeled-1-800_small2_hci8w7.jpg",
+"https://res.cloudinary.com/ducax2ucs/image/upload/v1741624918/15_small2_bnv0jh.jpg",
+"https://res.cloudinary.com/ducax2ucs/image/upload/v1741624915/6090_FR_small2_rqorh6.jpg",
+"https://res.cloudinary.com/ducax2ucs/image/upload/v1741624912/IMG_3102_small2_ytbbbf.png",
+"https://res.cloudinary.com/ducax2ucs/image/upload/v1741624909/Carousel_Jumper_Front_Jo_Davies_small_llrcry.jpg"
+    ]
+
+
 
 User.create(
   email: 'a@a.a',
@@ -208,12 +269,14 @@ User.create(
     post = Post.new(
       title: post_title,
       content: post_content,
-      user: user
+      user: user,
+      pattern: false
     )
+
 
     file = URI.parse(upload_images[i % upload_images.length]).open
     post.image.attach(io: file, filename: "post_image_#{i}.jpg", content_type: "image/jpeg")
-    post.save
+    post.save!
 
     3.times do
       commenter = users.reject { |u| u == user }.sample
@@ -224,7 +287,24 @@ User.create(
       )
     end
   end
+  for i in 0..14
+    user = users.sample
+    pattern = Post.new(
+      title: pattern_title[i],
+      content: "Content AI soon...",
+      craft: pattern_craft[i],
+      category: pattern_category[i],
+      gauge: pattern_gauge[i],
+      yarn_weight: pattern_weight[i],
+      needle_size: needle_size[i],
+      pattern: true,
+      user: user
+    )
 
+    file = URI.parse(pattern_images[i % pattern_images.length]).open
+    pattern.image.attach(io: file, filename: "pattern_image_#{i}.jpg", content_type: "image/jpeg")
+    pattern.save!
+  end
   User.all.each do |user|
     sender = user
     recipient = users.reject { |u| u == sender }.sample

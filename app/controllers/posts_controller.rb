@@ -21,7 +21,6 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.find(params[:id])
-    redirect_to posts_path
   end
 
   def create
@@ -47,8 +46,9 @@ class PostsController < ApplicationController
   end
 
   def update
+    @post = Post.find(params[:id])
     if @post.update(post_params)
-      redirect_to posts_path
+      redirect_to post_path(@post)
     else
       render :edit, status: :unprocessable_entity
     end
@@ -62,10 +62,14 @@ class PostsController < ApplicationController
     redirect_to my_profile_path
   end
 
+  def patterns
+    @patterns = Post.where(pattern: true)
+  end
+
   private
 
   def post_params
-    params.require(:post).permit(:title, :content, :image)
+    params.require(:post).permit(:id, :title, :content, :image)
   end
 
   def set_post

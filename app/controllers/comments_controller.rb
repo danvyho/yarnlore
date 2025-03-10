@@ -28,7 +28,7 @@ class CommentsController < ApplicationController
     Notification.create!(
       user: @post.user,
       post: @post,
-      content: "#{current_user.username} commented your post!"
+      content: "#{current_user.username} commented \"#{@comment.content.first(10)}...\" on your post!"
     )
   end
 

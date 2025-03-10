@@ -1,0 +1,8 @@
+<div class="card mx-auto rounded-top" style="width: 24rem; border: none;">
+  <%= render 'patterns/partials/pattern_image', post: post %>
+  <div class="card-body text-center">
+    <%= render 'patterns/partials/pattern_header', post: post %>
+    <%= render 'patterns/partials/pattern_content', post: post %>
+    <%= render 'patterns/partials/pattern_footer', post: post, current_user: current_user %>
+  </div>
+</div>
