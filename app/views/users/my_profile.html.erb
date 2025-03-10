@@ -22,16 +22,18 @@
       <% end %>
     </div>
   </div>
-<% end %>
 
-<hr>
-
+  <hr>
 <% @user.posts.each do |post| %>
   <%= render 'my_profile_card', post: post, user: @user %>
 
   <% if post.user_id == @user.id %>
-    <%= link_to "Delete", post_path(post), data: { turbo_method: :delete } %>
+    <%= form_with(url: post_path(post), method: :delete, data: { turbo: "true", confirm: "Are you sure you want to delete this post?" }) do |form| %>
+      <%= form.submit "Delete", data: { turbo_action: "replace", confirm: "Are you sure you want to delete this post?" } %>
+    <% end %>
   <% end %>
+<% end %>
+
 
   <% if user_signed_in? && @user != current_user %>
     <%= simple_form_for @user, url: follow_unfollow_path(@user), html: { method: :post } do |f| %>
@@ -39,5 +41,6 @@
     <% end %>
   <% end %>
 
-  <hr>
 <% end %>
+
+<hr>
