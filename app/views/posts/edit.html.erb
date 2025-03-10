@@ -1,6 +1,6 @@
-<%= simple_form_for @post do |f| %>
+<%= simple_form_for @post, html: { method: :patch } do |f| %>
   <%= f.input :title %>
   <%= f.input :content %>
-    <%= f.input :photo, as: :file %>
+  <%= f.input :image, as: :file %>
   <%= f.submit %>
 <% end %>

@@ -61,6 +61,7 @@ upload_images = [
 #   https://res.cloudinary.com/ducax2ucs/image/upload/v1741615629/teacher_u8b5df.png
 # ]
 
+
 usernames = [
   "KnitterQueen",
   "YarnMaster",
@@ -243,11 +244,17 @@ User.create(
 )
 
   users = usernames.shuffle.take(14).map do |username|
-    User.create!(
+    user = User.create!(
       email: Faker::Internet.unique.email,
       password: "password",
       username: username
     )
+
+      avatar_url = avatar_images.sample
+      file = URI.open(avatar_url)
+      user.avatar.attach(io: file, filename: "avatar_#{user.id}.jpg", content_type: "image/jpeg")
+
+    user
   end
 
   10.times do |i|
