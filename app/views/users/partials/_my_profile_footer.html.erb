@@ -23,7 +23,4 @@
   <div class="ms-3 p-2 bd-highlight">
     <span>💬 comments</span>
   </div>
-    <% if post.user_id == @user.id %>
-    <%= link_to "Delete", post_path(post), data: { turbo_method: :delete } %>
-  <% end %>
 </div>
