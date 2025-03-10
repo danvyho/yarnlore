@@ -37,7 +37,9 @@
 
     <% if comment.replies.any? %>
       <div class="ms-4 mt-2">
-        <%= render partial: "posts/partials/toggle_comment", collection: comment.replies.compact , as: :comment %>
+        <% comment.replies.each do |comment| %>
+          <%= render "posts/partials/toggle_comment", comment: comment %>
+        <% end %>
       </div>
     <% end %>
   </div>
