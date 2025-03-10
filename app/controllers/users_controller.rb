@@ -14,6 +14,14 @@ class UsersController < ApplicationController
     end
   end
 
+  def new
+    @user = User.find(params[:id])
+
+    if @user.save
+      redirect_to posts_path
+    end
+  end
+
   def my_notifications
     @user = current_user
   end

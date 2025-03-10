@@ -157,7 +157,7 @@ ActiveRecord::Schema[7.1].define(version: 2025_03_10_183422) do
     t.string "needle_size"
     t.string "craft"
     t.string "category"
-    t.string "type"
+    t.boolean "pattern"
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
 

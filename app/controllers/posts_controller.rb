@@ -62,6 +62,10 @@ class PostsController < ApplicationController
     redirect_to my_profile_path
   end
 
+  def patterns
+    @patterns = Post.where(pattern: true)
+  end
+
   private
 
   def post_params
