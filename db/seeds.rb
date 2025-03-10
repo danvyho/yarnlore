@@ -51,15 +51,30 @@ upload_images = [
 ]
 
 avatar_images = [
+<<<<<<< HEAD
 "https://res.cloudinary.com/ducax2ucs/image/upload/v1741615237/woman_xn7owh.png",
  "https://res.cloudinary.com/ducax2ucs/image/upload/v1741615236/boy_xhwf6m.png",
   "https://res.cloudinary.com/ducax2ucs/image/upload/v1741615237/man_ia2qlg.png",
+=======
+  "https://res.cloudinary.com/ducax2ucs/image/upload/v1741615237/woman_xn7owh.png",
+  "https://res.cloudinary.com/ducax2ucs/image/upload/v1741615236/boy_xhwf6m.png",
+>>>>>>> master
   "https://res.cloudinary.com/ducax2ucs/image/upload/v1741615236/man_1_fhxhdb.png",
   "https://res.cloudinary.com/ducax2ucs/image/upload/v1741615236/man_2_zvdqyw.png",
   "https://res.cloudinary.com/ducax2ucs/image/upload/v1741615630/woman_2_jtn0xn.png",
   "https://res.cloudinary.com/ducax2ucs/image/upload/v1741615630/avatar_uuvbnh.png",
+<<<<<<< HEAD
   "https://res.cloudinary.com/ducax2ucs/image/upload/v1741615629/teacher_u8b5df.png"
 ]
+=======
+  "https://res.cloudinary.com/ducax2ucs/image/upload/v1741615629/teacher_u8b5df.png",
+  "https://res.cloudinary.com/ducax2ucs/image/upload/v1741615235/chicken_qe1kib.png",
+  "https://res.cloudinary.com/ducax2ucs/image/upload/v1741615235/woman_1_rxlwra.png",
+  "https://res.cloudinary.com/ducax2ucs/image/upload/v1741615630/cat_yapnbh.png",
+  "https://res.cloudinary.com/ducax2ucs/image/upload/v1741615629/empathy_kehgo9.png"
+  ]
+
+>>>>>>> master
 
 usernames = [
   "KnitterQueen",
@@ -243,11 +258,17 @@ User.create(
 )
 
   users = usernames.shuffle.take(14).map do |username|
-    User.create!(
+    user = User.create!(
       email: Faker::Internet.unique.email,
       password: "password",
       username: username
     )
+
+      avatar_url = avatar_images.sample
+      file = URI.open(avatar_url)
+      user.avatar.attach(io: file, filename: "avatar_#{user.id}.jpg", content_type: "image/jpeg")
+
+    user
   end
 
   10.times do |i|
@@ -278,7 +299,11 @@ User.create(
     end
   end
   for i in 0..14
+<<<<<<< HEAD
     # user = users.sample
+=======
+    user = users.sample
+>>>>>>> master
     pattern = Post.new(
       title: pattern_title[i],
       content: "Content AI soon...",
@@ -288,7 +313,7 @@ User.create(
       yarn_weight: pattern_weight[i],
       needle_size: needle_size[i],
       pattern: true,
-      user: User.first
+      user: user
     )
 
     file = URI.parse(pattern_images[i % pattern_images.length]).open

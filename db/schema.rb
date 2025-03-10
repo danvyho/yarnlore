@@ -157,6 +157,7 @@ ActiveRecord::Schema[7.1].define(version: 2025_03_10_195630) do
     t.string "needle_size"
     t.string "craft"
     t.string "category"
+    t.string "type"
     t.boolean "pattern"
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
@@ -180,6 +181,7 @@ ActiveRecord::Schema[7.1].define(version: 2025_03_10_195630) do
     t.datetime "updated_at", null: false
     t.string "username"
     t.text "bio"
+    t.string "avatar"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
