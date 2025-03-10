@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2025_03_07_165542) do
+ActiveRecord::Schema[7.1].define(version: 2025_03_10_195630) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -157,6 +157,7 @@ ActiveRecord::Schema[7.1].define(version: 2025_03_07_165542) do
     t.string "needle_size"
     t.string "craft"
     t.string "category"
+    t.boolean "pattern"
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
 

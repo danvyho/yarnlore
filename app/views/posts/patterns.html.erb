@@ -1,1 +1,4 @@
 <h1>All Patterns</h1>
+<% @patterns.each do |post| %>
+  <%= render 'patterns/partials/pattern_card', post: post, user: @user %>
+  <% end %>

@@ -1,8 +1,8 @@
 <div class="card mx-auto rounded-top" style="width: 24rem; border: none;">
-  <%= render '/my_profile_image', post: post %>
+  <%= render 'users/my_profile_image', post: post %>
   <div class="card-body text-center">
-    <%= render '/my_profile_header', post: post %>
-    <%= render '/my_profile_content', post: post %>
-    <%= render '/show_my_profile_footer', post: post, user: user %>
+    <%= render 'users/my_profile_header', post: post %>
+    <%= render 'users/my_profile_content', post: post %>
+    <%= render 'users/show_my_profile_footer', post: post, user: user %>
   </div>
 </div>
