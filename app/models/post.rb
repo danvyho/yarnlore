@@ -1,4 +1,5 @@
 class Post < ApplicationRecord
+  enum type: [ :post, :pattern ]
   belongs_to :user
   has_many :comments, dependent: :destroy
   has_many :favorites
