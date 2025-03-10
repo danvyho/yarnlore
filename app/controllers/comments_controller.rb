@@ -25,6 +25,11 @@ class CommentsController < ApplicationController
         format.html { redirect_to @post, alert: "Error creating comment." }
       end
     end
+    Notification.create!(
+      user: @post.user,
+      post: @post,
+      content: "#{current_user.username} commented your post!"
+    )
   end
 
   def update
