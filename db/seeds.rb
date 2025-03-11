@@ -161,7 +161,22 @@ notifications = [
     "Knitted Sweater Perfect for Layering"
   ]
 
-
+bios = [
+  "Crochet enthusiast creating cozy designs and exploring new patterns.",
+  "Knit designer experimenting with colors and textures in my projects.",
+  "Collecting and sharing my favorite knitting and crochet patterns.",
+  "Yarn lover sharing discoveries and tracking my projects.",
+  "New to crochet, looking for easy patterns and helpful tips.",
+  "Creating wearable art with yarn and always seeking new patterns.",
+  "Knitting to unwind and crocheting to express creativity.",
+  "Making cozy, functional crochet and knit pieces for my home.",
+  "Working through my yarn stash while discovering new patterns.",
+  "Curating knitting and crochet collections for all skill levels.",
+  "Testing patterns and offering feedback to designers.",
+  "Obsessed with yarn and finding the perfect pattern.",
+  "Specializing in custom crochet and knit projects that reflect my style.",
+  "Exploring new stitches and techniques in both knitting and crochet."
+]
 
   post_contents = [
     "This cozy knit sweater pattern is perfect for chilly days. It’s warm, stylish, and easy to follow. Perfect for beginners and seasoned crafters alike!",
@@ -246,7 +261,8 @@ User.create(
     user = User.create!(
       email: Faker::Internet.unique.email,
       password: "password",
-      username: username
+      username: username,
+      bio: bios.sample
     )
 
       avatar_url = avatar_images.sample
