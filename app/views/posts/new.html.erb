@@ -1,7 +1,1 @@
-<%= simple_form_for @post do |f| %>
-  <%= f.input :title, required: true %>
-  <%= f.input :content, required: true %>
-  <%= f.input :image, as: :file, required: true %>
-  <%= f.submit %>
-  <%  %>
-<% end %>
+<%= render "posts/partials/new_edit_post_form", post: @post, method: :post, header: "Create a new post" %>
