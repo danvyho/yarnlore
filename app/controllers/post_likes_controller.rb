@@ -6,21 +6,27 @@ class PostLikesController < ApplicationController
 
   def toggle
     @post = Post.find(params[:post_id])
-    @post_like = @post.post_likes.find_by(user: current_user)
-    if @post_like
-      @post_like.destroy
+    if current_user.present?
+      if @post_like
+        @post_like.destroy
+      else
+        @post_like = @post.post_likes.create(user_id: current_user.id)
+      end
+      respond_to do |format|
+        format.turbo_stream
+        format.html { redirect_to @post }
+      end
+      Notification.create!(
+        user: @post.user,
+        post: @post,
+        content: "#{current_user.username} liked your post!"
+      )
     else
-      @post_like = @post.post_likes.create(user_id: current_user.id)
+      if @post_like
+        redirect_to new_user_session_path
+      end
     end
-    respond_to do |format|
-      format.turbo_stream
-      format.html { redirect_to @post }
-    end
-    Notification.create!(
-      user: @post.user,
-      post: @post,
-      content: "#{current_user.username} liked your post!"
-    )
+
   end
 
   private
