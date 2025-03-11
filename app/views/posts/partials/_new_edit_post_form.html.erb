@@ -2,12 +2,19 @@
   <h2><%= header %></h2>
   <div class="row mt-4 mb-5">
     <div class="col-12">
-      <%= simple_form_for post, html: { method: method } do |f| %>
+      <%= simple_form_for post, html: { method: method }, data: { controller: "toggle-pattern-fields" } do |f| %>
         <%= f.input :title, required: true %>
         <%= f.input :content, required: true %>
         <%= f.input :image, as: :file, required: true %>
-
-        <div class="accordion accordion-flush mt-2" id="accordionFlushExample">
+        <%= f.input :type,
+          as: :radio_buttons,
+          collection: [['Post', 'post'], ['Pattern', 'pattern']],
+          input_html: { class: 'form-check-input', data: { action: "click->toggle-pattern-fields#toggle" } },
+          checked: 'post',
+          wrapper_html: { class: '' },
+          legend: false
+        %>
+        <div class="accordion accordion-flush mt-2 visually-hidden" id="accordionFlushExample" data-toggle-pattern-fields-target="patternFields">
           <div class="accordion-item">
             <h2 class="accordion-header" id="flush-headingOne">
               <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
@@ -16,7 +23,6 @@
             </h2>
             <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
               <div class="accordion-body">
-                <%= f.input :pattern, checked: true %>
                 <%= f.input :yarn_weight %>
                 <%= f.input :gauge %>
                 <%= f.input :needle_size %>

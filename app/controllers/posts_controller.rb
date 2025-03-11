@@ -24,7 +24,11 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(post_params)
+    @post = Post.new(post_params.except(:type))
+    if params[:post][:type] = "pattern"
+      @post.pattern = true
+    end
+
     @post.user = current_user
     if @post.save
       redirect_to post_path(@post)
@@ -47,7 +51,11 @@ class PostsController < ApplicationController
 
   def update
     @post = Post.find(params[:id])
-    if @post.update(post_params)
+    if params[:post][:type] = "pattern"
+      @post.pattern = true
+    end
+
+    if @post.update(post_params.except(:type))
       redirect_to post_path(@post)
     else
       render :edit, status: :unprocessable_entity
@@ -69,7 +77,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:id, :title, :content, :image, :yarn_weight, :gauge, :needle_size, :craft, :category, :pattern)
+    params.require(:post).permit(:id, :title, :content, :image, :yarn_weight, :gauge, :needle_size, :craft, :category, :type)
   end
 
   def set_post
