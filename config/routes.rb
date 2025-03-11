@@ -30,8 +30,7 @@ Rails.application.routes.draw do
   get "/users/:id/followings", to: "followings#index_followings", as:"followings"
   get "/users/:id/followers", to: "followings#index_followers", as:"followers"
   get "/patterns", to: "posts#patterns", as: "trend_patterns"
-
-  post "/patterns", to: "posts#new_patterns"
+  post "/patterns/new", to: "posts#new_patterns"
   get "/users/my_profile", to: "users#my_profile", as: "my_profile"
   post "/users/:id/", to: "followings#follow_unfollow", as: "follow_unfollow"
   get "/notifications", to: "notifications#index"
