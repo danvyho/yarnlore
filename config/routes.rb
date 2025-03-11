@@ -3,12 +3,10 @@ Rails.application.routes.draw do
   get 'users/show'
   devise_for :users
 
-  # devise_scope :user do
-    get "/chats", to: "chats#index", as: "chats"
-    get "/chats/:id", to: "chats#show", as: "chat"
-    post "/chats", to: "chats#create", as: "chat_create"
-    post "chats/:id", to: "messages#create", as: "chat_messages"
-  # end
+  get "/chats", to: "chats#index", as: "chats"
+  get "/chats/:id", to: "chats#show", as: "chat"
+  post "/chats", to: "chats#create", as: "chat_create"
+  post "chats/:id", to: "messages#create", as: "chat_messages"
 
   root "posts#index"
 
