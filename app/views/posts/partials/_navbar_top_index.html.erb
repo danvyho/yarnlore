@@ -1,21 +1,21 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg sticky-top mb-3 shadow-sm" id="navbar-top">
   <div class="container">
   <%= link_to root_path, class: "navbar-brand d-flex align-items-center" do %>
-      <%= image_tag "knitting.png", alt: "Logo", height: 40, class: "me-2" %>
+    <% if controller_name == "posts" && action_name == "index" %>
+      <%= image_tag "yarnlore.png", alt: "Logo Text", height: 40, class: "mx-2" %>
+    <% else %>
+      <%= image_tag "knitting.png", alt: "Logo", height: 30, class: "mx-2" %>
+    <% end %>
   <% end %>
-
     <div class="ms-auto d-flex align-items-center">
       <% if user_signed_in? %>
         <%= link_to notifications_path, class: "nav-link" do %>
-          <i class="fa-regular fa-bell fa-lg px-4"></i>
+          <i class="fa-regular fa-bell fa-lg px-4" style="color: #ffffff"></i>
         <% end %>
         <%= link_to chats_path, class: "nav-link" do %>
-          <i class="fa-regular fa-comment fa-lg px-2"></i>
+          <i class="fa-regular fa-comment fa-lg px-2" style="color: #ffffff"></i>
         <% end %>
-        <%= link_to "Sign out", destroy_user_session_path, class: "nav-link", data: { turbo_method: :delete }, style: "padding: 0 20px"  %>
-      <% else %>
-        <%= link_to "Sign in", new_user_session_path, class: "nav-link", style: "padding: 0 20px" %>
-      <% end %>
+        <% end %>
     </div>
   </div>
 </nav>
