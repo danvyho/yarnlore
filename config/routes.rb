@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get "/chats/:id", to: "chats#show", as: "chat"
   post "/chats", to: "chats#create", as: "chat_create"
   post "chats/:id", to: "messages#create", as: "chat_messages"
+  delete "/chats/:id", to: "chats#clear_chat", as: "clear_chat"
 
   root "posts#index"
 

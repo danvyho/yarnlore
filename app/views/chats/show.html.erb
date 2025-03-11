@@ -28,12 +28,19 @@
                                                 <li class="navbar nav-item dropdown">
                                                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v" aria-hidden="true"></i></a>
                                                     <ul class="dropdown-menu">
-                                                        <li><a class="dropdown-item" href="#">Action</a></li>
-                                                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                                                        <li>
+                                                          <%= form_with url: clear_chat_path(@chat), method: :delete, class: "d-inline" do %>
+                                                            <%= button_to "Clear chat", clear_chat_path(@chat), method: :delete, class: "dropdown-item", data: { confirm: "Are you sure you want to clear this chat?" } %>
+                                                          <% end %>
+                                                        </li>
                                                         <li>
                                                             <hr class="dropdown-divider">
                                                         </li>
-                                                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                                        <li>
+                                                          <%= link_to user_path(@chat_with), class: "dropdown-item" do %>
+                                                            Go to <strong><%= @chat_with.username %></strong> profile
+                                                          <% end %>
+                                                        </li>
                                                     </ul>
                                                 </li>
                                             </ul>
