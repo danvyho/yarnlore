@@ -15,6 +15,13 @@ export default class extends Controller {
   }
 
   toggle(event) {
+    // empty the pattern fields if the user selects the "post" radio button
+    if (event.target.value == "post") {
+      this.patternFieldsTarget.querySelectorAll('input').forEach(input => {
+        input.value = ''
+      }
+      );
+    }
     this.patternFieldsTarget.classList.toggle('visually-hidden');
     this.patternFieldsTarget.querySelector('button').click()
   }
