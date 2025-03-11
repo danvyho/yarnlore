@@ -1,7 +1,7 @@
 <% if user_signed_in? %>
   <%= render "users/partials/profile_header" %>
 
-  <% if @user != current_user %>  <!-- Fixed condition here, removed redundant `user_signed_in?` -->
+  <% if @user != current_user %>
     <div class="d-flex align-items-center justify-content-between">
       <%= simple_form_for @user, url: follow_unfollow_path(@user), html: { method: :post } do |f| %>
         <%= f.button :submit, @is_following ? "Unfollow" : "Follow", class: @is_following ? "btn btn-secondary" : "btn btn-primary" %>
@@ -17,16 +17,13 @@
 
 <hr>
 
+
 <% @user.posts.each do |post| %>
   <%= link_to post_path(post) do %>
     <%= render 'users/partials/my_profile_card', post: post, user: @user %>
   <% end %>
 
-  <% if post.user_id == @user.id %>
-    <%= form_with(url: post_path(post), method: :delete, data: { turbo: "true", confirm: "Are you sure you want to delete this post?" }) do |form| %>
-      <%= form.submit "Delete", data: { turbo_action: "replace" } %>
-    <% end %>
-  <% end %>
+
 <% end %>
 
 <hr>

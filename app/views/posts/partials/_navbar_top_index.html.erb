@@ -1,8 +1,8 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container">
-    <a class="navbar-brand d-flex align-items-center" href="#">
+  <%= link_to root_path, class: "navbar-brand d-flex align-items-center" do %>
       <%= image_tag "knitting.png", alt: "Logo", height: 40, class: "me-2" %>
-    </a>
+  <% end %>
 
     <div class="ms-auto d-flex align-items-center">
       <% if user_signed_in? %>

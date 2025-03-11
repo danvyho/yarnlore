@@ -4,14 +4,14 @@
       <i class="fa-solid fa-house"></i>
     <% end %>
 <% if user_signed_in? %>
-    <%= link_to favorites_path || "#", class: "nav-link" do %>
-      <i class="fa-solid fa-bookmark"></i>
+    <%= link_to trend_patterns_path || '#', class: "nav-link" do %>
+      <i class="fas fa-search"></i>
     <% end %>
     <%= link_to new_post_path || "#", class: "nav-link", id: "navbar-search" do %>
       <i class="fa-solid fa-plus"></i>
     <% end %>
-    <%= link_to notifications_path || '#', class: "nav-link" do %>
-      <i class="fa-solid fa-bell"></i>
+    <%= link_to favorites_path || "#", class: "nav-link" do %>
+      <i class="fa-solid fa-bookmark"></i>
     <% end %>
     <%= link_to my_profile_path || "#", class: "nav-link" do %>
       <i class="fa-solid fa-user"></i>

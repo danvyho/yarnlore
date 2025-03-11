@@ -12,7 +12,7 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
-    @comments = @post.comments.order(created_at: :desc)  # Ensure comments are loaded
+    @comments = @post.comments.order(created_at: :desc)
   end
 
   def new
@@ -27,21 +27,21 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
     @post.user = current_user
     if @post.save
-      redirect_to posts_path
+      redirect_to post_path(@post)
     else
       render :new, status: :unprocessable_entity
     end
   end
 
   def patterns
-    @posts = Post.all
+    @patterns = Post.where(pattern: true)
     if params[:query].present?
       sql_subquery = <<~SQL
-        posts.title ILIKE :query
-        OR posts.content ILIKE :query
-        OR users.username ILIKE :query
+        posts.title @@ :query
+        OR posts.content @@ :query
+        OR users.username @@ :query
       SQL
-      @posts = @posts.joins(:user).where(sql_subquery, query: "%#{params[:query]}%")
+      @patterns = @patterns.joins(:user).where(sql_subquery, query: "%#{params[:query]}%")
     end
   end
 
@@ -62,14 +62,11 @@ class PostsController < ApplicationController
     redirect_to my_profile_path
   end
 
-  def patterns
-    @patterns = Post.where(pattern: true)
-  end
 
   private
 
   def post_params
-    params.require(:post).permit(:id, :title, :content, :image)
+    params.require(:post).permit(:id, :title, :content, :image, :yarn_weight, :gauge, :needle_size, :craft, :category, :pattern)
   end
 
   def set_post
