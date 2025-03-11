@@ -26,8 +26,8 @@ class User < ApplicationRecord
 
   def followers
     Following.where(followee: self).map(&:follower)
-
   end
+
   private
 
   def avatar_validation

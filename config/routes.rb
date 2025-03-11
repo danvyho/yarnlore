@@ -26,7 +26,7 @@ Rails.application.routes.draw do
   resources :comments, only: [] do
     resources :comment_likes, only: %i[create destroy]
   end
-  get "/users/:id/followers", to: "followings#index_followings", as:"followings"
+  get "/users/:id/followings", to: "followings#index_followings", as:"followings"
   get "/users/:id/followers", to: "followings#index_followers", as:"followers"
   get "/patterns", to: "posts#patterns"
   post "/patterns", to: "posts#new_patterns"

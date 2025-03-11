@@ -24,6 +24,7 @@ class FollowingsController < ApplicationController
   def index_followings
     @followings = Following.where(follower_id: @user.id).map(&:followee)
   end
+
   private
 
   def set_user
