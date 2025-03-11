@@ -15,5 +15,12 @@
           style: 'margin-top: -0.16rem;' %>
     <p class="small text-muted mb-0"><%= post.post_likes.count %></p>
   </div>
-
+  <%# <% @user.posts.each do |post| %>
+    <% if post.user_id == current_user.id %>
+      <%= link_to "Edit", edit_post_path(post) %>
+      <%= form_with(url: post_path(post), method: :delete, data: { turbo: "true", confirm: "Are you sure you want to delete this post?" }) do |form| %>
+        <%= form.submit "Delete", data: { turbo_action: "replace" } %>
+      <% end %>
+    <% end %>
+  <%# <% end %>
 </div>
