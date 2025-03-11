@@ -17,16 +17,21 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
+    @post.pattern = false
+    @post.type = "post"
   end
 
   def edit
     @post = Post.find(params[:id])
+    @post.pattern == true ? @post.type = "pattern" : @post.type = "post"
   end
 
   def create
     @post = Post.new(post_params.except(:type))
-    if params[:post][:type] = "pattern"
+    if params[:post][:type] == "pattern"
       @post.pattern = true
+    elsif params[:post][:type] == "post"
+      @post.pattern = false
     end
 
     @post.user = current_user
@@ -51,8 +56,10 @@ class PostsController < ApplicationController
 
   def update
     @post = Post.find(params[:id])
-    if params[:post][:type] = "pattern"
+    if params[:post][:type] == "pattern"
       @post.pattern = true
+    elsif params[:post][:type] == "post"
+      @post.pattern = false
     end
 
     if @post.update(post_params.except(:type))

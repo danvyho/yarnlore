@@ -10,9 +10,7 @@
           as: :radio_buttons,
           collection: [['Post', 'post'], ['Pattern', 'pattern']],
           input_html: { class: 'form-check-input', data: { action: "click->toggle-pattern-fields#toggle" } },
-          checked: 'post',
-          wrapper_html: { class: '' },
-          legend: false
+          wrapper_html: { class: '' }
         %>
         <div class="accordion accordion-flush mt-2 visually-hidden" id="accordionFlushExample" data-toggle-pattern-fields-target="patternFields">
           <div class="accordion-item">
