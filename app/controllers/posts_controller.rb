@@ -3,16 +3,15 @@ class PostsController < ApplicationController
   before_action :authenticate_user!, except: [:index]
 
   def index
+    @all_posts = Post.all
     @following_posts = []
-    if current_user && current_user.followees.any?
-      @following_posts = current_user.followees.map(&:posts).flatten
-    end
+    if current_user
       @all_posts = Post.where.not(user_id: current_user.id)
-      @trending_posts = @all_posts.joins(:post_likes).group(:id).order('COUNT(post_likes.user_id) DESC')
-      @random_posts = Post.where.not(user_id: current_user.id).shuffle
-      @posts = @following_posts +
-                @trending_posts +
-                @random_posts.reject { |post| @trending_posts.include?(post) }
+      @following_posts = current_user.followees.map(&:posts).flatten if current_user.followees.any?
+    end
+    @trending_posts = @all_posts.joins(:post_likes).group(:id).order('COUNT(post_likes.user_id) DESC')
+    @random_posts = @all_posts.shuffle.reject { |post| @trending_posts.include?(post) }
+    @posts = (@following_posts + @trending_posts + @random_posts).uniq { |post| post.id }
   end
 
   def show
