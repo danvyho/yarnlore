@@ -1,4 +1,18 @@
 <h1>All Patterns</h1>
+<div class="row justify-content-center">
+  <div class="col-sm-8 my-3">
+    <%= form_with url: trend_patterns_path , method: :get, class: "d-flex" do %>
+      <%= text_field_tag :query,
+            params[:query],
+            class: "form-control",
+            placeholder: "Type a keyword"
+        %>
+      <%= submit_tag "Search", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
+
+
 <% @patterns.each do |post| %>
   <%= link_to post_path(post) do %>
     <%= render 'patterns/partials/pattern_card', post: post, user: @user %>
