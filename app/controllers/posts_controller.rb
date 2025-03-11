@@ -12,7 +12,7 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
-    @comments = @post.comments.order(created_at: :desc)  # Ensure comments are loaded
+    @comments = @post.comments.order(created_at: :desc)
   end
 
   def new
@@ -43,14 +43,14 @@ class PostsController < ApplicationController
   end
 
   def patterns
-    @posts = Post.all
+    @patterns = Post.where(pattern: true)
     if params[:query].present?
       sql_subquery = <<~SQL
-        posts.title ILIKE :query
-        OR posts.content ILIKE :query
-        OR users.username ILIKE :query
+        posts.title @@ :query
+        OR posts.content @@ :query
+        OR users.username @@ :query
       SQL
-      @posts = @posts.joins(:user).where(sql_subquery, query: "%#{params[:query]}%")
+      @patterns = @patterns.joins(:user).where(sql_subquery, query: "%#{params[:query]}%")
     end
   end
 
@@ -77,9 +77,6 @@ class PostsController < ApplicationController
     redirect_to my_profile_path
   end
 
-  def patterns
-    @patterns = Post.where(pattern: true)
-  end
 
   private
 
