@@ -13,10 +13,10 @@
                                     <%= form_with url: chats_path, method: :get, class: "search-form d-flex" do %>
                                       <%= text_field_tag :query,
                                             params[:query],
-                                            class: "form-control",
+                                            class: "form-control rounded-0 rounded-start",
                                             placeholder: "Search by chat title, message content, or user name"
                                         %>
-                                      <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
+                                      <%= submit_tag "Search", name: "", class: "btn btn-primary rounded-0 rounded-end" %>
                                     <% end %>
 
                                     </div>
