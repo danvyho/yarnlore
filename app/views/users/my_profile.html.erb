@@ -1,29 +1,33 @@
 <% if user_signed_in? %>
   <%= render "users/partials/profile_header" %>
 
-  <% if @user != current_user %>
-    <div class="d-flex align-items-center justify-content-between">
+<% if @user != current_user %>
+  <div class="d-flex justify-content-center align-items-center mt-3">
+    <div class="d-flex flex-row align-items-center gap-2">
       <%= simple_form_for @user, url: follow_unfollow_path(@user), html: { method: :post } do |f| %>
-        <%= f.button :submit, @is_following ? "Unfollow" : "Follow", class: @is_following ? "btn btn-secondary" : "btn btn-primary" %>
+        <%= f.button :submit, @is_following ? "Unfollow" : "Follow",
+          class: "btn btn-sm #{@is_following ? 'btn-outline-secondary' : 'btn-primary'} px-3" %>
       <% end %>
 
       <%= simple_form_for @chat, url: chat_create_path, html: { method: :post } do |f| %>
-        <%= f.input :user_id, as: :hidden, input_html: { value: @user.id }, wrapper: false %>
-        <%= f.button :submit, "Message", class: "btn btn-primary" %>
+        <%= f.input :user_id, as: :hidden, input_html: { value: @user.id } %>
+        <%= f.button :submit, "Message", class: "btn btn-sm btn-outline-primary px-3" %>
       <% end %>
     </div>
-  <% end %>
+  </div>
 <% end %>
 
-<hr>
-
-
-<% @user.posts.each do |post| %>
-  <%= link_to post_path(post) do %>
-    <%= render 'users/partials/my_profile_card', post: post, user: @user %>
-  <% end %>
-
-
+<% if @user.bio.present? %>
+  <p class="fs-6 text-muted text-center mt-2"><%= @user.bio %></p>
 <% end %>
 
-<hr>
+  <hr>
+
+  <% @user.posts.each do |post| %>
+    <%= link_to post_path(post) do %>
+      <%= render 'users/partials/my_profile_card', post: post, user: @user %>
+    <% end %>
+  <% end %>
+
+  <hr>
+<% end %>

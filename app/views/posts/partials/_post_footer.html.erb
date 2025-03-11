@@ -13,7 +13,11 @@
             style: 'margin-top: -0.16rem;' %>
     <% end %>
   </div>
-
+  <% if post.pattern? %>
+    <div class="badge bg-primary">Pattern</div>
+  <% else %>
+    <div class="badge bg-secondary">Post</div>
+  <% end %>
   <div id="post-<%= post.id %>-likes" class="d-flex align-items-center p-2 bd-highlight">
     <% if post.post_likes.where(user: current_user).exists? %>
       <%= link_to '', toggle_post_post_likes_path(post),
