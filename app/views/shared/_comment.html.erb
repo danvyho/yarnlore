@@ -4,9 +4,11 @@
       <p><%= comment.content %></p>
           <div class="d-flex justify-content-between">
             <div class="d-flex flex-row align-items-center">
+                <%= link_to user_path(comment.user), data: { turbo_frame: '_top' } do %>
               <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(4).webp" alt="avatar" width="25"
                 height="25" />
-              <p class="small mb-0 ms-2"> <%= comment.user.username %> </p>
+                <p class="small mb-0 ms-2"> <%= comment.user.username %> </p>
+                <% end %>
             </div>
             <div class="d-flex flex-row align-items-center">
               <% if comment.user_id == current_user.id %>
