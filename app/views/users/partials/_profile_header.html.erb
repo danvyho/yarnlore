@@ -8,10 +8,10 @@
       <%= image_tag basic_avatar,  class: "rounded-circle me-3", style: "width: 100px; height: 100px;" %>
     <% end %>
     <div style="display: flex; flex-direction: column;">
-      <span class = "h3">@<%=  @user.username %></span>
-<span class="h5 no-style-link text-dark">
-  <%= link_to "Followers #{@user.followers.count}", followers_path(@user), style: "text-decoration: none;", class: "text-dark" %>
-  <%= link_to "Following #{@user.followees.count}", followings_path(@user), style: "text-decoration: none;", class: "text-dark" %>
+      <span class = "h3"><%=  @user.username %></span>
+<span class="no-style-link text-dark">
+  <%= link_to "Followers #{@user.followers.count}", followers_path(@user), style: "text-decoration: none;", class: "text-dark fs-6" %>
+  <%= link_to "Following #{@user.followees.count}", followings_path(@user), style: "text-decoration: none;", class: "text-dark fs-6" %>
 </span>
     </div>
   </div>
