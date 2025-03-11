@@ -1,5 +1,5 @@
 <%= render "posts/partials/show_post_card" %>
 
 <%= turbo_frame_tag "comments" do %>
-  <%= render "shared/comments", comments: @comments, post: @post %>
+  <%= render "shared/comments", post: @post %>
 <% end %>

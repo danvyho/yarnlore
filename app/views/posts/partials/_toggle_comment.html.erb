@@ -9,22 +9,23 @@
       <div class="w-100">
         <strong class="text-primary"><%= comment.user&.username %></strong>
         <p class="mb-1"><%= comment.content %></p>
-
-        <div data-controller="reply">
-          <button type="button"
-                  data-action="click->reply#toggle"
-                  class="btn btn-sm btn-link">
-            Reply
-          </button>
+        <% if comment.parent.blank? %>
+          <div data-controller="reply">
+            <button type="button"
+                    data-action="click->reply#toggle"
+                    class="btn btn-sm btn-link">
+              Reply
+            </button>
 
           <div data-reply-target="form" class="mt-2 d-none">
             <%= form_with(model: [comment.post, Comment.new], local: false, html: { class: "form-inline" }) do |f| %>
               <%= f.hidden_field :parent_id, value: comment.id %>
               <%= f.text_area :content, rows: 2, class: "form-control form-control-sm", placeholder: "Write a reply..." %>
               <%= f.submit "Reply", class: "btn btn-primary btn-sm mt-1" %>
-            <% end %>
+          <% end %>
+            </div>
           </div>
-        </div>
+        <% end %>
       </div>
     </div>
     <% if comment.user_id == current_user&.id %>

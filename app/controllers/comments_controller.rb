@@ -9,18 +9,18 @@ class CommentsController < ApplicationController
 
   def create
     @comment = @post.comments.new(comment_params)
-    @comment.user_id = current_user
+    @comment.user_id = current_user.id
     if @comment.save
       respond_to do |format|
         format.turbo_stream do
-          render turbo_stream: turbo_stream.replace("comments", partial: "shared/comments", locals: { comments: @post.comments, post: @post })
+          render turbo_stream: turbo_stream.replace("comments", partial: "shared/comments", comment: @comment)
         end
         format.html { redirect_to @post, notice: "Comment was successfully created." }
       end
     else
       respond_to do |format|
         format.turbo_stream do
-          render turbo_stream: turbo_stream.replace("comments", partial: "shared/comments", locals: { comments: @post.comments, post: @post })
+          render turbo_stream: turbo_stream.replace("comments", partial: "shared/comments", comment: @comment)
         end
         format.html { redirect_to @post, alert: "Error creating comment." }
       end

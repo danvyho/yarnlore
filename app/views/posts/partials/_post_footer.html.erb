@@ -28,15 +28,4 @@
     <% end %>
     <p class="small text-muted mb-0"><%= post.post_likes.count %></p>
   </div>
-
-  <div data-controller="comments-section">
-    <button type="button"
-            data-action="click->comments-section#toggle"
-            class="btn btn-sm btn-secondary">
-      Comments
-    </button>
-    <div data-comments-section-target="section" class="mt-2 d-none">
-      <%= render "shared/comments", comments: post.comments, post: post %>
-    </div>
-  </div>
 </div>

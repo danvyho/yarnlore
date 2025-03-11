@@ -2,18 +2,22 @@
   <div class="col-md-8 col-lg-6">
     <div class="card shadow-0 border" style="background-color: #f0f2f5;">
       <div class="card-body p-4">
-    <% comments.where(parent_id: nil).each do |comment| %>
-      <%= render "posts/partials/toggle_comment", comment: comment %>
-    <% end %>
-      <%= form_with(model: [post, Comment.new], local: false, html: { class: "form-outline mb-4", id: "new-comment-form" }) do |f| %>
-        <div class="field">
-          <%= f.label :content, "", class: "visually-hidden" %>
-          <%= f.text_area :content, rows: 3, class: "form-control" %>
-      </div>
-      <div class="actions">
-        <%= f.submit "Comment", class: "btn btn-primary" %>
-      </div>
-      <% end %>
+        <div class="comments-list mb-3" style="max-height: 600px; overflow-y: auto;">
+          <% @post.comments.where(parent_id: nil).each do |comment| %>
+            <%= render "posts/partials/comment", comment: comment %>
+          <% end %>
+          <%= form_with(model: [@post, Comment.new], local: false, html: { class: "form-outline mb-4", id: "new-comment-form" }) do |f| %>
+            <div class="field">
+              <%= f.label :content, "", class: "visually-hidden" %>
+              <%= f.text_area :content, rows: 3, class: "form-control", placeholder: "Write a comment..." %>
+            </div>
+            <div class="actions">
+              <%= button_tag type: "submit", class: "btn btn-link" do %>
+                <i class="fa-regular fa-square-caret-up"></i>
+              <% end %>
+            </div>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>
