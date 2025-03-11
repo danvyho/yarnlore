@@ -8,11 +8,11 @@
       <%= image_tag basic_avatar,  class: "rounded-circle me-3", style: "width: 100px; height: 100px;" %>
     <% end %>
     <div style="display: flex; flex-direction: column;">
-      <span class = "h3"><%= @user.username %></span>
-      <span class = "h5"> <%= @user.followers.count %>  <%= link_to "Followers", followers_path(@user) %> <%= @user.followees.count %> <%= link_to "Following", followings_path(@user) %></span>
-      <% if @user.bio.present? %>
-        <p>"<%= @user.bio %>"</p>
-        <% end %>
+      <span class = "h3">@<%=  @user.username %></span>
+<span class="h5 no-style-link text-dark">
+  <%= link_to "Followers #{@user.followers.count}", followers_path(@user), style: "text-decoration: none;", class: "text-dark" %>
+  <%= link_to "Following #{@user.followees.count}", followings_path(@user), style: "text-decoration: none;", class: "text-dark" %>
+</span>
     </div>
   </div>
 </div>
