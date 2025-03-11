@@ -4,8 +4,12 @@
       <%= render 'users/partials/my_profile_image', post: post %>
 
       <div class="flex-grow-1 px-2 d-flex flex-column justify-content-between" style="height: 113px; overflow: hidden;">
-        <%= render 'users/partials/my_profile_content', post: post %>
+        <div class="mt-4">
+          <%= render 'users/partials/my_profile_content', post: post %>
+        </div>
+        <div class="mb-2">
         <%= render 'users/partials/my_profile_footer', post: post, current_user: current_user %>
+      </div>
       </div>
     </div>
   </div>
