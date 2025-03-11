@@ -1,6 +1,1 @@
-<%= simple_form_for @post do |f| %>
-  <%= f.input :title %>
-  <%= f.input :content %>
-    <%= f.input :photo, as: :file %>
-  <%= f.submit %>
-<% end %>
+<%= render "posts/partials/new_edit_post_form", post: @post, method: :patch, header: "Update post" %>

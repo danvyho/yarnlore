@@ -1,0 +1,16 @@
+<div class="row">
+  <div class="following w-100">
+    <% @followers.each do |follow| %>
+      <div class="follower-item d-flex justify-content-start align-items-center gap-3 p-3">
+<% if follow.avatar.attached? %>
+  <%= cl_image_tag follow.avatar.key, class: "avatar-large rounded-circle", alt: follow.username %>
+<% else %>
+  <% basic_avatar = 'blank-profile.jpeg' %>
+  <%= image_tag basic_avatar, class: "rounded-circle me-3", style: "width: 100px; height: 100px;" %>
+<% end %>
+
+        <%= link_to follow.username, user_path(follow), class: "no-style-link fw-bold" %>
+      </div>
+    <% end %>
+  </div>
+</div>

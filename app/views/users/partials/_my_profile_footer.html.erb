@@ -6,6 +6,7 @@
       <i class="fa-regular fa-bookmark" data-action="click->favorites#toggleFavorite"></i>
     <% end %>
   </div>
+
   <div id="post-<%= post.id %>-likes" class="d-flex align-items-center ms-3">
     <% if post.post_likes.where(user: current_user).exists? %>
       <%= link_to '', toggle_post_post_likes_path(post),
@@ -20,10 +21,17 @@
     <% end %>
     <p class="small text-muted mb-0"><%= post.post_likes.count %></p>
   </div>
+
   <div class="ms-3 p-2 bd-highlight">
     <span>💬 comments</span>
   </div>
-    <% if post.user_id == @user.id %>
-    <%= link_to "Delete", post_path(post), data: { turbo_method: :delete } %>
+
+  <% @user.posts.each do |post| %>
+    <% if post.user_id == current_user.id %>
+      <%= link_to "Edit", edit_post_path(post) %>
+      <%= form_with(url: post_path(post), method: :delete, data: { turbo: "true", confirm: "Are you sure you want to delete this post?" }) do |form| %>
+        <%= form.submit "Delete", data: { turbo_action: "replace" } %>
+      <% end %>
+    <% end %>
   <% end %>
 </div>

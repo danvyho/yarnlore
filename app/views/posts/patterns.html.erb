@@ -1,1 +1,6 @@
 <h1>All Patterns</h1>
+<% @patterns.each do |post| %>
+  <%= link_to post_path(post) do %>
+    <%= render 'patterns/partials/pattern_card', post: post, user: @user %>
+  <% end %>
+<% end %>

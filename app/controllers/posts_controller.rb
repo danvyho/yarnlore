@@ -8,14 +8,6 @@ class PostsController < ApplicationController
     else
       @posts = Post.all
     end
-    if params[:query].present?
-      sql_subquery = <<~SQL
-        posts.title ILIKE :query
-        OR posts.content ILIKE :query
-        OR users.username ILIKE :query
-      SQL
-      @posts = @posts.joins(:user).where(sql_subquery, query: "%#{params[:query]}%")
-    end
   end
 
   def show
@@ -29,25 +21,34 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.find(params[:id])
-    redirect_to posts_path
   end
 
   def create
     @post = Post.new(post_params)
     @post.user = current_user
     if @post.save
-      redirect_to posts_path
+      redirect_to post_path(@post)
     else
       render :new, status: :unprocessable_entity
     end
   end
 
   def patterns
+    @posts = Post.all
+    if params[:query].present?
+      sql_subquery = <<~SQL
+        posts.title ILIKE :query
+        OR posts.content ILIKE :query
+        OR users.username ILIKE :query
+      SQL
+      @posts = @posts.joins(:user).where(sql_subquery, query: "%#{params[:query]}%")
+    end
   end
 
   def update
+    @post = Post.find(params[:id])
     if @post.update(post_params)
-      redirect_to posts_path
+      redirect_to post_path(@post)
     else
       render :edit, status: :unprocessable_entity
     end
@@ -61,10 +62,14 @@ class PostsController < ApplicationController
     redirect_to my_profile_path
   end
 
+  def patterns
+    @patterns = Post.where(pattern: true)
+  end
+
   private
 
   def post_params
-    params.require(:post).permit(:title, :content, :image)
+    params.require(:post).permit(:id, :title, :content, :image, :yarn_weight, :gauge, :needle_size, :craft, :category, :pattern)
   end
 
   def set_post

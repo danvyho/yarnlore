@@ -25,4 +25,12 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:sign_up, keys: [:bio])
     devise_parameter_sanitizer.permit(:account_update, keys: [:bio])
   end
+
+  def after_sign_in_path_for(resource)
+    posts_path
+  end
+
+  def after_log_up_path_for(resource)
+    posts_path
+  end
 end
