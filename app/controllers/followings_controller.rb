@@ -1,4 +1,5 @@
 class FollowingsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_user, only: [:follow_unfollow, :index_followers, :index_followings]
 
   def follow_unfollow # followings#create && followings#delete

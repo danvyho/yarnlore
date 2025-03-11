@@ -12,7 +12,7 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
-    @comments = @post.comments.order(created_at: :desc)  # Ensure comments are loaded
+    @comments = @post.comments.order(created_at: :desc)
   end
 
   def new
