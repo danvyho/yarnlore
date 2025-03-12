@@ -26,7 +26,7 @@
 
         <div class="posts-list mt-4">
           <% @user.posts.each do |post| %>
-              <%= link_to post_path(post) do %>
+              <%= link_to post_path(post), class: "text-decoration-none" do %>
                 <%= render 'users/partials/my_profile_card', post: post, user: @user %>
               <% end %>
             <% end %>
