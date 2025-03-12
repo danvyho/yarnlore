@@ -1,0 +1,16 @@
+<%= turbo_stream.replace "comment-#{@comment.id}-likes" do %>
+  <div id="comment-<%= @comment.id %>-likes" class="d-flex flex-column align-items-center">
+    <% if @comment.comment_likes.where(user: current_user).exists? %>
+      <%= link_to '', toggle_comment_comment_likes_path(@comment),
+            data: { turbo_method: 'post' },
+            class: 'fas fa-heart text-decoration-none',
+            style: 'font-size: 1.25rem; cursor: pointer;' %>
+    <% else %>
+      <%= link_to '', toggle_comment_comment_likes_path(@comment),
+            data: { turbo_method: 'post' },
+            class: 'far fa-heart text-decoration-none',
+            style: 'font-size: 1.25rem; cursor: pointer;' %>
+     <% end %>
+      <span class="small text-muted"><%= @comment.comment_likes.count %></span>
+  </div>
+<% end %>

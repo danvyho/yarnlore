@@ -1,0 +1,17 @@
+<div class="d-flex align-items-center mb-3">
+  <div class="me-2">
+    <%= link_to user_path(post.user) do %>
+      <% if post.user.avatar.attached? %>
+        <%= image_tag post.user.avatar, class: "rounded-circle", style: "width: 70px; height: 70px; object-fit: cover;" %>
+      <% else %>
+        <%= image_tag "default-avatar.png", class: "rounded-circle", style: "width: 70px; height: 70px; object-fit: cover;" %>
+      <% end %>
+    <% end %>
+  </div>
+  <div>
+    <h2 class="mb-0 mt-1 text-dark" style="font-size: 1.8rem;"><%= post.title %></h2>
+    <div class="mb-1">
+      <%= link_to post.user.username, user_path(post.user), class: "fw-bold text-primary text-decoration-none" %>
+    </div>
+  </div>
+</div>

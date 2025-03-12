@@ -3,13 +3,13 @@
     <% if @post.post_likes.where(user: current_user).exists? %>
       <%= link_to '', toggle_post_post_likes_path(@post),
             data: { turbo_method: 'post' },
-            class: 'fas fa-heart mx-2 fa-xs text-body',
-            style: 'margin-top: -0.16rem;' %>
+            class: 'fas fa-heart text-decoration-none px-2',
+            style: 'font-size: 1.25rem; cursor: pointer;' %>
     <% else %>
       <%= link_to '', toggle_post_post_likes_path(@post),
             data: { turbo_method: 'post' },
-            class: 'far fa-heart mx-2 fa-xs text-body',
-            style: 'margin-top: -0.16rem;' %>
+            class: 'far fa-heart text-decoration-none px-2',
+            style: 'font-size: 1.25rem; cursor: pointer;' %>
     <% end %>
     <p class="small text-muted mb-0"><%= @post.post_likes.count %></p>
   </div>

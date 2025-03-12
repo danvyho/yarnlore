@@ -24,7 +24,9 @@ Rails.application.routes.draw do
     post 'toggle', on: :collection
   end
   resources :comments, only: [] do
-    resources :comment_likes, only: %i[create destroy]
+    resources :comment_likes, only: %i[create destroy] do
+      post "toggle", on: :collection
+    end
   end
 
   get "/users/:id/followings", to: "followings#index_followings", as:"followings"
