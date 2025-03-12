@@ -1,6 +1,5 @@
-<div class="container mt-3">
+<div class="container">
   <div style="display: flex; align-items: center;">
-
     <% if @user.avatar.attached? %>
       <%= image_tag @user.avatar,  class: "rounded-circle me-3", style: "width: 100px; height: 100px;" %>
     <% else %>
@@ -9,10 +8,14 @@
     <% end %>
     <div style="display: flex; flex-direction: column;">
       <span class = "h3"><%=  @user.username %></span>
-<span class="no-style-link text-dark">
-  <%= link_to "Followers #{@user.followers.count}", followers_path(@user), style: "text-decoration: none;", class: "text-dark fs-6" %>
-  <%= link_to "Following #{@user.followees.count}", followings_path(@user), style: "text-decoration: none;", class: "text-dark fs-6" %>
-</span>
+      <span class="no-style-link text-dark">
+        <%= link_to followers_path(@user), class: "text-decoration-none text-dark fs-6" do %>
+          <span>Followers <strong><%= @user.followers.count %></strong></span>
+        <% end %>
+        <%= link_to followings_path(@user), class: "text-decoration-none text-dark fs-6" do %>
+          <span>Following <strong><%= @user.followees.count %></strong></span>
+        <% end %>
+      </span>
     </div>
   </div>
 </div>
