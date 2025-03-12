@@ -1,0 +1,16 @@
+<div class="me-3">
+  <% if comment.user&.avatar&.attached? %>
+    <%= link_to user_path(comment.user), data: { turbo_frame: '_top' } do %>
+      <%= image_tag comment.user.avatar,
+            alt: comment.user.username,
+            width: 40, height: 40,
+            class: "rounded-circle",
+            style: "object-fit: cover;" %>
+    <% end %>
+  <% else %>
+    <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(4).webp"
+          alt="avatar"
+          width="40" height="40"
+          class="rounded-circle">
+  <% end %>
+</div>

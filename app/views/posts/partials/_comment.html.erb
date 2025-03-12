@@ -1,48 +1,84 @@
-<div class="card mb-3 position-relative" id="comment-<%= comment.id %>">
-  <div class="card-body p-3">
+<div class="card mb-2 border-0 position-relative" id="comment-<%= comment.id %>">
+  <div class="card-body p-4">
     <div class="d-flex">
-      <% if comment.user&.avatar&.attached? %>
-        <%= link_to user_path(comment.user), data: { turbo_frame: '_top' } do %>
-          <%= image_tag comment.user.avatar, alt: comment.user.username, width: 30, height: 30, class: "rounded-circle me-2" %>
-          <strong class="text-primary"><%= comment.user&.username %></strong>
+
+      <div class="me-3">
+        <% if comment.user&.avatar&.attached? %>
+          <%= link_to user_path(comment.user), data: { turbo_frame: '_top' } do %>
+            <%= image_tag comment.user.avatar,
+                  alt: comment.user.username,
+                  width: 40, height: 40,
+                  class: "rounded-circle",
+                  style: "object-fit: cover;" %>
+          <% end %>
+        <% else %>
+          <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(4).webp"
+               alt="avatar"
+               width="40" height="40"
+               class="rounded-circle">
         <% end %>
-      <% else %>
-        <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(4).webp" alt="avatar" width="30" height="30" class="rounded-circle me-2">
-      <% end %>
+      </div>
+
       <div class="w-100">
-        <p class="mb-1"><%= comment.content %></p>
+        <div class="mb-1">
+          <%= link_to (comment.user&.username || "Anonymous"), user_path(comment.user),
+                class: "fw-bold text-primary text-decoration-none" %>
+        </div>
 
-        <div data-controller="reply">
-          <button type="button"
-                  data-action="click->reply#toggle"
-                  class="btn btn-sm btn-link">
-            Reply
-          </button>
+        <div class="d-flex align-items-center">
+          <p class="mb-0 flex-grow-1"><%= comment.content %></p>
 
-          <div data-reply-target="form" class="mt-2 d-none">
-            <%= form_with(model: [comment.post, Comment.new], local: false, html: { class: "form-inline" }) do |f| %>
-              <%= f.hidden_field :parent_id, value: comment.id %>
-              <%= f.text_area :content, rows: 2, class: "form-control form-control-sm", placeholder: "Write a reply..." %>
-              <%= f.submit "Reply", class: "btn btn-primary btn-sm mt-1" %>
+          <div id="comment-<%= comment.id %>-likes" class="d-flex flex-column align-items-center ms-3">
+            <% if comment.comment_likes.where(user: current_user).exists? %>
+              <%= link_to '', toggle_comment_comment_likes_path(comment),
+                    data: { turbo_method: 'post' },
+                    class: 'fas fa-heart text-decoration-none',
+                    style: 'font-size: 1.25rem; cursor: pointer;' %>
+            <% else %>
+              <%= link_to '', toggle_comment_comment_likes_path(comment),
+                    data: { turbo_method: 'post' },
+                    class: 'far fa-heart text-decoration-none',
+                    style: 'font-size: 1.25rem; cursor: pointer;' %>
             <% end %>
+            <span class="small text-muted"><%= comment.comment_likes.count %></span>
           </div>
         </div>
+
+        <% if comment.parent_id.nil? %>
+          <div data-controller="reply" class="mt-2">
+            <button type="button"
+                    data-action="click->reply#toggle"
+                    class="btn btn-sm btn-link p-0 text-decoration-none">
+              <i class="me-1" style="font-size: 1.25rem; cursor: pointer;"></i>
+              <%= comment.replies.any? ? "Replies (#{comment.replies.count})" : "Reply" %>
+            </button>
+
+            <div data-reply-target="container" class="mt-2 d-none" style="padding-bottom: 50px;">
+              <%= form_with(model: [comment.post, Comment.new], local: false, html: { class: "w-100" }) do |f| %>
+                <%= f.hidden_field :parent_id, value: comment.id %>
+                <div class="position-relative">
+                  <%= f.text_area :content, rows: 2, class: "form-control form-control-sm", placeholder: "Write a reply...", style: "height: 50px; padding-right: 60px;" %>
+                  <%= button_tag type: "submit", class: "btn btn-link position-absolute p-0", style: "bottom: 10px; right: 10px;" do %>
+                    <i class="fa-regular fa-square-caret-up fs-4 text-secondary"></i>
+                  <% end %>
+                </div>
+              <% end %>
+              <% comment.replies.each do |reply| %>
+                <%= render "posts/partials/toggle_comment", comment: reply %>
+              <% end %>
+            </div>
+          </div>
+        <% end %>
       </div>
     </div>
+
     <% if comment.user_id == current_user&.id %>
-      <div class="position-absolute" style="top: 5px; right: 5px;">
+      <div class="position-absolute" style="bottom: 23px; left: 140px;">
         <%= link_to '', post_comment_path(comment.post, comment),
               data: { turbo_method: 'delete' },
-              class: 'text-danger fas fa-trash',
-              title: 'Delete Comment' %>
-      </div>
-    <% end %>
-
-    <% if comment.replies.any? %>
-      <div class="ms-4 mt-2">
-        <% comment.replies.each do |reply| %>
-          <%= render "posts/partials/toggle_comment", comment: reply %>
-        <% end %>
+              class: 'fas fa-trash fa-xs text-decoration-none',
+              title: 'Delete Comment',
+              style: 'cursor: pointer;' %>
       </div>
     <% end %>
   </div>

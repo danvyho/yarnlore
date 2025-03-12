@@ -3,13 +3,13 @@
     <% if @post.favorites.reload.where(user: current_user).exists? %>
       <%= link_to '', toggle_favorites_path(post_id: @post.id),
             data: { turbo_method: 'post', turbo_confirm: 'Are you sure?' },
-            class: 'fas fa-bookmark mx-2 text-body text-decoration-none',
-            style: 'margin-top: -0.16rem;' %>
+            class: 'fas fa-bookmark mx-2 text-decoration-none',
+            style: 'font-size: 1.2rem;' %>
     <% else %>
       <%= link_to '', toggle_favorites_path(post_id: @post.id),
             data: { turbo_method: 'post' },
-            class: 'far fa-bookmark mx-2 text-body text-decoration-none',
-            style: 'margin-top: -0.16rem;' %>
+            class: 'far fa-bookmark mx-2 text-decoration-none',
+            style: 'font-size: 1.2rem;' %>
     <% end %>
   </div>
 <% end %>

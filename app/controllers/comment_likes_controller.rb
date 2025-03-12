@@ -4,22 +4,26 @@ class CommentLikesController < ApplicationController
     @comment_like = CommentLike.new
   end
 
-  def create
+  def toggle
     @comment = Comment.find(params[:comment_id])
-    @comment_like = @comment.comment_likes.new(user_id: current_user.id)
-    respond_to do |format|
-      if @comment_like.save
-        format.turbo_stream
-        format.html { redirect_to @comment.post }
-      else
-        format.html { redirect_to @comment.post }
-      end
+    @comment_like = @comment.comment_likes.find_by(user: current_user)
+
+    if @comment_like
+      @comment_like.destroy
+    else
+      @comment_like = @comment.comment_likes.create(user: current_user)
+      # Create a notification when a like is added.
+      Notification.create!(
+        user: @comment.user,
+        post: @comment.post,
+        content: "#{current_user.username} liked your comment!"
+      )
     end
-    Notification.create!(
-      user: @comment.user,
-      post: @comment.post,
-      content: "#{current_user.username} liked your comment!"
-    )
+
+    respond_to do |format|
+      format.turbo_stream  # This should render a turbo stream view that updates the like counter on the comment.
+      format.html { redirect_to @comment.post }
+    end
   end
 
   private
