@@ -1,23 +1,21 @@
-<div class="row d-flex justify-content-center">
-  <div class="col-md-8 col-lg-6">
-    <div class="card shadow-0 border" style="background-color: #f0f2f5;">
-      <div class="card-body p-4">
+<div id="comments-container">
+  <div class="row justify-content-center mt-3">
+    <div class="col-md-8 col-lg-6">
+      <div class="p-2 bg-light border border-primary border-opacity-10 rounded-3" style="box-shadow: inset 0 0 8px rgba(171, 71, 188, 0.1);">
         <div class="comments-list mb-3" style="max-height: 600px; overflow-y: auto;">
-          <% @post.comments.where(parent_id: nil).each do |comment| %>
+          <% @post.comments.where(parent_id: nil).order(comment_likes_count: :desc).each do |comment| %>
             <%= render "posts/partials/comment", comment: comment %>
           <% end %>
-          <%= form_with(model: [@post, Comment.new], local: false, html: { class: "form-outline mb-4", id: "new-comment-form" }) do |f| %>
-            <div class="field">
-              <%= f.label :content, "", class: "visually-hidden" %>
-              <%= f.text_area :content, rows: 3, class: "form-control", placeholder: "Write a comment..." %>
-            </div>
-            <div class="actions">
-              <%= button_tag type: "submit", class: "btn btn-link" do %>
-                <i class="fa-regular fa-square-caret-up"></i>
-              <% end %>
-            </div>
-          <% end %>
         </div>
+
+        <%= form_with(model: [@post, Comment.new], local: false, html: { id: "new-comment-form", class: "mb-5" }) do |f| %>
+          <div class="position-relative">
+            <%= f.text_area :content, rows: 3, class: "form-control", placeholder: "Write a comment..." %>
+            <%= button_tag type: "submit", class: "btn btn-primary position-absolute p-1", style: "bottom: 10px; right: 10px; color: #ffffff;" do %>
+              <i class="fa-regular fa-white fa-square-caret-up fs-4 text-secondary"></i>
+            <% end %>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>

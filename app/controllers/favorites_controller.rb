@@ -8,15 +8,13 @@ class FavoritesController < ApplicationController
   def toggle
     @post = Post.find(params[:post_id])
     @favorite = @post.favorites.find_by(user: current_user)
+
     if @favorite
       @favorite.destroy
-      respond_to do |format|
-        format.turbo_stream { render turbo_stream: turbo_stream.remove("favorite-post-#{@post.id}") }
-        format.html { redirect_to favorites_path, notice: "Favorite removed." }
-      end
     else
       @favorite = @post.favorites.create(user_id: current_user.id)
     end
+
     @post.reload
     respond_to do |format|
       format.turbo_stream

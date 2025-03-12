@@ -7,6 +7,7 @@ class PostLikesController < ApplicationController
   def toggle
     @post = Post.find(params[:post_id])
     if current_user.present?
+      @post_like = @post.post_likes.find_by(user_id: current_user.id)
       if @post_like
         @post_like.destroy
       else
