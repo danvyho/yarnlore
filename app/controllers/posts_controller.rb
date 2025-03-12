@@ -75,12 +75,15 @@ class PostsController < ApplicationController
 
   def destroy
     if @post.user_id == current_user.id
+      Favorite.where(post_id: @post.id).destroy_all
+      Notification.where(post_id: @post.id).destroy_all
+      @post.comments.destroy_all
+      @post.post_likes.destroy_all
       @post.destroy
 
     end
     redirect_to my_profile_path
   end
-
 
   private
 

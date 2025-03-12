@@ -1,6 +1,5 @@
-<div class="container mt-3">
+<div class="container pb-4 border-bottom">
   <div style="display: flex; align-items: center;">
-
     <% if @user.avatar.attached? %>
       <%= image_tag @user.avatar,  class: "rounded-circle me-3", style: "width: 100px; height: 100px;" %>
     <% else %>
@@ -9,10 +8,35 @@
     <% end %>
     <div style="display: flex; flex-direction: column;">
       <span class = "h3"><%=  @user.username %></span>
-<span class="no-style-link text-dark">
-  <%= link_to "Followers #{@user.followers.count}", followers_path(@user), style: "text-decoration: none;", class: "text-dark fs-6" %>
-  <%= link_to "Following #{@user.followees.count}", followings_path(@user), style: "text-decoration: none;", class: "text-dark fs-6" %>
-</span>
+      <span class="no-style-link text-dark">
+        <%= link_to followers_path(@user), class: "text-decoration-none text-dark fs-6" do %>
+          <span>Followers <strong><%= @user.followers.count %></strong></span>
+        <% end %>
+        <%= link_to followings_path(@user), class: "text-decoration-none text-dark fs-6" do %>
+          <span>Following <strong><%= @user.followees.count %></strong></span>
+        <% end %>
+      </span>
+
+      <% if @user.bio.present? %>
+        <p class="fs-6 text-muted text-left mt-2"><%= @user.bio %></p>
+      <% end %>
     </div>
   </div>
+
+  <% if @user != current_user %>
+    <div class="d-flex justify-content-end align-items-center gap-2">
+      <%= simple_form_for @user, url: follow_unfollow_path(@user), html: { method: :post } do |f| %>
+        <%= f.button :submit, @is_following ? "Unfollow" : "Follow",
+          class: "btn btn-sm #{@is_following ? 'btn-outline-secondary' : 'btn-primary'} px-4 py-2",
+          style: "transition: background-color 0.2s;" %>
+      <% end %>
+
+      <%= simple_form_for @chat, url: chat_create_path, html: { method: :post } do |f| %>
+        <%= f.button :submit, "Message",
+            class: "btn btn-sm btn-outline-primary px-3 py-2",
+            style: "transition: background-color 0.2s;" %>
+        <%= f.input :user_id, as: :hidden, input_html: { value: @user.id }, wrapper: false %>
+      <% end %>
+    </div>
+  <% end %>
 </div>
