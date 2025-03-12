@@ -3,35 +3,34 @@
     <%= link_to root_path, class: "nav-link" do %>
       <i class="fas fa-house" style="color: #ffffff"></i>
     <% end %>
-<% if user_signed_in? %>
-    <%= link_to trend_patterns_path || '#', class: "nav-link" do %>
-      <i class="fas fa-search" style="color: #ffffff"></i>
-    <% end %>
-    <%= link_to new_post_path || "#", class: "nav-link", id: "navbar-search" do %>
-      <i class="fas fa-plus" style="color: #ffffff"></i>
-    <% end %>
-    <%= link_to favorites_path || "#", class: "nav-link" do %>
-      <i class="fas fa-bookmark" style="color: #ffffff"></i>
-    <% end %>
-    <%= link_to my_profile_path || "#", class: "nav-link" do %>
-      <i class="fas fa-user" style="color: #ffffff"></i>
-    <% end %>
-    <% else %>
-    <%= link_to new_user_session_path,  class: "nav-link navbar-button" || "#", class: "nav-link" do %>
-      <i class="fas fa-search"></i>
-    <% end %>
-    <%= link_to new_user_session_path,  class: "nav-link navbar-button" || "#", class: "nav-link", id: "navbar-search" do %>
-      <i class="fas fa-plus" style="color: #ffffff"></i>
-    <% end %>
-    <%= link_to new_user_session_path,  class: "nav-link navbar-button" || "#", class: "nav-link" do %>
-      <i class="fa-solid fa-bookmark"></i>
-      <i class="fas fa-bell" style="color: #ffffff"></i>
-    <% end %>
-    <%= link_to new_user_session_path,  class: "nav-link navbar-button" || "#", class: "nav-link" do %>
-      <i class="fas fa-user" style="color: #ffffff"></i>
-    <% end %>
-<% end %>
 
+    <% if user_signed_in? %>
+        <%= link_to trend_patterns_path || "#", class: "nav-link" do %>
+          <i class="fas fa-search" style="color: #ffffff"></i>
+        <% end %>
+        <%= link_to new_post_path || "#", class: "nav-link" do %>
+          <i class="fas fa-plus" style="color: #ffffff"></i>
+        <% end %>
+        <%= link_to favorites_path || "#", class: "nav-link" do %>
+          <i class="fas fa-bookmark" style="color: #ffffff"></i>
+        <% end %>
+        <%= link_to my_profile_path || "#", class: "nav-link" do %>
+          <i class="fas fa-user" style="color: #ffffff"></i>
+        <% end %>
+    <% else %>
+        <%= link_to new_user_session_path  || "#",  class: "nav-link" do %>
+          <i class="fas fa-search" style="color: #ffffff"></i>
+        <% end %>
+        <%= link_to new_user_session_path || "#",  class: "nav-link" do %>
+          <i class="fas fa-plus" style="color: #ffffff"></i>
+        <% end %>
+        <%= link_to new_user_session_path || "#",  class: "nav-link" do %>
+          <i class="fas fa-bell" style="color: #ffffff"></i>
+        <% end %>
+        <%= link_to new_user_session_path || "#",  class: "nav-link" do %>
+          <i class="fas fa-user" style="color: #ffffff"></i>
+        <% end %>
+    <% end %>
 
   </div>
 </nav>

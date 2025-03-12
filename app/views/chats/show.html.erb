@@ -28,11 +28,19 @@
                                                 <li class="navbar nav-item dropdown">
                                                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v" aria-hidden="true"></i></a>
                                                     <ul class="dropdown-menu">
-                                                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                                                        <li>
+                                                          <%= form_with url: delete_chat_path(@chat), method: :delete, class: "d-inline" do %>
+                                                            <%= submit_tag "Delete chat", class: "dropdown-item", data: { confirm: "Are you sure you want to delete this chat?" } %>
+                                                          <% end %>
+                                                        </li>
                                                         <li>
                                                             <hr class="dropdown-divider">
                                                         </li>
-                                                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                                        <li>
+                                                          <%= link_to user_path(@chat_with), class: "dropdown-item" do %>
+                                                            See <em><%= @chat_with.username %></em> profile
+                                                          <% end %>
+                                                        </li>
                                                     </ul>
                                                 </li>
                                             </ul>
