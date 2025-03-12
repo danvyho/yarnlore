@@ -145,20 +145,21 @@ notifications = [
 ]
 
   post_titles = [
-    "Cozy Knit Sweater for Chilly Days",
-    "Simple and Stylish Knit Beanie Pattern",
-    "Vibrant Spring Crochet Flower Shawl",
-    "Classic Cable Knit Blanket for the Home",
-    "Boho-Inspired Crochet Tote Bag",
-    "Lacy Knit Scarf for Elegant Outfits",
-    "Chunky Knit Throw Blanket for Comfort",
-    "Warm and Comfy Knitted Slippers",
-    "Crochet Coasters to Brighten Up Your Space",
-    "Light and Breezy Crochet Shawl for Summer",
-    "Sleek and Stylish Knit Fingerless Gloves",
+    "Simple knitted coaster",
+    "Crocheted Flower Shawl for Spring",
+    "Crocheted Bunny for Baby",
+    "Summer Shawl",
+    "Beginner friendly Crochet Coasters",
+    "Cable Knit Blanket",
     "Bohemian Crochet Wall Hanging",
-    "Soft Baby Booties for the Little One",
-    "Knitted Sweater Perfect for Layering"
+    "Knitted Sweater for Layering",
+    "Simple Crochet Square",
+    "Stylish Knit Beanie Pattern",
+    "Chunky Knit Throw Blanket",
+    "Boho-Inspired Crochet Tote Bag",
+    "Cozy Knit Sweater",
+    "Sleek and Stylish Knitted Mittens"
+
   ]
 
 bios = [
@@ -340,15 +341,14 @@ User.create(
     user
   end
 
-  10.times do |i|
+  for i in 0..13
     user = users.sample
 
-    post_title = post_titles.sample
-    post_content = post_contents.sample
+
 
     post = Post.new(
-      title: post_title,
-      content: post_content,
+      title: post_titles[i],
+      content: post_contents[i],
       user: user,
       pattern: false
     )
