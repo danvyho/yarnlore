@@ -1,6 +1,12 @@
-<h2>Notification</h2>
-<div id="notifications">
-  <% @notifications.each do |notification|%>
-    <%= render "notification", notification: notification %>
-  <% end %>
+<div class="container p-4">
+  <div class="row">
+    <div class="col-12">
+      <h2>Notifications</h2>
+      <div id="notifications" class="mt-4">
+        <% @notifications.each do |notification|%>
+          <%= render "notification", notification: notification %>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>
