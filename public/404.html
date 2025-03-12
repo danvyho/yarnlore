@@ -1,43 +1,50 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>The page you were looking for doesn't exist (404)</title>
+  <title>Yarnlore - Crafting Dreams</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <style>
-  .rails-default-error-page {
-    background-color: #EFEFEF;
+
+  .center {
+    display: flex;
+    align-items: center;
+    height: 100vh;
+  }
+
+  .yarnlore-error-page {
+    background-color: #C989EB;
     color: #2E2F30;
     text-align: center;
     font-family: arial, sans-serif;
     margin: 0;
   }
 
-  .rails-default-error-page div.dialog {
+  .yarnlore-error-page div.dialog dialog{
     width: 95%;
     max-width: 33em;
     margin: 4em auto 0;
   }
 
-  .rails-default-error-page div.dialog > div {
+  .yarnlore-error-page div.dialog > div {
     border: 1px solid #CCC;
     border-right-color: #999;
     border-left-color: #999;
     border-bottom-color: #BBB;
-    border-top: #B00100 solid 4px;
+    border-top: #8B5FBF solid 4px;
     border-top-left-radius: 9px;
     border-top-right-radius: 9px;
-    background-color: white;
+    background-color: #FDC5F5;
     padding: 7px 12% 0;
     box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
   }
 
-  .rails-default-error-page h1 {
+  .yarnlore-error-page h1 {
     font-size: 100%;
-    color: #730E15;
+    color: #8B5FBF;
     line-height: 1.5em;
   }
 
-  .rails-default-error-page div.dialog > p {
+  .yarnlore-error-page div.dialog > p {
     margin: 0 0 1em;
     padding: 1em;
     background-color: #F7F7F7;
@@ -51,17 +58,26 @@
     color: #666;
     box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
   }
+
+  .error404_img {
+    margin-top: 10px;
+    border-radius: 10px;
+  }
+
   </style>
 </head>
 
-<body class="rails-default-error-page">
+<body class="yarnlore-error-page">
   <!-- This file lives in public/404.html -->
-  <div class="dialog">
-    <div>
-      <h1>The page you were looking for doesn't exist.</h1>
-      <p>You may have mistyped the address or the page may have moved.</p>
+  <div class="center">
+    <div class="dialog">
+      <div>
+        <h1>Oops, I couldn't find that.</h1>
+        <img class="error404_img" src="error404.jpg" alt="Cat entangled in yarn">
+        <p>You might have have entered the wrong information or accessed a page that no longer exists.</p>
+      </div>
+      <p>Let's un-purl this together.</p>
     </div>
-    <p>If you are the application owner check the logs for more information.</p>
   </div>
 </body>
 </html>
