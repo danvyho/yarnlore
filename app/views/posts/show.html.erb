@@ -1,5 +1,12 @@
-<%= render "posts/partials/show_post_card" %>
+<% if @post.pattern == false %>
+  <%= render "posts/partials/show_post_card" %>
+  <%= @post.content %>
+<% else  %>
+  <%= render 'patterns/partials/pattern_card', post: @post, user: @user %>
+  <%= render 'patterns/partials/pattern_content', post: @post, user: @user %>
+<% end %>
+
 
 <%= turbo_frame_tag "comments" do %>
-  <%= render "shared/comments", post: @post %>
+  <%= render partial: "shared/comments", locals: { comments: @post.comments, post: @post } %>
 <% end %>

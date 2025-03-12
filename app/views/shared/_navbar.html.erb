@@ -1,4 +1,4 @@
-<nav class="navbar navbar-lewagon navbar-expand-lg fixed-bottom">
+<nav class="navbar navbar-lewagon navbar-expand-lg fixed-bottom container-fluid">
   <div class="container d-flex justify-content-around">
     <%= link_to root_path, class: "nav-link" do %>
       <i class="fas fa-house" style="color: #ffffff"></i>
@@ -18,12 +18,13 @@
     <% end %>
     <% else %>
     <%= link_to new_user_session_path,  class: "nav-link navbar-button" || "#", class: "nav-link" do %>
-      <i class="fas fa-bookmark" style="color: #ffffff"></i>
+      <i class="fas fa-search"></i>
     <% end %>
     <%= link_to new_user_session_path,  class: "nav-link navbar-button" || "#", class: "nav-link", id: "navbar-search" do %>
       <i class="fas fa-plus" style="color: #ffffff"></i>
     <% end %>
     <%= link_to new_user_session_path,  class: "nav-link navbar-button" || "#", class: "nav-link" do %>
+      <i class="fa-solid fa-bookmark"></i>
       <i class="fas fa-bell" style="color: #ffffff"></i>
     <% end %>
     <%= link_to new_user_session_path,  class: "nav-link navbar-button" || "#", class: "nav-link" do %>

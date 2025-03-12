@@ -161,7 +161,22 @@ notifications = [
     "Knitted Sweater Perfect for Layering"
   ]
 
-
+bios = [
+  "Crochet enthusiast creating cozy designs and exploring new patterns.",
+  "Knit designer experimenting with colors and textures in my projects.",
+  "Collecting and sharing my favorite knitting and crochet patterns.",
+  "Yarn lover sharing discoveries and tracking my projects.",
+  "New to crochet, looking for easy patterns and helpful tips.",
+  "Creating wearable art with yarn and always seeking new patterns.",
+  "Knitting to unwind and crocheting to express creativity.",
+  "Making cozy, functional crochet and knit pieces for my home.",
+  "Working through my yarn stash while discovering new patterns.",
+  "Curating knitting and crochet collections for all skill levels.",
+  "Testing patterns and offering feedback to designers.",
+  "Obsessed with yarn and finding the perfect pattern.",
+  "Specializing in custom crochet and knit projects that reflect my style.",
+  "Exploring new stitches and techniques in both knitting and crochet."
+]
 
   post_contents = [
     "This cozy knit sweater pattern is perfect for chilly days. It’s warm, stylish, and easy to follow. Perfect for beginners and seasoned crafters alike!",
@@ -186,6 +201,74 @@ notifications = [
       "6090 Sweater and Jacket", "Blushing Frog", "Round Raccoon", "Unfair Carousel", "Eloisa Vest", "Collin Scarf",
       "Embers Shawl", "Bow Square", "Baby Chick Mini Palm Plushie"
     ]
+
+    pattern_content = [ "Cast on 120 stitches (48 for the body, 24 for each sleeve). Join in the round.
+Increase every other round until the body has 72 stitches and each sleeve has 36 stitches.
+Knit the body until it reaches your desired length (12-16 inches), adding ribbing at the hem if you want.
+Pick up the stitches for the sleeves, then knit them to your desired length (15-20 cm), adding ribbing at the cuffs if you want.
+Weave in the ends and block the sweater.",
+"Cast on the required number of stitches for the body and sleeves.
+Knit the body in stockinette stitch.
+Knit the sleeves and adjust for fit.
+Join the body and sleeves, knit the yoke, and finish with ribbing.",
+"Cast on stitches, incorporating colourwork into the design.
+Knit the body with colourwork pattern, adjusting to your size.
+Knit the sleeves in the colourwork pattern.
+Join body and sleeves, continue colourwork for yoke, and finish with ribbing.",
+"Cast on the required stitches for the body.
+Knit the body in the round until you reach the desired length.
+Knit the sleeves, adjusting for fit.
+Join body and sleeves, knit the yoke, and finish with ribbing.",
+"Cast on the stitches based on your size and begin with the mosaic pattern.
+Knit the body in the round following the mosaic pattern.
+Knit the sleeves, incorporating the mosaic stitch.
+Join body and sleeves, continue with the pattern, and finish with ribbing.",
+"Cast on stitches for the brim in ribbing.
+Knit the body of the hat in rib 1x1 stitch.
+Shape the crown by decreasing.
+Finish with a ribbed cuff and bind off.",
+"Cast on the required number of stitches for the body.
+Knit the body in stocking stitch to the desired length.
+Knit the sleeves in stocking stitch.
+Join body and sleeves, knit the yoke, and finish with ribbing.",
+"Create the frog's body using the magic ring method.
+Crochet the limbs and attach them to the body.
+Crochet the eyes and attach them to the head.
+Stuff the frog and finish by closing up any openings.",
+"Start by crocheting the head in the round.
+Create the body and limbs, attach them to the head.
+Crochet the tail and ears, then attach them.
+Stuff the raccoon and finish closing any gaps.",
+"Cast on the required stitches for the body.
+Knit the body in the round until you reach the desired length.
+Knit the sleeves, adjusting to fit.
+Join body and sleeves, knit the yoke, and finish with ribbing.",
+"Cast on the stitches for the body and knit in garter stitch.
+Knit the body until it reaches your desired length.
+Knit the sides of the vest and attach them.
+Finish with ribbing at the neck and armholes.",
+"Cast on the required number of stitches for the scarf.
+Knit the scarf in the desired stitch pattern (e.g., garter, stockinette).
+Knit until the scarf reaches your desired length.
+Bind off and weave in the ends.",
+"Cast on stitches for the shawl.
+Knit the shawl in your preferred stitch pattern.
+Shape the shawl by decreasing and increasing as needed.
+Finish with a simple border and weave in the ends.",
+"Start with a foundation chain and work the first row.
+Crochet the bow design in the center of the square.
+Continue crocheting the square to the desired size.
+Finish by adding a border around the square.",
+"Create the body using the magic ring method.
+Crochet the limbs and attach them to the body.
+Crochet the beak and eyes, then attach them.
+Stuff the chick and finish by closing any openings.",
+
+
+
+    ]
+
+
     pattern_craft = [
       "Knitting", "Knitting", "Knitting", "Knitting", "Knitting", "Knitting",
       "Knitting", "Crochet", "Crochet", "Knitting", "Knitting", "Knitting", "Knitting", "Crochet", "Crochet"
@@ -246,7 +329,8 @@ User.create(
     user = User.create!(
       email: Faker::Internet.unique.email,
       password: "password",
-      username: username
+      username: username,
+      bio: bios.sample
     )
 
       avatar_url = avatar_images.sample
@@ -287,7 +371,7 @@ User.create(
     user = users.sample
     pattern = Post.new(
       title: pattern_title[i],
-      content: "Content AI soon...",
+      content: pattern_content[i],
       craft: pattern_craft[i],
       category: pattern_category[i],
       gauge: pattern_gauge[i],

@@ -1,8 +1,21 @@
-<h4 class="card-title text-center text-nowrap" style="font-size: 1.2rem; font-weight: bold; color: #444;">
-  <%= post.title %>
-</h4>
-<%= link_to user_path(post.user) do %>
-  <div class="d-flex justify-content-center align-items-center" style="gap: 10px;">
-    <h5 style="font-size: 1.1rem;"><%= post.user.username %></h5>
+<!-- Existing top row: Avatar on the left, Title/Username on the right -->
+<div class="d-flex align-items-center justify-content-between">
+  <div>
+    <%= link_to user_path(post.user) do %>
+      <% if post.user.avatar.attached? %>
+        <%= image_tag post.user.avatar, class: "rounded-circle mb-3 me-2", style: "width: 45px; height: 45px; object-fit: cover;" %>
+      <% else %>
+        <%= image_tag 'blank-profile.jpeg', class: "rounded-circle mb-3 me-2", style: "width: 45px; height: 45px; object-fit: cover;" %>
+      <% end %>
+    <% end %>
   </div>
-<% end %>
+
+  <div>
+    <h4 class="card-title text-nowrap text-start mb-0" style="font-size: 1.2rem; font-weight: bold; color: #444; width: 300px; overflow: hidden;">
+      <%= post.title %>
+    </h4>
+    <h5 class="font-bold text-start" style="font-size: 1.1rem;">
+      <%= link_to post.user.username, user_path(post.user), class: 'text-decoration-none' %>
+    </h5>
+  </div>
+</div>
