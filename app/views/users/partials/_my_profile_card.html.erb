@@ -1,10 +1,10 @@
 <div class="col-12 col-md-6 mb-4">
-  <div class="card shadow p-3 mb-3 bg-body rounded-top" style="width: 100%;">
+  <div class="shadow mb-3 bg-body" style="width: 100%; min-height: 150px; border-top-left-radius: 16px; border-top-right-radius: 16px;">
     <div class="d-flex h-100">
       <%= render 'users/partials/my_profile_image', post: post %>
 
-      <div class="flex-grow-1 px-2 d-flex flex-column justify-content-between" style="height: 113px; overflow: hidden;">
-        <div class="mt-4">
+      <div class="flex-grow-1 p-2 pb-0 d-flex flex-column justify-content-between" style="height: 150px; overflow: hidden;">
+        <div class="">
           <%= render 'users/partials/my_profile_content', post: post %>
         </div>
         <div class="mb-2">

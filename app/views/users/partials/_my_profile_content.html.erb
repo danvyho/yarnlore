@@ -1,7 +1,10 @@
-<div>
+<div class="post-content">
   <h4 class="card-title text-start"
       style="font-size: 1.1rem; font-weight: bold; color: #444; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
     <%= post.title %>
   </h4>
-
+  <p class="card-text text-muted text-start my-2"
+    style="font-size: 0.9rem; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis;">
+  <%= post.content %>
+</p>
 </div>
