@@ -29,8 +29,8 @@
                                                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v" aria-hidden="true"></i></a>
                                                     <ul class="dropdown-menu">
                                                         <li>
-                                                          <%= form_with url: clear_chat_path(@chat), method: :delete, class: "d-inline" do %>
-                                                            <%= button_to "Clear chat", clear_chat_path(@chat), method: :delete, class: "dropdown-item", data: { confirm: "Are you sure you want to clear this chat?" } %>
+                                                          <%= form_with url: delete_chat_path(@chat), method: :delete, class: "d-inline" do %>
+                                                            <%= submit_tag "Delete chat", class: "dropdown-item", data: { confirm: "Are you sure you want to delete this chat?" } %>
                                                           <% end %>
                                                         </li>
                                                         <li>

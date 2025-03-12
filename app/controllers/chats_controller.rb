@@ -24,10 +24,12 @@ class ChatsController < ApplicationController
     @chat_with = User.find(@chat.memberships.reject { |m| m.user_id == current_user.id }[0].user_id)
   end
 
-  def clear_chat
+  def delete_chat
     @chat = Chat.find(params[:id])
     @chat.messages.destroy_all
-    redirect_to chat_path(@chat)
+    @chat.memberships.destroy_all
+    @chat.destroy
+    redirect_to chats_path
   end
 
   def create
