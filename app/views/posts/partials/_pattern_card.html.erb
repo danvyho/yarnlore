@@ -1,0 +1,14 @@
+<div class="container mb-4">
+  <div class="row justify-content-center">
+    <div class="col-12 col-lg-8">
+      <div class="card border-0">
+        <%= render 'posts/partials/show_post_image', post: @post %>
+        <div class="card-body">
+          <%= render 'posts/partials/show_post_header', post: @post %>
+          <%= render 'posts/partials/pattern_content', post: @post %>
+          <%= render 'posts/partials/show_post_footer', post: @post, current_user: current_user %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
