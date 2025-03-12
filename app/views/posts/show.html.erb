@@ -6,8 +6,18 @@
     <%= render 'patterns/partials/pattern_content', post: @post, user: @user %>
   <% end %>
 
+<%= turbo_frame_tag "comments" do %>
+  <%= render partial: "shared/comments", locals: { comments: @post.comments, post: @post } %>
+<% end %>
 
-  <%= turbo_frame_tag "comments" do %>
-    <%= render partial: "shared/comments", locals: { comments: @post.comments, post: @post } %>
-  <% end %>
+<% if @post.pattern == false %>
+  <% content_for :meta_title, "#{@post.title} is on #{DEFAULT_META["meta_product_name"]}" %>
+  <% content_for :meta_description, @post.content %>
+  <% content_for :meta_image, cl_image_path(@post.image.key) %>
+<% else %>
+  <% content_for :meta_title, "#{@post.title} is on #{DEFAULT_META["meta_product_name"]}" %>
+  <% content_for :meta_description, @post.content %>
+  <% content_for :meta_image, cl_image_path(@post.image.key) %>
+<% end %>
 </div>
+
