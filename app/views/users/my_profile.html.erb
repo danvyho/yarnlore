@@ -3,27 +3,6 @@
     <div class="col-12">
       <% if user_signed_in? %>
         <%= render "users/partials/profile_header" %>
-        <% if @user != current_user %>
-          <div class="d-flex justify-content-center align-items-center gap-2">
-            <%= simple_form_for @user, url: follow_unfollow_path(@user), html: { method: :post } do |f| %>
-              <%= f.button :submit, @is_following ? "Unfollow" : "Follow",
-                class: "btn btn-sm #{@is_following ? 'btn-outline-secondary' : 'btn-primary'} px-4 py-2",
-                style: "transition: background-color 0.2s;" %>
-            <% end %>
-
-            <%= simple_form_for @chat, url: chat_create_path, html: { method: :post } do |f| %>
-            <%= f.button :submit, "Message",
-                class: "btn btn-sm btn-outline-primary px-4 py-2",
-                style: "transition: background-color 0.2s;" %>
-              <%= f.input :user_id, as: :hidden, input_html: { value: @user.id }, wrapper: false %>
-            <% end %>
-          </div>
-        <% end %>
-
-        <% if @user.bio.present? %>
-          <p class="fs-6 text-muted text-left mt-2"><%= @user.bio %></p>
-        <% end %>
-
         <div class="posts-list mt-4">
           <% @user.posts.each do |post| %>
               <%= link_to post_path(post), class: "text-decoration-none" do %>
