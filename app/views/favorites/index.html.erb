@@ -1,3 +1,4 @@
+<% provide(:navbar_title, "Favourites") %>
 <% @favorites.each do |favorite| %>
   <div id="favorite-post-<%= favorite.post.id %>">
     <%= render "posts/partials/post_card", post: favorite.post, favorite: true %>
