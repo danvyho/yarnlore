@@ -1,4 +1,4 @@
-<div class="d-flex align-items-center justify-content-between">
+<div class="d-flex align-items-center justify-content-between position-relative">
   <div>
     <%= link_to user_path(post.user) do %>
       <% if post.user.avatar.attached? %>
@@ -9,12 +9,105 @@
     <% end %>
   </div>
 
+    <div class="d-flex justify-content-between align-items-center position-absolute" style="font-size: 0.9rem; bottom: 0px; right: 37px;">
+    <div id="favorite-<%= post.id %>">
+    <% if post.favorites.where(user: current_user).exists? %>
+      <%= link_to '', toggle_favorites_path(post_id: post.id),
+            data: { turbo_method: 'post', turbo_confirm: 'Are you sure?' },
+            class: 'fas fa-bookmark mx-2 text-decoration-none',
+            style: 'font-size: 1.2rem;' %>
+    <% else %>
+      <%= link_to '', toggle_favorites_path(post_id: post.id),
+            data: { turbo_method: 'post' },
+            class: 'far fa-bookmark mx-2 text-decoration-none',
+            style: 'font-size: 1.2rem;' %>
+    <% end %>
+    </div>
+  </div>
+
+
+  <div class="d-flex justify-content-between align-items-center position-absolute" style="font-size: 0.9rem; bottom: 0px; right: 0px;">
+    <div id="post-<%= post.id %>-likes">
+    <% if post.post_likes.where(user: current_user).exists? %>
+      <%= link_to '', toggle_post_post_likes_path(post),
+            data: { turbo_method: 'post' },
+            class: 'fas fa-heart text-decoration-none px-2',
+            style: 'font-size: 1.25rem; cursor: pointer;' %>
+    <% else %>
+      <%= link_to '', toggle_post_post_likes_path(post),
+            data: { turbo_method: 'post' },
+            class: 'far fa-heart text-decoration-none px-2',
+            style: 'font-size: 1.25rem; cursor: pointer;' %>
+    <% end %>
+  </div>
+  </div>
+
   <div>
     <h4 class="card-title text-nowrap text-start mb-0" style="font-size: 1.2rem; font-weight: bold; color: #444; width: 300px; overflow: hidden;">
       <%= post.title %>
     </h4>
     <h5 class="font-bold text-start" style="font-size: 1.1rem;">
       <%= link_to post.user.username, user_path(post.user), class: 'text-decoration-none' %>
+      <% difficulty = ["Easy", "Medium", "Hard"] %>
+      <% level =- difficulty.sample %>
+      <%# <% difficulty = "Easy"  %>
+      <% if post.pattern == true %>
+        <% if level == "Easy" %>
+          <% if post.user.username.size == 8 %>
+            <span style="margin-left: 94px;">Difficulty: <%= level  %></span>
+          <% elsif post.user.username.size == 10 %>
+            <span style="margin-left: 88px;">Difficulty: <%= level  %></span>
+          <% elsif post.user.username.size == 11 %>
+            <span style="margin-left: 78px;">Difficulty: <%= level  %></span>
+          <% elsif post.user.username.size == 12 %>
+            <span style="margin-left: 72px;">Difficulty: <%= level  %></span>
+          <% elsif post.user.username.size == 13 %>
+            <span style="margin-left: 65px;">Difficulty: <%= level  %></span>
+          <% end %>
+        <% elsif level == "Medium" %>
+          <% if post.user.username.size == 8 %>
+            <span style="margin-left: 65px;">Difficulty: <%= level  %></span>
+          <% elsif post.user.username.size == 10 %>
+            <span style="margin-left: 58px;">Difficulty: <%= level  %></span>
+          <% elsif post.user.username.size == 11 %>
+            <span style="margin-left: 48px;">Difficulty: <%= level  %></span>
+          <% elsif post.user.username.size == 12 %>
+            <span style="margin-left: 41px;">Difficulty: <%= level  %></span>
+          <% elsif post.user.username.size == 13 %>
+            <span style="margin-left: 37px;">Difficulty: <%= level  %></span>
+          <% end %>
+        <% elsif level == "Hard" %>
+          <% if post.user.username.size == 8 %>
+            <span style="margin-left: 91px;">Difficulty: <%= level  %></span>
+          <% elsif post.user.username.size == 10 %>
+            <span style="margin-left: 87px;">Difficulty: <%= level  %></span>
+          <% elsif post.user.username.size == 11 %>
+            <span style="margin-left: 75px;">Difficulty: <%= level  %></span>
+          <% elsif post.user.username.size == 12 %>
+            <span style="margin-left: 69px;">Difficulty: <%= level  %></span>
+          <% elsif post.user.username.size == 13 %>
+            <span style="margin-left: 62px;">Difficulty: <%= level  %></span>
+          <% end %>
+        <% end %>
+      <% end %>
+
+
     </h5>
   </div>
 </div>
+
+
+<%# "KnitterQueen" → 12 characters
+"YarnMaster" → 10 characters
+"CrochetGuru" → 11 characters
+"WoolWhiz" → 8 characters
+"ThreadTrekker" → 13 characters
+"FiberFanatic" → 12 characters
+"HookedOnYarn" → 12 characters
+"StitchSavant" → 12 characters
+"KnitAndPurl" → 11 characters
+"WoolWanderer" → 12 characters
+"CraftyThreads" → 13 characters
+"YarnVoyager" → 11 characters
+"TwistAndKnit" → 12 characters
+"LoopedIn" → 8 characters %>
