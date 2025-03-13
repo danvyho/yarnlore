@@ -1,5 +1,5 @@
 <%= turbo_stream.replace "post-#{@post.id}-likes" do %>
-  <div id="post-<%= @post.id %>-likes" class="d-flex justify-content-between align-items-center position-absolute" style="font-size: 0.9rem; bottom: -5px; right: 0px;">
+    <div id="post-<%= @post.id %>-likes">
     <% if @post.post_likes.where(user: current_user).exists? %>
       <%= link_to '', toggle_post_post_likes_path(@post),
             data: { turbo_method: 'post' },
@@ -11,6 +11,5 @@
             class: 'far fa-heart text-decoration-none px-2',
             style: 'font-size: 1.25rem; cursor: pointer;' %>
     <% end %>
-    <p class="small text-muted mb-0"><%= @post.post_likes.count %></p>
   </div>
 <% end %>
