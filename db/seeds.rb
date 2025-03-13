@@ -249,7 +249,11 @@ Finish:
 - Break the yarn.
 - Place all sts on a spare cable or stitch holder.",
 
-"*Ribbing: With B and smaller needles, cast on 13 sts. Work in garter st (knit every row) until Ribbing, when slightly stretched measures 22 (24-26- 29-32-34)[56 (61-66-73.5-81.5- 86.5) cm], noting 1st row is WS and ending on a WS row. Cast off knitwise. Do not break B. Turn work sideways. With RS facing , smaller needles and B, pick up and knit 122 (132- 144-160-176-188) sts evenly across long edge of ribbing. Next row: (WS). Knit. Change to larger needles and proceed as follows: 1st row: (RS). With B, K1. *Sl1Pwyib. K1. Rep from * to last st. K1. 2nd row: K1. *Sl1Pwyif K1. Rep from * to last st. K1. 3rd row: (RS). With MC, K1. *K1. Sl1Pwyib. Rep from *39 (43-47- 52-57-61) times more. With A, rep from * to last st. K1. 4th row: With A, K1. *K1. Sl1Pwyif. Rep from * 19 (20-22-25-28-30) times more. With MC, rep from * to last st. K1. Rep 1st to 4th rows for Tweed Pat until work from pick up row measures approx 7 [18 cm], ending on a 4th row. Proceed as follows: 1st row: (RS). With MC, K1. *Sl1Pwyib. K1. Rep from * 39 (43- 47-52-57-61) times more. With A, rep from * to last st. K1. 2nd row: With A, K1. *Sl1Pwyif. K1. Rep from * 19 (20-22-25-28-30) times more. With MC, rep from * to last st. K1. 3rd row: (RS). With A, K1. *K1. Sl1Pwyib. Rep from * to last st. K1. 4th row: K1. *K1. Sl1Pwyif. Rep from * to last st. K1.** Rep 1st to 4th rows for Tweed Pat until work from beg measures 19 (20-20-22-22-23) Cast off..",
+"Ribbing: With B and smaller needles, cast on 13 sts. Work in garter st (knit every row) until Ribbing, when slightly stretched measures 22 (24-26- 29-32-34)[56 (61-66-73.5-81.5- 86.5) cm], noting 1st row is WS and ending on a WS row. Cast off knitwise.
+
+Do not break B. Turn work sideways. With RS facing , smaller needles and B, pick up and knit 122 (132- 144-160-176-188) sts evenly across long edge of ribbing. Next row: (WS). Knit.
+
+Change to larger needles and proceed as follows: 1st row: (RS). With B, K1. *Sl1Pwyib. K1. Rep from * to last st. K1. 2nd row: K1. *Sl1Pwyif K1. Rep from * to last st. K1. 3rd row: (RS). With MC, K1. *K1. Sl1Pwyib. Rep from *39 (43-47- 52-57-61) times more. With A, rep from * to last st. K1. 4th row: With A, K1. *K1. Sl1Pwyif. Rep from * 19 (20-22-25-28-30) times more. With MC, rep from * to last st. K1. Rep 1st to 4th rows for Tweed Pat until work from pick up row measures approx 7 [18 cm], ending on a 4th row. Proceed as follows: 1st row: (RS). With MC, K1. *Sl1Pwyib. K1. Rep from * 39 (43- 47-52-57-61) times more. With A, rep from * to last st. K1. 2nd row: With A, K1. *Sl1Pwyif. K1. Rep from * 19 (20-22-25-28-30) times more. With MC, rep from * to last st. K1. 3rd row: (RS). With A, K1. *K1. Sl1Pwyib. Rep from * to last st. K1. 4th row: K1. *K1. Sl1Pwyif. Rep from * to last st. K1.** Rep 1st to 4th rows for Tweed Pat until work from beg measures 19 (20-20-22-22-23) Cast off..",
 
 "Cast on 64 (68, 72, 80) (84, 88, 88) stitches on 4.5mm 40cm circular needles using the longtail cast on. If you don’t use this cast on, make sure you are casting on loosely enough to get the collar over your head, and check you can once you have knitted a few centimetres. Join in the round and place a BOR marker to indicate the beginning of the round. Select one of the following neckline options. Option One: Funnel Neck Collar Work in rib (*k1 p1*, repeat *-* to end of round) until the collar measures 8cm from the cast on edge. Option Two: Folded Collar Work in rib (*k1 p1*, repeat *-* to end of round) until the collar measures 4cm from the cast on edge. P one round. Work in rib (*k1 p1*, repeat *-* to end of round) until the collar measures 8cm from the cast on edge. Now knit the live stitches together with the cast on edge. It may be helpful to check the video for help with this step. Yoke Switch to 5.5mm 40cm needles and knit one round while placing stitch markers as follows: k 11 (13, 15, 17) (18, 19, 19), place marker, k2, place marker, k 6 (4, 2, 2) (2, 2, 2), place marker, k2, place marker, k 22 (26, 30, 34) (36, 38, 38), place marker, k2, place marker, k 6 (4, 2, 2) (2, 2, 2), place marker, k2, place marker, k 11 (13, 15, 17) (18, 19, 19) to end of round. Choose whether or not to include the German short row neck shaping. For a total beginner, you may wish to exclude it. For an adventurous beginner or more experienced knitter, it may improve the fit around the neck. If you do choose to include the German short rows, when the pattern says to turn, make sure to follow the specific turning instructions in the German short row note earlier in the pattern.",
 
@@ -393,13 +397,18 @@ Cut the yarn and fasten off."
 "https://res.cloudinary.com/ducax2ucs/image/upload/v1741631790/IMG_9379_small2_vtvgpv.jpg"
     ]
 
-
-
 User.create(
   email: 'a@a.a',
   password: "123456",
-  username: 'jasper'
+  username: 'Jasper'
 )
+
+User.create(
+  email: 'b@b.b',
+  password: "password",
+  username: 'Pierre-Paul'
+)
+
 
 users = usernames.shuffle.take(14).map do |username|
   user = User.create!(
@@ -418,15 +427,12 @@ end
   for i in 0..13
     user = users.sample
 
-
-
     post = Post.new(
       title: post_titles[i],
       content: post_contents[i],
       user: user,
       pattern: false
     )
-
 
     file = URI.parse(upload_images[i % upload_images.length]).open
     post.image.attach(io: file, filename: "post_image_#{i}.jpg", content_type: "image/jpeg")
@@ -440,7 +446,17 @@ end
         post: post
       )
     end
+
+    CommentLike.create!(
+      user: User.last,
+      comment: post.comments.first
+    )
+    CommentLike.create!(
+      user: User.third,
+      comment: post.comments.first
+    )
   end
+
   for i in 0..10
     user = users.sample
     pattern = Post.new(
@@ -459,6 +475,7 @@ end
     pattern.image.attach(io: file, filename: "pattern_image_#{i}.jpg", content_type: "image/jpeg")
     pattern.save!
   end
+
   User.all.each do |user|
     sender = user
     recipient = users.reject { |u| u == sender }.sample
