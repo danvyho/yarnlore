@@ -4,7 +4,7 @@
       <% if post.user.avatar.attached? %>
         <%= image_tag post.user.avatar, class: "rounded-circle", style: "width: 70px; height: 70px; object-fit: cover;" %>
       <% else %>
-        <%= image_tag "default-avatar.png", class: "rounded-circle", style: "width: 70px; height: 70px; object-fit: cover;" %>
+        <%= image_tag "blank-profile.jpeg", class: "rounded-circle", style: "width: 70px; height: 70px; object-fit: cover;" %>
       <% end %>
     <% end %>
   </div>
