@@ -1,14 +1,13 @@
 
-<section class="bg-primary pt-5 pb-2 mt-5">
+<section class="pt-5 pb-2 mt-5">
   <div class="container">
-    <div class="row align-items-center">
-      <!-- Text -->
-      <div class="col-md-6 mb-4 mb-md-0">
-        <h1 class="display-4 fw-bold pb-3">      <%= image_tag "yarnlore.png", alt: "Logo Text", height: 100, class: "mx-2" %></h1>
-        <p class="lead px-3 py-2">Find inspiration for your next project and bring it to life with Yarnlore! Share your passion and connect with fiber artists of all skill levels—beginners, intermediates, and experts alike.</p>
-      </div>
-      <!-- Hero Image Placeholder -->
-      <div class="col-md-6 text-center">
+    <div class="row justify-content-center">
+      <div class="col-md-6 position-relative" style="background-image: url('<%= asset_path('yarn.jpg') %>'); background-size: cover; background-position: center; height: 380px;">
+        <div class="position-absolute top-0 start-0 w-100 h-100" style="background: rgba(110, 27, 125, 0.7);"></div>
+        <div class="position-absolute top-50 start-50 translate-middle text-center text-white">
+          <%= image_tag "yarnlore.png", alt: "Logo Text", height: 110, class: "mb-3" %>
+          <h1 class="display-6 pt-3">Where every stitch <br> tells a story.</h1>
+        </div>
       </div>
     </div>
   </div>
@@ -18,7 +17,6 @@
 <section class="py-4">
   <div class="container">
     <div class="row g-4">
-      <!-- Feature 1: Discover -->
       <div class="col-md-4">
         <div class="card h-100 border-0 shadow-sm">
           <div class="card-body text-center">
@@ -31,7 +29,7 @@
           </div>
         </div>
       </div>
-      <!-- Feature 2: Create -->
+
       <div class="col-md-4">
         <div class="card h-100 border-0 shadow-sm">
           <div class="card-body text-center">
@@ -44,7 +42,7 @@
           </div>
         </div>
       </div>
-      <!-- Feature 3: Connect -->
+
       <div class="col-md-4">
         <div class="card h-100 border-0 shadow-sm">
           <div class="card-body text-center">
@@ -61,7 +59,7 @@
   </div>
 </section>
 
-<!-- CTA SECTION -->
+
 <section class="bg-primary text-white py-5">
   <div class="container text-center">
     <h2>Ready?</h2>
