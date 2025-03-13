@@ -383,7 +383,7 @@ Cut the yarn and fasten off."
 "https://res.cloudinary.com/ducax2ucs/image/upload/v1741631793/Eloisa-Vest-06a-Craftrebella_small2_xi3poz.jpg",
 "https://res.cloudinary.com/ducax2ucs/image/upload/v1741631792/story_1698165303805_edit_699012711724586_small2_pbnzdo.jpg",
 "https://res.cloudinary.com/ducax2ucs/image/upload/v1741631791/IMG_4294_small2_hsgiow.jpg",
-"https://res.cloudinary.com/ducax2ucs/image/upload/v1741631791/2_small2_dmjyfp.png",
+"https://res.cloudinary.com/ducax2ucs/image/upload/v1741890859/IMG_1882-1024x1024-1_vlqu8g.webp",
 "https://res.cloudinary.com/ducax2ucs/image/upload/v1741631790/IMG_9379_small2_vtvgpv.jpg"
     ]
 
