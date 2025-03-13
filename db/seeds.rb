@@ -140,22 +140,6 @@ notifications = [
 ]
 
 
-  post_titles = [
-      "Simple Knitted Coaster",
-      "Crochet Flower Shawl",
-      "Crocheted Bunny for Baby",
-      "Summer Crochet Shawl",
-      "Beginner Crochet Coasters",
-      "Cable Knit Blanket",
-      "Boho Crochet Wall Hanging",
-      "Knit Sweater for Layering",
-      "Simple Crochet Square",
-      "Stylish Knit Beanie",
-      "Chunky Knit Throw",
-      "Boho Crochet Tote Bag",
-      "Cozy Knit Sweater",
-      "Sleek Knit Mittens"
-  ]
 
 bios = [
   "Crochet enthusiast creating cozy designs and exploring new patterns.",
@@ -173,22 +157,38 @@ bios = [
   "Specializing in custom crochet and knit projects that reflect my style.",
   "Exploring new stitches and techniques in both knitting and crochet."
 ]
+post_titles = [
+    "Simple Knitted Coaster",
+    "Crochet Flower Shawl",
+    "Crocheted Bunny for Baby",
+    "Summer Crochet Shawl",
+    "Beginner Crochet Coasters",
+    "Cable Knit Blanket",
+    "Boho Crochet Wall Hanging",
+    "Knit Sweater for Layering",
+    "Simple Crochet Square",
+    "Stylish Knit Beanie",
+    "Chunky Knit Throw",
+    "Boho Crochet Tote Bag",
+    "Cozy Knit Sweater",
+    "Sleek Knit Mittens"
+]
 
   post_contents = [
-      "Cozy up in this knit sweater! It's warm, stylish, and the perfect way to stay cozy on chilly days. So proud of how it turned out! 🧶✨",
-      "This knit beanie is so quick and cute! A perfect last-minute gift that’s both cozy and stylish. I’m loving how it turned out! 🎁🧣",
-      "Spring vibes all the way with this crochet shawl! Lightweight, breezy, and the perfect pop of color for warmer days. Can’t wait to wear it! 🌸☀️",
-      "This cable knit blanket is the ultimate comfort piece! Perfect for movie nights and lounging around. I’m so proud of how it looks! 🛋️📚",
-      "This boho-inspired crochet tote bag is everything! It’s spacious, stylish, and perfect for casual outings. So happy with how it came together! 🌿👜",
-      "This lacy knit scarf adds such an elegant touch to any outfit! It’s easy to wear and easy to make—so proud of how it turned out! 💕🧶",
-      "I’m in love with this chunky knit throw! It’s cozy, warm, and adds the perfect touch to any room. So happy with how it turned out! 🛋️✨",
-      "These knitted slippers are pure comfort! Warm and cozy—perfect for lounging around. I love how these turned out! 💖👣",
-      "These crochet coasters are the perfect touch for any table. Quick to make and such a fun little project. Can’t wait to show them off! ✨🍵",
-      "This crochet shawl is light and breezy, perfect for those summer evenings. I love how it layers over any outfit—can’t wait for the warmer weather! ☀️🌙",
-      "These knit fingerless gloves are sleek and stylish, and they keep me warm while still letting me use my hands. I’m so proud of how they came out! 🧤💫",
-      "This crochet wall hanging brings so much boho charm to my space! I’m so proud of how it turned out—it’s totally unique and functional! 🌸🧶",
-      "These baby booties are the cutest little project! I’m so proud of how they turned out, and they’re the perfect gift for any newborn. 💖👶",
-      "This knitted sweater is my new favorite layering piece! Comfortable, stylish, and cozy—so proud of how it turned out! 🧶👗"
+    "This lacy knit scarf adds such an elegant touch to any outfit! It’s easy to wear and easy to make—so proud of how it turned out! 💕🧶",
+    "Spring vibes all the way with this crochet shawl! Lightweight, breezy, and the perfect pop of color for warmer days. Can’t wait to wear it! 🌸☀️",
+    "These baby booties are the cutest little project! I’m so proud of how they turned out, and they’re the perfect gift for any newborn. 💖👶",
+    "This crochet shawl is light and breezy, perfect for those summer evenings. I love how it layers over any outfit—can’t wait for the warmer weather! ☀️🌙",
+    "These crochet coasters are the perfect touch for any table. Quick to make and such a fun little project. Can’t wait to show them off! ✨🍵",
+    "This cable knit blanket is the ultimate comfort piece! Perfect for movie nights and lounging around. I’m so proud of how it looks! 🛋️📚",
+    "This crochet wall hanging brings so much boho charm to my space! I’m so proud of how it turned out—it’s totally unique and functional! 🌸🧶",
+    "This knitted sweater is my new favorite layering piece! Comfortable, stylish, and cozy—so proud of how it turned out! 🧶👗",
+    "These knitted slippers are pure comfort! Warm and cozy—perfect for lounging around. I love how these turned out! 💖👣",
+    "This knit beanie is so quick and cute! A perfect last-minute gift that’s both cozy and stylish. I’m loving how it turned out! 🎁🧣",
+    "I’m in love with this chunky knit throw! It’s cozy, warm, and adds the perfect touch to any room. So happy with how it turned out! 🛋️✨",
+    "This boho-inspired crochet tote bag is everything! It’s spacious, stylish, and perfect for casual outings. So happy with how it came together! 🌿👜",
+    "Cozy up in this knit sweater! It's warm, stylish, and the perfect way to stay cozy on chilly days. So proud of how it turned out! 🧶✨",
+    "These knit fingerless gloves are sleek and stylish, and they keep me warm while still letting me use my hands. I’m so proud of how they came out! 🧤💫"
 
   ]
 
