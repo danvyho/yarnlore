@@ -10,12 +10,20 @@
     <div class="ms-auto d-flex align-items-center">
       <% if user_signed_in? %>
         <%= link_to notifications_path, class: "nav-link" do %>
-          <i class="fa-regular fa-bell fa-lg px-4" style="color: #ffffff"></i>
+          <% if controller_name == "notifications" && action_name == "index" %>
+            <i class="fa-regular fa-bell fa-lg px-4" style="color: #392F5A"></i>
+          <% else %>
+            <i class="fa-regular fa-bell fa-lg px-4" style="color: #ffffff"></i>
+          <% end %>
         <% end %>
         <%= link_to chats_path, class: "nav-link" do %>
-          <i class="fa-regular fa-comment fa-lg px-2" style="color: #ffffff"></i>
+          <% if controller_name == "chats" && action_name == "index" %>
+            <i class="fa-regular fa-comment fa-lg px-2" style="color: #392F5A"></i>
+          <% else %>
+            <i class="fa-regular fa-comment fa-lg px-2" style="color: #ffffff"></i>
+          <% end %>
         <% end %>
-        <% end %>
+      <% end %>
     </div>
   </div>
 </nav>
