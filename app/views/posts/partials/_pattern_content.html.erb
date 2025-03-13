@@ -1,11 +1,9 @@
 <div class="mb-4">
-  <!-- Instructions Section -->
   <h5 class="mb-2">Instructions</h5>
-  <p class="fs-6 text-dark">
-    <%= post.content %>
-  </p>
+<p class="fs-6 text-dark overflow-auto" style="max-height: 200px;">
+  <%= post.content %>
+</p>
 
-  <!-- Details Section -->
   <h5 class="mt-4 mb-2">Details</h5>
   <ul class="list-unstyled fs-6 text-dark">
     <% if post.craft.present? %>
