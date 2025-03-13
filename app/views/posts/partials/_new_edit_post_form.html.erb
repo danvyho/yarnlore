@@ -9,7 +9,7 @@
         <%= f.input :type,
           as: :radio_buttons,
           collection: [['Post', 'post'], ['Pattern', 'pattern']],
-          input_html: { class: 'form-check-input',
+          input_html: { class: 'text-reset',
                         data: { action: "click->toggle-pattern-fields#toggle",
                                 toggle_pattern_fields_target: "radio" } },
           wrapper_html: { class: '' }
