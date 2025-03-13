@@ -1,4 +1,4 @@
-<div class="d-flex align-items-center justify-content-between">
+<div class="d-flex align-items-center justify-content-between position-relative">
   <div>
     <%= link_to user_path(post.user) do %>
       <% if post.user.avatar.attached? %>
@@ -7,6 +7,39 @@
         <%= image_tag 'blank-profile.jpeg', class: "rounded-circle mb-3 me-2", style: "width: 45px; height: 45px; object-fit: cover;" %>
       <% end %>
     <% end %>
+  </div>
+
+    <div class="d-flex justify-content-between align-items-center position-absolute" style="font-size: 0.9rem; bottom: 0px; right: 37px;">
+    <div id="favorite-<%= post.id %>">
+    <% if post.favorites.where(user: current_user).exists? %>
+      <%= link_to '', toggle_favorites_path(post_id: post.id),
+            data: { turbo_method: 'post', turbo_confirm: 'Are you sure?' },
+            class: 'fas fa-bookmark mx-2 text-decoration-none',
+            style: 'font-size: 1.2rem;' %>
+    <% else %>
+      <%= link_to '', toggle_favorites_path(post_id: post.id),
+            data: { turbo_method: 'post' },
+            class: 'far fa-bookmark mx-2 text-decoration-none',
+            style: 'font-size: 1.2rem;' %>
+    <% end %>
+    </div>
+  </div>
+
+
+  <div class="d-flex justify-content-between align-items-center position-absolute" style="font-size: 0.9rem; bottom: 0px; right: 0px;">
+    <div id="post-<%= post.id %>-likes">
+    <% if post.post_likes.where(user: current_user).exists? %>
+      <%= link_to '', toggle_post_post_likes_path(post),
+            data: { turbo_method: 'post' },
+            class: 'fas fa-heart text-decoration-none px-2',
+            style: 'font-size: 1.25rem; cursor: pointer;' %>
+    <% else %>
+      <%= link_to '', toggle_post_post_likes_path(post),
+            data: { turbo_method: 'post' },
+            class: 'far fa-heart text-decoration-none px-2',
+            style: 'font-size: 1.25rem; cursor: pointer;' %>
+    <% end %>
+  </div>
   </div>
 
   <div>
