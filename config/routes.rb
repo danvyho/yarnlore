@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   delete "/chats/:id", to: "chats#delete_chat", as: "delete_chat"
 
 
-  root "posts#index"
+  root "users#landing"
 
   resources :posts do
     resources :comments, only: %i[create update destroy]
