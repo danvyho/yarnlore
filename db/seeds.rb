@@ -51,17 +51,22 @@ upload_images = [
 ]
 
 avatar_images = [
-  "https://res.cloudinary.com/ducax2ucs/image/upload/v1741615237/woman_xn7owh.png",
-  "https://res.cloudinary.com/ducax2ucs/image/upload/v1741615236/boy_xhwf6m.png",
-  "https://res.cloudinary.com/ducax2ucs/image/upload/v1741615237/man_ia2qlg.png",
-  "https://res.cloudinary.com/ducax2ucs/image/upload/v1741615236/man_1_fhxhdb.png",
-  "https://res.cloudinary.com/ducax2ucs/image/upload/v1741615236/man_2_zvdqyw.png",
-  "https://res.cloudinary.com/ducax2ucs/image/upload/v1741615630/woman_2_jtn0xn.png",
-  "https://res.cloudinary.com/ducax2ucs/image/upload/v1741615630/avatar_uuvbnh.png",
-  "https://res.cloudinary.com/ducax2ucs/image/upload/v1741615629/teacher_u8b5df.png",
-  "https://res.cloudinary.com/ducax2ucs/image/upload/v1741879271/wild-boar_ad3yql.png",
-  "https://res.cloudinary.com/ducax2ucs/image/upload/v1741879271/girl_fl4p1n.png",
-  "https://res.cloudinary.com/ducax2ucs/image/upload/v1741879271/woman_3_hhz3tv.png",
+    "https://res.cloudinary.com/ducax2ucs/image/upload/v1741615237/woman_xn7owh.png",
+    "https://res.cloudinary.com/ducax2ucs/image/upload/v1741615236/boy_xhwf6m.png",
+    "https://res.cloudinary.com/ducax2ucs/image/upload/v1741615237/man_ia2qlg.png",
+    "https://res.cloudinary.com/ducax2ucs/image/upload/v1741615236/man_1_fhxhdb.png",
+    "https://res.cloudinary.com/ducax2ucs/image/upload/v1741615236/man_2_zvdqyw.png",
+    "https://res.cloudinary.com/ducax2ucs/image/upload/v1741615630/avatar_uuvbnh.png",
+    "https://res.cloudinary.com/ducax2ucs/image/upload/v1741615629/teacher_u8b5df.png",
+    "https://res.cloudinary.com/ducax2ucs/image/upload/v1741879271/wild-boar_ad3yql.png",
+    "https://res.cloudinary.com/ducax2ucs/image/upload/v1741879271/girl_fl4p1n.png",
+    "https://res.cloudinary.com/ducax2ucs/image/upload/v1741879271/woman_3_hhz3tv.png",
+    "https://res.cloudinary.com/ducax2ucs/image/upload/v1741879271/gamer_acd6rw.png",
+    "https://res.cloudinary.com/ducax2ucs/image/upload/v1741615630/cat_yapnbh.png",
+    "https://res.cloudinary.com/ducax2ucs/image/upload/v1741615235/chicken_qe1kib.png",
+    "https://res.cloudinary.com/ducax2ucs/image/upload/v1741615235/woman_1_rxlwra.png",
+    "https://res.cloudinary.com/ducax2ucs/image/upload/v1741615629/empathy_kehgo9.png",
+    "https://res.cloudinary.com/ducax2ucs/image/upload/v1741615235/human_j7dhn5.png"
 ]
 
 
@@ -118,21 +123,22 @@ usernames = [
   ]
 
 notifications = [
-  "Alex liked your post. 👍",
-  "Emma just gave your post a thumbs up!",
-  "You’ve got a new like! Chris enjoyed your post.",
-  "Wow! Taylor liked your post. Keep sharing great content!",
-  "Your post caught Jordan’s eye – they liked it!",
-  "A new fan of your post! Sam just hit like.",
-  "Nice! Riley liked what you shared.",
-  "Liam thinks your post is awesome! They gave it a like.",
-  "Your post is getting attention! Avery just liked it.",
-  "Another like for you! Casey appreciates your post.",
-  "Morgan liked your post. Looks like it’s a hit!",
-  "Dylan enjoyed your content – they just liked your post!",
-  "Your post got some love! Jamie hit the like button.",
-  "Keep it up! Cameron liked your post.",
+  "KnitterQueen liked your post. 👍",
+  "YarnMaster just gave your post a thumbs up!",
+  "You’ve got a new like! CrochetGuru enjoyed your post.",
+  "Wow! WoolWhiz liked your post. Keep sharing great content!",
+  "Your post caught ThreadTrekker’s eye – they liked it!",
+  "A new fan of your post! FiberFanatic just hit like.",
+  "Nice! HookedOnYarn liked what you shared.",
+  "StitchSavant thinks your post is awesome! They gave it a like.",
+  "Your post is getting attention! KnitAndPurl just liked it.",
+  "Another like for you! WoolWanderer appreciates your post.",
+  "CraftyThreads liked your post. Looks like it’s a hit!",
+  "YarnVoyager enjoyed your content – they just liked your post!",
+  "Your post got some love! TwistAndKnit hit the like button.",
+  "Keep it up! LoopedIn liked your post."
 ]
+
 
   post_titles = [
       "Simple Knitted Coaster",
@@ -395,21 +401,20 @@ User.create(
   username: 'jasper'
 )
 
-  users = usernames.shuffle.take(14).map do |username|
-    user = User.create!(
-      email: Faker::Internet.unique.email,
-      password: "password",
-      username: username,
-      bio: bios.sample
-    )
+users = usernames.shuffle.take(14).map do |username|
+  user = User.create!(
+    email: Faker::Internet.unique.email,
+    password: "password",
+    username: username,
+    bio: bios.sample
+  )
 
-      avatar_url = avatar_images.sample
-      file = URI.open(avatar_url)
-      user.avatar.attach(io: file, filename: "avatar_#{user.id}.jpg", content_type: "image/jpeg")
+  avatar_url = avatar_images.shuffle.take(1).first
+  file = URI.open(avatar_url)
+  user.avatar.attach(io: file, filename: "avatar_#{user.id}.jpg", content_type: "image/jpeg")
 
-    user
-  end
-
+  user
+end
   for i in 0..13
     user = users.sample
 
