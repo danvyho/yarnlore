@@ -1,0 +1,14 @@
+.form-check-input {
+  color: $gray !important;
+  border-color: $gray !important;
+}
+
+.form-check-label {
+  color: $gray !important;
+}
+
+.form-check-input:checked {
+  background-color: $primary !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
