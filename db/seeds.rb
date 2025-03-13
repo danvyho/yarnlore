@@ -51,17 +51,22 @@ upload_images = [
 ]
 
 avatar_images = [
-  "https://res.cloudinary.com/ducax2ucs/image/upload/v1741615237/woman_xn7owh.png",
-  "https://res.cloudinary.com/ducax2ucs/image/upload/v1741615236/boy_xhwf6m.png",
-  "https://res.cloudinary.com/ducax2ucs/image/upload/v1741615237/man_ia2qlg.png",
-  "https://res.cloudinary.com/ducax2ucs/image/upload/v1741615236/man_1_fhxhdb.png",
-  "https://res.cloudinary.com/ducax2ucs/image/upload/v1741615236/man_2_zvdqyw.png",
-  "https://res.cloudinary.com/ducax2ucs/image/upload/v1741615630/woman_2_jtn0xn.png",
-  "https://res.cloudinary.com/ducax2ucs/image/upload/v1741615630/avatar_uuvbnh.png",
-  "https://res.cloudinary.com/ducax2ucs/image/upload/v1741615629/teacher_u8b5df.png",
-  "https://res.cloudinary.com/ducax2ucs/image/upload/v1741879271/wild-boar_ad3yql.png",
-  "https://res.cloudinary.com/ducax2ucs/image/upload/v1741879271/girl_fl4p1n.png",
-  "https://res.cloudinary.com/ducax2ucs/image/upload/v1741879271/woman_3_hhz3tv.png",
+    "https://res.cloudinary.com/ducax2ucs/image/upload/v1741615237/woman_xn7owh.png",
+    "https://res.cloudinary.com/ducax2ucs/image/upload/v1741615236/boy_xhwf6m.png",
+    "https://res.cloudinary.com/ducax2ucs/image/upload/v1741615237/man_ia2qlg.png",
+    "https://res.cloudinary.com/ducax2ucs/image/upload/v1741615236/man_1_fhxhdb.png",
+    "https://res.cloudinary.com/ducax2ucs/image/upload/v1741615236/man_2_zvdqyw.png",
+    "https://res.cloudinary.com/ducax2ucs/image/upload/v1741615630/avatar_uuvbnh.png",
+    "https://res.cloudinary.com/ducax2ucs/image/upload/v1741615629/teacher_u8b5df.png",
+    "https://res.cloudinary.com/ducax2ucs/image/upload/v1741879271/wild-boar_ad3yql.png",
+    "https://res.cloudinary.com/ducax2ucs/image/upload/v1741879271/girl_fl4p1n.png",
+    "https://res.cloudinary.com/ducax2ucs/image/upload/v1741879271/woman_3_hhz3tv.png",
+    "https://res.cloudinary.com/ducax2ucs/image/upload/v1741879271/gamer_acd6rw.png",
+    "https://res.cloudinary.com/ducax2ucs/image/upload/v1741615630/cat_yapnbh.png",
+    "https://res.cloudinary.com/ducax2ucs/image/upload/v1741615235/chicken_qe1kib.png",
+    "https://res.cloudinary.com/ducax2ucs/image/upload/v1741615235/woman_1_rxlwra.png",
+    "https://res.cloudinary.com/ducax2ucs/image/upload/v1741615629/empathy_kehgo9.png",
+    "https://res.cloudinary.com/ducax2ucs/image/upload/v1741615235/human_j7dhn5.png"
 ]
 
 
@@ -118,21 +123,22 @@ usernames = [
   ]
 
 notifications = [
-  "Alex liked your post. 👍",
-  "Emma just gave your post a thumbs up!",
-  "You’ve got a new like! Chris enjoyed your post.",
-  "Wow! Taylor liked your post. Keep sharing great content!",
-  "Your post caught Jordan’s eye – they liked it!",
-  "A new fan of your post! Sam just hit like.",
-  "Nice! Riley liked what you shared.",
-  "Liam thinks your post is awesome! They gave it a like.",
-  "Your post is getting attention! Avery just liked it.",
-  "Another like for you! Casey appreciates your post.",
-  "Morgan liked your post. Looks like it’s a hit!",
-  "Dylan enjoyed your content – they just liked your post!",
-  "Your post got some love! Jamie hit the like button.",
-  "Keep it up! Cameron liked your post.",
+  "KnitterQueen liked your post. 👍",
+  "YarnMaster just gave your post a thumbs up!",
+  "You’ve got a new like! CrochetGuru enjoyed your post.",
+  "Wow! WoolWhiz liked your post. Keep sharing great content!",
+  "Your post caught ThreadTrekker’s eye – they liked it!",
+  "A new fan of your post! FiberFanatic just hit like.",
+  "Nice! HookedOnYarn liked what you shared.",
+  "StitchSavant thinks your post is awesome! They gave it a like.",
+  "Your post is getting attention! KnitAndPurl just liked it.",
+  "Another like for you! WoolWanderer appreciates your post.",
+  "CraftyThreads liked your post. Looks like it’s a hit!",
+  "YarnVoyager enjoyed your content – they just liked your post!",
+  "Your post got some love! TwistAndKnit hit the like button.",
+  "Keep it up! LoopedIn liked your post."
 ]
+
 
   post_titles = [
       "Simple Knitted Coaster",
@@ -243,7 +249,11 @@ Finish:
 - Break the yarn.
 - Place all sts on a spare cable or stitch holder.",
 
-"*Ribbing: With B and smaller needles, cast on 13 sts. Work in garter st (knit every row) until Ribbing, when slightly stretched measures 22 (24-26- 29-32-34)[56 (61-66-73.5-81.5- 86.5) cm], noting 1st row is WS and ending on a WS row. Cast off knitwise. Do not break B. Turn work sideways. With RS facing , smaller needles and B, pick up and knit 122 (132- 144-160-176-188) sts evenly across long edge of ribbing. Next row: (WS). Knit. Change to larger needles and proceed as follows: 1st row: (RS). With B, K1. *Sl1Pwyib. K1. Rep from * to last st. K1. 2nd row: K1. *Sl1Pwyif K1. Rep from * to last st. K1. 3rd row: (RS). With MC, K1. *K1. Sl1Pwyib. Rep from *39 (43-47- 52-57-61) times more. With A, rep from * to last st. K1. 4th row: With A, K1. *K1. Sl1Pwyif. Rep from * 19 (20-22-25-28-30) times more. With MC, rep from * to last st. K1. Rep 1st to 4th rows for Tweed Pat until work from pick up row measures approx 7 [18 cm], ending on a 4th row. Proceed as follows: 1st row: (RS). With MC, K1. *Sl1Pwyib. K1. Rep from * 39 (43- 47-52-57-61) times more. With A, rep from * to last st. K1. 2nd row: With A, K1. *Sl1Pwyif. K1. Rep from * 19 (20-22-25-28-30) times more. With MC, rep from * to last st. K1. 3rd row: (RS). With A, K1. *K1. Sl1Pwyib. Rep from * to last st. K1. 4th row: K1. *K1. Sl1Pwyif. Rep from * to last st. K1.** Rep 1st to 4th rows for Tweed Pat until work from beg measures 19 (20-20-22-22-23) Cast off..",
+"Ribbing: With B and smaller needles, cast on 13 sts. Work in garter st (knit every row) until Ribbing, when slightly stretched measures 22 (24-26- 29-32-34)[56 (61-66-73.5-81.5- 86.5) cm], noting 1st row is WS and ending on a WS row. Cast off knitwise.
+
+Do not break B. Turn work sideways. With RS facing , smaller needles and B, pick up and knit 122 (132- 144-160-176-188) sts evenly across long edge of ribbing. Next row: (WS). Knit.
+
+Change to larger needles and proceed as follows: 1st row: (RS). With B, K1. *Sl1Pwyib. K1. Rep from * to last st. K1. 2nd row: K1. *Sl1Pwyif K1. Rep from * to last st. K1. 3rd row: (RS). With MC, K1. *K1. Sl1Pwyib. Rep from *39 (43-47- 52-57-61) times more. With A, rep from * to last st. K1. 4th row: With A, K1. *K1. Sl1Pwyif. Rep from * 19 (20-22-25-28-30) times more. With MC, rep from * to last st. K1. Rep 1st to 4th rows for Tweed Pat until work from pick up row measures approx 7 [18 cm], ending on a 4th row. Proceed as follows: 1st row: (RS). With MC, K1. *Sl1Pwyib. K1. Rep from * 39 (43- 47-52-57-61) times more. With A, rep from * to last st. K1. 2nd row: With A, K1. *Sl1Pwyif. K1. Rep from * 19 (20-22-25-28-30) times more. With MC, rep from * to last st. K1. 3rd row: (RS). With A, K1. *K1. Sl1Pwyib. Rep from * to last st. K1. 4th row: K1. *K1. Sl1Pwyif. Rep from * to last st. K1.** Rep 1st to 4th rows for Tweed Pat until work from beg measures 19 (20-20-22-22-23) Cast off..",
 
 "Cast on 64 (68, 72, 80) (84, 88, 88) stitches on 4.5mm 40cm circular needles using the longtail cast on. If you don’t use this cast on, make sure you are casting on loosely enough to get the collar over your head, and check you can once you have knitted a few centimetres. Join in the round and place a BOR marker to indicate the beginning of the round. Select one of the following neckline options. Option One: Funnel Neck Collar Work in rib (*k1 p1*, repeat *-* to end of round) until the collar measures 8cm from the cast on edge. Option Two: Folded Collar Work in rib (*k1 p1*, repeat *-* to end of round) until the collar measures 4cm from the cast on edge. P one round. Work in rib (*k1 p1*, repeat *-* to end of round) until the collar measures 8cm from the cast on edge. Now knit the live stitches together with the cast on edge. It may be helpful to check the video for help with this step. Yoke Switch to 5.5mm 40cm needles and knit one round while placing stitch markers as follows: k 11 (13, 15, 17) (18, 19, 19), place marker, k2, place marker, k 6 (4, 2, 2) (2, 2, 2), place marker, k2, place marker, k 22 (26, 30, 34) (36, 38, 38), place marker, k2, place marker, k 6 (4, 2, 2) (2, 2, 2), place marker, k2, place marker, k 11 (13, 15, 17) (18, 19, 19) to end of round. Choose whether or not to include the German short row neck shaping. For a total beginner, you may wish to exclude it. For an adventurous beginner or more experienced knitter, it may improve the fit around the neck. If you do choose to include the German short rows, when the pattern says to turn, make sure to follow the specific turning instructions in the German short row note earlier in the pattern.",
 
@@ -383,37 +393,39 @@ Cut the yarn and fasten off."
 "https://res.cloudinary.com/ducax2ucs/image/upload/v1741631793/Eloisa-Vest-06a-Craftrebella_small2_xi3poz.jpg",
 "https://res.cloudinary.com/ducax2ucs/image/upload/v1741631792/story_1698165303805_edit_699012711724586_small2_pbnzdo.jpg",
 "https://res.cloudinary.com/ducax2ucs/image/upload/v1741631791/IMG_4294_small2_hsgiow.jpg",
-"https://res.cloudinary.com/ducax2ucs/image/upload/v1741631791/2_small2_dmjyfp.png",
+"https://res.cloudinary.com/ducax2ucs/image/upload/v1741890859/IMG_1882-1024x1024-1_vlqu8g.webp",
 "https://res.cloudinary.com/ducax2ucs/image/upload/v1741631790/IMG_9379_small2_vtvgpv.jpg"
     ]
-
-
 
 User.create(
   email: 'a@a.a',
   password: "123456",
-  username: 'jasper'
+  username: 'Jasper'
 )
 
-  users = usernames.shuffle.take(14).map do |username|
-    user = User.create!(
-      email: Faker::Internet.unique.email,
-      password: "password",
-      username: username,
-      bio: bios.sample
-    )
+User.create(
+  email: 'b@b.b',
+  password: "password",
+  username: 'Pierre-Paul'
+)
 
-      avatar_url = avatar_images.sample
-      file = URI.open(avatar_url)
-      user.avatar.attach(io: file, filename: "avatar_#{user.id}.jpg", content_type: "image/jpeg")
 
-    user
-  end
+users = usernames.shuffle.take(14).map do |username|
+  user = User.create!(
+    email: Faker::Internet.unique.email,
+    password: "password",
+    username: username,
+    bio: bios.sample
+  )
 
+  avatar_url = avatar_images.shuffle.take(1).first
+  file = URI.open(avatar_url)
+  user.avatar.attach(io: file, filename: "avatar_#{user.id}.jpg", content_type: "image/jpeg")
+
+  user
+end
   for i in 0..13
     user = users.sample
-
-
 
     post = Post.new(
       title: post_titles[i],
@@ -421,7 +433,6 @@ User.create(
       user: user,
       pattern: false
     )
-
 
     file = URI.parse(upload_images[i % upload_images.length]).open
     post.image.attach(io: file, filename: "post_image_#{i}.jpg", content_type: "image/jpeg")
@@ -435,7 +446,17 @@ User.create(
         post: post
       )
     end
+
+    CommentLike.create!(
+      user: User.last,
+      comment: post.comments.first
+    )
+    CommentLike.create!(
+      user: User.third,
+      comment: post.comments.first
+    )
   end
+
   for i in 0..10
     user = users.sample
     pattern = Post.new(
@@ -454,6 +475,7 @@ User.create(
     pattern.image.attach(io: file, filename: "pattern_image_#{i}.jpg", content_type: "image/jpeg")
     pattern.save!
   end
+
   User.all.each do |user|
     sender = user
     recipient = users.reject { |u| u == sender }.sample
