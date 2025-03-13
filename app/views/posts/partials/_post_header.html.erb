@@ -48,48 +48,7 @@
     </h4>
     <h5 class="font-bold text-start" style="font-size: 1.1rem;">
       <%= link_to post.user.username, user_path(post.user), class: 'text-decoration-none' %>
-      <% difficulty = ["Easy", "Medium", "Hard"] %>
-      <% level =- difficulty.sample %>
-      <%# <% difficulty = "Easy"  %>
-      <% if post.pattern == true %>
-        <% if level == "Easy" %>
-          <% if post.user.username.size == 8 %>
-            <span style="margin-left: 94px;">Difficulty: <%= level  %></span>
-          <% elsif post.user.username.size == 10 %>
-            <span style="margin-left: 88px;">Difficulty: <%= level  %></span>
-          <% elsif post.user.username.size == 11 %>
-            <span style="margin-left: 78px;">Difficulty: <%= level  %></span>
-          <% elsif post.user.username.size == 12 %>
-            <span style="margin-left: 72px;">Difficulty: <%= level  %></span>
-          <% elsif post.user.username.size == 13 %>
-            <span style="margin-left: 65px;">Difficulty: <%= level  %></span>
-          <% end %>
-        <% elsif level == "Medium" %>
-          <% if post.user.username.size == 8 %>
-            <span style="margin-left: 65px;">Difficulty: <%= level  %></span>
-          <% elsif post.user.username.size == 10 %>
-            <span style="margin-left: 58px;">Difficulty: <%= level  %></span>
-          <% elsif post.user.username.size == 11 %>
-            <span style="margin-left: 48px;">Difficulty: <%= level  %></span>
-          <% elsif post.user.username.size == 12 %>
-            <span style="margin-left: 41px;">Difficulty: <%= level  %></span>
-          <% elsif post.user.username.size == 13 %>
-            <span style="margin-left: 37px;">Difficulty: <%= level  %></span>
-          <% end %>
-        <% elsif level == "Hard" %>
-          <% if post.user.username.size == 8 %>
-            <span style="margin-left: 91px;">Difficulty: <%= level  %></span>
-          <% elsif post.user.username.size == 10 %>
-            <span style="margin-left: 87px;">Difficulty: <%= level  %></span>
-          <% elsif post.user.username.size == 11 %>
-            <span style="margin-left: 75px;">Difficulty: <%= level  %></span>
-          <% elsif post.user.username.size == 12 %>
-            <span style="margin-left: 69px;">Difficulty: <%= level  %></span>
-          <% elsif post.user.username.size == 13 %>
-            <span style="margin-left: 62px;">Difficulty: <%= level  %></span>
-          <% end %>
-        <% end %>
-      <% end %>
+
 
 
     </h5>
