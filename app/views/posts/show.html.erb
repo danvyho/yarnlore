@@ -4,7 +4,7 @@
   <% if @post.pattern == false %>
     <%= render "posts/partials/show_post_card" %>
   <% else %>
-    <%= render "posts/partials/pattern_card", post: @post%>
+    <%= render "posts/partials/show_pattern_card", post: @post%>
   <% end %>
   <%= turbo_frame_tag "comments" do %>
     <%= render partial: "shared/comments", locals: { comments: @post.comments, post: @post } %>
