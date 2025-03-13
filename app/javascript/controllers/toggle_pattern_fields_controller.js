@@ -21,8 +21,14 @@ export default class extends Controller {
         input.value = ''
       }
       );
+      this.patternFieldsTarget.classList.add('visually-hidden');
     }
-    this.patternFieldsTarget.classList.toggle('visually-hidden');
-    this.patternFieldsTarget.querySelector('button').click()
+    if (event.target.value == "pattern") {
+      this.patternFieldsTarget.classList.remove('visually-hidden');
+      const accordionButton = this.patternFieldsTarget.querySelector('button')
+      if (accordionButton.classList.contains('collapsed')) {
+        accordionButton.click()
+      }
+    }
   }
 }
