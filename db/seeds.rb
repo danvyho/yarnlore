@@ -89,20 +89,20 @@ usernames = [
 ]
 
   comment = [
-    "Beautiful and easy-to-follow pattern! The instructions were clear, and my project turned out great.",
-    "Loved this pattern! Perfect for beginners and works up quickly.",
-    "A bit challenging at first, but the end result was worth it. Highly recommend for intermediate crafters!",
-    "The stitch count was off in some places, but overall a nice design.",
-    "Such a fun and creative pattern! I’ve already made two and plan to make more.",
-    "Well-written and detailed instructions made this project a breeze!",
-    "A stunning design, but I wish there were more step-by-step pictures.",
-    "Absolutely gorgeous! I get so many compliments on my finished piece.",
-    "This pattern is a must-have! Simple, elegant, and works up beautifully.",
-    "I struggled with one section, but the designer was super helpful in clarifying.",
-    "Perfect for gifting! The finished item looks so professional.",
-    "I modified the sizing a bit, but otherwise, the pattern was flawless.",
-    "Great for using up scrap yarn! Will definitely be making this again.",
-    "This has become my go-to pattern! Easy to memorize and very satisfying to complete."
+      "Your project turned out beautifully! Such a stunning piece!",
+      "This looks absolutely amazing! You should be so proud!",
+      "Wow, this is gorgeous! Love how it came together!",
+      "Such a beautiful creation! The details are stunning!",
+      "This is so impressive! You did an incredible job!",
+      "Your work is amazing! It looks so polished and professional!",
+      "Absolutely stunning! The colors and texture are perfect!",
+      "This turned out beautifully! You should definitely show it off!",
+      "What a fantastic piece! It looks so elegant and well-made!",
+      "You totally nailed this! It looks like a masterpiece!",
+      "Such a unique and eye-catching project! You have serious talent!",
+      "This looks incredible! Love the creativity and detail!",
+      "Your project is a total showstopper! Amazing work!",
+      "I’m in awe—this turned out so beautifully! Great job!"
   ]
 
   messages = [
@@ -175,21 +175,20 @@ post_titles = [
 ]
 
   post_contents = [
-    "This lacy knit scarf adds such an elegant touch to any outfit! It’s easy to wear and easy to make—so proud of how it turned out! 💕🧶",
-    "Spring vibes all the way with this crochet shawl! Lightweight, breezy, and the perfect pop of color for warmer days. Can’t wait to wear it! 🌸☀️",
-    "These baby booties are the cutest little project! I’m so proud of how they turned out, and they’re the perfect gift for any newborn. 💖👶",
-    "This crochet shawl is light and breezy, perfect for those summer evenings. I love how it layers over any outfit—can’t wait for the warmer weather! ☀️🌙",
-    "These crochet coasters are the perfect touch for any table. Quick to make and such a fun little project. Can’t wait to show them off! ✨🍵",
-    "This cable knit blanket is the ultimate comfort piece! Perfect for movie nights and lounging around. I’m so proud of how it looks! 🛋️📚",
-    "This crochet wall hanging brings so much boho charm to my space! I’m so proud of how it turned out—it’s totally unique and functional! 🌸🧶",
-    "This knitted sweater is my new favorite layering piece! Comfortable, stylish, and cozy—so proud of how it turned out! 🧶👗",
-    "These knitted slippers are pure comfort! Warm and cozy—perfect for lounging around. I love how these turned out! 💖👣",
-    "This knit beanie is so quick and cute! A perfect last-minute gift that’s both cozy and stylish. I’m loving how it turned out! 🎁🧣",
-    "I’m in love with this chunky knit throw! It’s cozy, warm, and adds the perfect touch to any room. So happy with how it turned out! 🛋️✨",
-    "This boho-inspired crochet tote bag is everything! It’s spacious, stylish, and perfect for casual outings. So happy with how it came together! 🌿👜",
-    "Cozy up in this knit sweater! It's warm, stylish, and the perfect way to stay cozy on chilly days. So proud of how it turned out! 🧶✨",
-    "These knit fingerless gloves are sleek and stylish, and they keep me warm while still letting me use my hands. I’m so proud of how they came out! 🧤💫"
-
+      "A simple knitted coaster for your morning coffee.",
+      "Wrap yourself in elegance with this crochet flower shawl. 🌸",
+      "The sweetest crocheted bunny—perfect for little hands! 🐰",
+      "Stay breezy with this lightweight summer crochet shawl.",
+      "Perfect for beginners—crochet coasters that are both cute & functional. ☕",
+      "Stay warm in style with this cozy cable knit blanket. ❄️",
+      "Add a boho touch to your home with this crochet wall hanging.",
+      "The ultimate layering piece—a knit sweater for all seasons. 🧥",
+      "A simple crochet square with endless creative possibilities.",
+      "Keep warm & stylish with this must-have knit beanie. ❄️",
+      "Chunky, cozy, and perfect for snuggling—meet your new favorite throw.",
+      "A boho crochet tote bag that’s both chic & practical. 👜",
+      "The coziest knit sweater for chilly days.",
+      "Sleek and warm, these knit mittens are winter essentials. 🧤"
   ]
 
 
