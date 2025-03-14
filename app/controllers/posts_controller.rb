@@ -10,8 +10,8 @@ class PostsController < ApplicationController
       @following_posts = current_user.followees.map(&:posts).flatten if current_user.followees.any?
     end
     @trending_posts = @all_posts.joins(:post_likes).group(:id).order('COUNT(post_likes.user_id) DESC')
-    @random_posts = @all_posts.shuffle.reject { |post| @trending_posts.include?(post) }
-    @posts = (@following_posts + @trending_posts + @random_posts).uniq { |post| post.id }
+    # @random_posts = @all_posts.shuffle.reject { |post| @trending_posts.include?(post) }
+    @posts = (@following_posts + @trending_posts).uniq { |post| post.id }
   end
 
   def show
