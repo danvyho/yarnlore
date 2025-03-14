@@ -18,7 +18,7 @@
                                                 <%#   <img class="img-fluid" src="" alt="user img"> %>
                                                 <%# </div> %>
                                                 <div class="flex-grow-1 ms-3">
-                                                    <h3><%= @chat.title %></h3>
+                                                    <h3><%= @chat.memberships.map(&:user).reject{|u| u.id == current_user.id}.first.username%></h3>
                                                     <p></p>
                                                 </div>
                                             </div>
