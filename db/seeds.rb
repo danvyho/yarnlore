@@ -213,7 +213,7 @@ post_titles = [
 "- Cast on 100 (112) sts using the Long-tail Cast on method
  - Place locking stitch markers 30 (35) sts from each edge.
  - (*Note: These markers show where you’ll pick up stitches
- for the front panels. Place them on the fabric, not on the needle.)
+  for the front panels. Place them on the fabric, not on the needle.)
 
 Back Panel:
 Follow the [Cable Chart] for the back panel.
@@ -387,15 +387,42 @@ Start with medium grey
 9. Sc 5 [in black: sc 4] {in white: sc 3} [in black: sc 4] in grey:sc 14(30)
 10. Sc 4 [in black: sc 4] {in white: sc 5} [in black: sc 4] in grey: sc 13(30)
 11. Sc 3 [in black: sc 4] {in white: sc 7} [in black: sc 4] in grey: sc 12(30)
-12. Dec, sc 1 [in black: sc 2, dec] {in white: sc 3, dec, sc 2} [in black: sc, dec, sc] in grey: sc 2, dec, sc 3, dec, sc3 (24)
+12. Dec, sc 1 [in black: sc 2, dec] {in white: sc 3, dec, sc 2} [in black: sc, dec, sc]
+in grey: sc 2, dec, sc 3, dec, sc3 (24)
 13. (Sc 2, dec)x6 (18)
 FO and leave tail for sewing
 Sew nose between round 8 and 9. Insert eyes between rounds 7 and 8.
 ",
 
-"Find the stitch right below the working stitch on the left needle, lift it’s right leg onto the left needle and knit it trough the right leg. Video LLI (left lifted increase) - find the stitch 2 rows below the just knitted stitch on the right needle, lift it’s left leg onto the left needle and knit trough the back loop. Video ssk (slip slip knit) - slip the next 2 stitches one at a time knitwise to the right needle (to change their direction), slide them back to the left needle and knit together through the back loop. Video k2tog (knit 2 together) - knit 2 stitches together through the front loop. p2tog (purl 2 together) - purl 2 stitches together. Neckline On size 4 (3.5 mm) 16″ (40 cm) circular needles with the main color CO 78/84/90/96 stitches. Join knitting in the round, place BOR marker and knit the following 1×1 ribbing until the neckline measures 1.5″ (3.5 cm): *k1 tbl, p1*, repeat between ** to the end of row.",
+"Find the stitch right below the working stitch on the left needle, lift it’s right leg
+onto the left needle and knit it trough the right leg. Video LLI (left lifted increase),
+find the stitch 2 rows below the just knitted stitch on the right
+needle, lift it’s left leg onto the left needle and knit trough the back loop. Video ssk
+(slip slip knit) - slip the next 2 stitches
+one at a time knitwise to the right needle (to change their direction), slide them back
+to the left needle and knit together through
+the back loop. Video k2tog (knit 2 together) - knit 2 stitches together through the front
+loop. p2tog (purl 2 together) - purl 2 stitches together.
+Neckline On size 4 (3.5 mm) 16″ (40 cm) circular needles with the main color CO 78/84/90/96
+stitches. Join knitting in the round, place BOR marker and knit the following 1×1 ribbing
+until the neckline measures 1.5″ (3.5 cm): *k1 tbl, p1*, repeat between ** to the end of row.",
 
-"Using circular needle, CO 81, (91, 101) sts. Row 1 (WS): Knit 5, sl1 wyif, *k4, sl1 wyif, repeat from * to last 6 st, sl1 wyif, k5. Row 2 (RS): Knit. Repeat these two rows for a total of 15 rows, ending with a WS row. (approx. 2”) Break yarn. Place stitches on stitch holder. Left Front: Using size 8 circular needle, CO 40, (45, 50) sts. Row 1 (WS): *K4, sl1 wyif, repeat from * to last 5, k5. Row 2 (RS): Knit. Repeat these two rows for a total of 15 rows, ending with a WS row. (approx. 2”) Break yarn. Place stitches on stitch holder. Right Front: Using size 8 circular needle, CO 40, (45, 50) sts. Row 1 (WS): Knit 5, sl1 wyif, *k4, sl1 wyif, repeat from * to last 4st, k4. Row 2 (RS): Knit. Repeat these two rows for a total of 15 rows, ending with a WS row. (approx. 2”). Do not break yarn. Joining: 0970000P May we suggest: 209 236 127 119 205 You are now going to join all 3 pieces into one onto the same circular needle. 1. (RS) Work across Right Front to the last stitch. Slip the last stitch purlwise onto the right hand needle. 2. Slip the last stitch on the righthand needle over to the lefthand needle and k2tog. (This joins the two pieces and reinforces the join at the same time.) Work across Back to the last stitch. Slip the last stitch purlwise onto the right hand needle. 3. Slip the last stitch on the righthand needle over to the lefthand needle and k2tog. Knit across Left Front stitches to the end. 159 (179, 199) sts",
+"Using circular needle, CO 81, (91, 101) sts. Row 1 (WS): Knit 5, sl1 wyif, *k4, sl1 wyif,
+repeat from * to last 6 st, sl1 wyif, k5. Row 2 (RS): Knit. Repeat these two rows for a total
+of 15 rows, ending with a WS row. (approx. 2”) Break yarn. Place stitches on stitch holder.
+Left Front: Using size 8 circular needle, CO 40, (45, 50) sts. Row 1 (WS): *K4, sl1 wyif, repeat
+from * to last 5, k5. Row 2 (RS): Knit. Repeat these two rows for a total of 15 rows, ending with
+a WS row. (approx. 2”) Break yarn. Place stitches on stitch holder. Right Front: Using size 8
+circular needle, CO 40, (45, 50) sts. Row 1 (WS): Knit 5, sl1 wyif, *k4, sl1 wyif, repeat
+from * to last 4st, k4. Row 2 (RS): Knit. Repeat these two rows for a total of 15 rows, ending
+with a WS row. (approx. 2”). Do not break yarn. Joining: 0970000P May we suggest: 209 236 127 119
+05 You are now going to join all 3 pieces into one onto the same circular needle. 1.
+(RS) Work across Right Front to the last stitch. Slip the last stitch purlwise onto the right
+hand needle. 2. Slip the last stitch on the righthand needle over to the lefthand needle and k2tog.
+This joins the two pieces and reinforces the join at the same time.) Work across Back to the last
+stitch. Slip the last stitch purlwise onto the right hand needle. 3. Slip the last stitch on the
+righthand needle over to the lefthand needle and k2tog. Knit across Left Front stitches to the end.
+159 (179, 199) sts",
 
 "Cast On:
  Cast on 3 sts.
