@@ -1,10 +1,10 @@
+<% provide(:navbar_title, "Post Your Work") %>
 <div class="container p-4">
-  <h2><%= header %></h2>
   <div class="row mt-4 mb-5">
     <div class="col-12">
       <%= simple_form_for post, html: { method: method }, data: { controller: "toggle-pattern-fields" } do |f| %>
-        <%= f.input :title, required: true %>
-        <%= f.input :content, required: true %>
+        <%= f.input :title, label: 'What did you make?', required: true %>
+        <%= f.input :content, label: 'Tell us about it', required: true %>
         <%= f.input :image, as: :file, required: true %>
         <%= f.input :type,
           as: :radio_buttons,

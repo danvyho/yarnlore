@@ -51,17 +51,22 @@ upload_images = [
 ]
 
 avatar_images = [
-  "https://res.cloudinary.com/ducax2ucs/image/upload/v1741615237/woman_xn7owh.png",
-  "https://res.cloudinary.com/ducax2ucs/image/upload/v1741615236/boy_xhwf6m.png",
-  "https://res.cloudinary.com/ducax2ucs/image/upload/v1741615237/man_ia2qlg.png",
-  "https://res.cloudinary.com/ducax2ucs/image/upload/v1741615236/man_1_fhxhdb.png",
-  "https://res.cloudinary.com/ducax2ucs/image/upload/v1741615236/man_2_zvdqyw.png",
-  "https://res.cloudinary.com/ducax2ucs/image/upload/v1741615630/woman_2_jtn0xn.png",
-  "https://res.cloudinary.com/ducax2ucs/image/upload/v1741615630/avatar_uuvbnh.png",
-  "https://res.cloudinary.com/ducax2ucs/image/upload/v1741615629/teacher_u8b5df.png",
-  "https://res.cloudinary.com/ducax2ucs/image/upload/v1741879271/wild-boar_ad3yql.png",
-  "https://res.cloudinary.com/ducax2ucs/image/upload/v1741879271/girl_fl4p1n.png",
-  "https://res.cloudinary.com/ducax2ucs/image/upload/v1741879271/woman_3_hhz3tv.png",
+    "https://res.cloudinary.com/ducax2ucs/image/upload/v1741615237/woman_xn7owh.png",
+    "https://res.cloudinary.com/ducax2ucs/image/upload/v1741615236/boy_xhwf6m.png",
+    "https://res.cloudinary.com/ducax2ucs/image/upload/v1741615237/man_ia2qlg.png",
+    "https://res.cloudinary.com/ducax2ucs/image/upload/v1741615236/man_1_fhxhdb.png",
+    "https://res.cloudinary.com/ducax2ucs/image/upload/v1741615236/man_2_zvdqyw.png",
+    "https://res.cloudinary.com/ducax2ucs/image/upload/v1741615630/avatar_uuvbnh.png",
+    "https://res.cloudinary.com/ducax2ucs/image/upload/v1741615629/teacher_u8b5df.png",
+    "https://res.cloudinary.com/ducax2ucs/image/upload/v1741879271/wild-boar_ad3yql.png",
+    "https://res.cloudinary.com/ducax2ucs/image/upload/v1741879271/girl_fl4p1n.png",
+    "https://res.cloudinary.com/ducax2ucs/image/upload/v1741879271/woman_3_hhz3tv.png",
+    "https://res.cloudinary.com/ducax2ucs/image/upload/v1741879271/gamer_acd6rw.png",
+    "https://res.cloudinary.com/ducax2ucs/image/upload/v1741615630/cat_yapnbh.png",
+    "https://res.cloudinary.com/ducax2ucs/image/upload/v1741615235/chicken_qe1kib.png",
+    "https://res.cloudinary.com/ducax2ucs/image/upload/v1741615235/woman_1_rxlwra.png",
+    "https://res.cloudinary.com/ducax2ucs/image/upload/v1741615629/empathy_kehgo9.png",
+    "https://res.cloudinary.com/ducax2ucs/image/upload/v1741615235/human_j7dhn5.png"
 ]
 
 
@@ -84,20 +89,20 @@ usernames = [
 ]
 
   comment = [
-    "Beautiful and easy-to-follow pattern! The instructions were clear, and my project turned out great.",
-    "Loved this pattern! Perfect for beginners and works up quickly.",
-    "A bit challenging at first, but the end result was worth it. Highly recommend for intermediate crafters!",
-    "The stitch count was off in some places, but overall a nice design.",
-    "Such a fun and creative pattern! I’ve already made two and plan to make more.",
-    "Well-written and detailed instructions made this project a breeze!",
-    "A stunning design, but I wish there were more step-by-step pictures.",
-    "Absolutely gorgeous! I get so many compliments on my finished piece.",
-    "This pattern is a must-have! Simple, elegant, and works up beautifully.",
-    "I struggled with one section, but the designer was super helpful in clarifying.",
-    "Perfect for gifting! The finished item looks so professional.",
-    "I modified the sizing a bit, but otherwise, the pattern was flawless.",
-    "Great for using up scrap yarn! Will definitely be making this again.",
-    "This has become my go-to pattern! Easy to memorize and very satisfying to complete."
+      "Your project turned out beautifully! Such a stunning piece!",
+      "This looks absolutely amazing! You should be so proud!",
+      "Wow, this is gorgeous! Love how it came together!",
+      "Such a beautiful creation! The details are stunning!",
+      "This is so impressive! You did an incredible job!",
+      "Your work is amazing! It looks so polished and professional!",
+      "Absolutely stunning! The colors and texture are perfect!",
+      "This turned out beautifully! You should definitely show it off!",
+      "What a fantastic piece! It looks so elegant and well-made!",
+      "You totally nailed this! It looks like a masterpiece!",
+      "Such a unique and eye-catching project! You have serious talent!",
+      "This looks incredible! Love the creativity and detail!",
+      "Your project is a total showstopper! Amazing work!",
+      "I’m in awe—this turned out so beautifully! Great job!"
   ]
 
   messages = [
@@ -118,38 +123,23 @@ usernames = [
   ]
 
 notifications = [
-  "Alex liked your post. 👍",
-  "Emma just gave your post a thumbs up!",
-  "You’ve got a new like! Chris enjoyed your post.",
-  "Wow! Taylor liked your post. Keep sharing great content!",
-  "Your post caught Jordan’s eye – they liked it!",
-  "A new fan of your post! Sam just hit like.",
-  "Nice! Riley liked what you shared.",
-  "Liam thinks your post is awesome! They gave it a like.",
-  "Your post is getting attention! Avery just liked it.",
-  "Another like for you! Casey appreciates your post.",
-  "Morgan liked your post. Looks like it’s a hit!",
-  "Dylan enjoyed your content – they just liked your post!",
-  "Your post got some love! Jamie hit the like button.",
-  "Keep it up! Cameron liked your post.",
+  "KnitterQueen liked your post. 👍",
+  "YarnMaster just gave your post a thumbs up!",
+  "You’ve got a new like! CrochetGuru enjoyed your post.",
+  "Wow! WoolWhiz liked your post. Keep sharing great content!",
+  "Your post caught ThreadTrekker’s eye – they liked it!",
+  "A new fan of your post! FiberFanatic just hit like.",
+  "Nice! HookedOnYarn liked what you shared.",
+  "StitchSavant thinks your post is awesome! They gave it a like.",
+  "Your post is getting attention! KnitAndPurl just liked it.",
+  "Another like for you! WoolWanderer appreciates your post.",
+  "CraftyThreads liked your post. Looks like it’s a hit!",
+  "YarnVoyager enjoyed your content – they just liked your post!",
+  "Your post got some love! TwistAndKnit hit the like button.",
+  "Keep it up! LoopedIn liked your post."
 ]
 
-  post_titles = [
-      "Simple Knitted Coaster",
-      "Crochet Flower Shawl",
-      "Crocheted Bunny for Baby",
-      "Summer Crochet Shawl",
-      "Beginner Crochet Coasters",
-      "Cable Knit Blanket",
-      "Boho Crochet Wall Hanging",
-      "Knit Sweater for Layering",
-      "Simple Crochet Square",
-      "Stylish Knit Beanie",
-      "Chunky Knit Throw",
-      "Boho Crochet Tote Bag",
-      "Cozy Knit Sweater",
-      "Sleek Knit Mittens"
-  ]
+
 
 bios = [
   "Crochet enthusiast creating cozy designs and exploring new patterns.",
@@ -167,23 +157,38 @@ bios = [
   "Specializing in custom crochet and knit projects that reflect my style.",
   "Exploring new stitches and techniques in both knitting and crochet."
 ]
+post_titles = [
+    "Simple Knitted Coaster",
+    "Crochet Flower Shawl",
+    "Crocheted Bunny for Baby",
+    "Summer Crochet Shawl",
+    "Beginner Crochet Coasters",
+    "Cable Knit Blanket",
+    "Boho Crochet Wall Hanging",
+    "Knit Sweater for Layering",
+    "Simple Crochet Square",
+    "Stylish Knit Beanie",
+    "Chunky Knit Throw",
+    "Boho Crochet Tote Bag",
+    "Cozy Knit Sweater",
+    "Sleek Knit Mittens"
+]
 
   post_contents = [
-      "Cozy up in this knit sweater! It's warm, stylish, and the perfect way to stay cozy on chilly days. So proud of how it turned out! 🧶✨",
-      "This knit beanie is so quick and cute! A perfect last-minute gift that’s both cozy and stylish. I’m loving how it turned out! 🎁🧣",
-      "Spring vibes all the way with this crochet shawl! Lightweight, breezy, and the perfect pop of color for warmer days. Can’t wait to wear it! 🌸☀️",
-      "This cable knit blanket is the ultimate comfort piece! Perfect for movie nights and lounging around. I’m so proud of how it looks! 🛋️📚",
-      "This boho-inspired crochet tote bag is everything! It’s spacious, stylish, and perfect for casual outings. So happy with how it came together! 🌿👜",
-      "This lacy knit scarf adds such an elegant touch to any outfit! It’s easy to wear and easy to make—so proud of how it turned out! 💕🧶",
-      "I’m in love with this chunky knit throw! It’s cozy, warm, and adds the perfect touch to any room. So happy with how it turned out! 🛋️✨",
-      "These knitted slippers are pure comfort! Warm and cozy—perfect for lounging around. I love how these turned out! 💖👣",
-      "These crochet coasters are the perfect touch for any table. Quick to make and such a fun little project. Can’t wait to show them off! ✨🍵",
-      "This crochet shawl is light and breezy, perfect for those summer evenings. I love how it layers over any outfit—can’t wait for the warmer weather! ☀️🌙",
-      "These knit fingerless gloves are sleek and stylish, and they keep me warm while still letting me use my hands. I’m so proud of how they came out! 🧤💫",
-      "This crochet wall hanging brings so much boho charm to my space! I’m so proud of how it turned out—it’s totally unique and functional! 🌸🧶",
-      "These baby booties are the cutest little project! I’m so proud of how they turned out, and they’re the perfect gift for any newborn. 💖👶",
-      "This knitted sweater is my new favorite layering piece! Comfortable, stylish, and cozy—so proud of how it turned out! 🧶👗"
-
+      "A simple knitted coaster for your morning coffee.",
+      "Wrap yourself in elegance with this crochet flower shawl. 🌸",
+      "The sweetest crocheted bunny—perfect for little hands! 🐰",
+      "Stay breezy with this lightweight summer crochet shawl.",
+      "Perfect for beginners—crochet coasters that are both cute & functional. ☕",
+      "Stay warm in style with this cozy cable knit blanket. ❄️",
+      "Add a boho touch to your home with this crochet wall hanging.",
+      "The ultimate layering piece—a knit sweater for all seasons. 🧥",
+      "A simple crochet square with endless creative possibilities.",
+      "Keep warm & stylish with this must-have knit beanie. ❄️",
+      "Chunky, cozy, and perfect for snuggling—meet your new favorite throw.",
+      "A boho crochet tote bag that’s both chic & practical. 👜",
+      "The coziest knit sweater for chilly days.",
+      "Sleek and warm, these knit mittens are winter essentials. 🧤"
   ]
 
 
@@ -194,15 +199,20 @@ bios = [
     ]
 
     pattern_content = [
-"Cast on 120 stitches (48 for the body, 24 for each sleeve). Join in the round.
-Increase every other round until the body has 72 stitches and each sleeve has 36 stitches.
-Knit the body until it reaches your desired length (12-16 inches), adding ribbing at the hem if you want.
-Pick up the stitches for the sleeves, then knit them to your desired length (15-20 cm), adding ribbing at the cuffs if you want.
-Weave in the ends and block the sweater.",
+"- Cast on 120 stitches (48 for the body, 24 for each sleeve)
+ - Join in the round
+ - Increase every other round until the body has 72 stitches
+ and each sleeve has 36 stitches.
+ - Knit the body until it reaches your desired length
+ (12-16 inches), adding ribbing at the hem if you want.
+ - Pick up the stitches for the sleeves, then knit them to
+ your desired length (15-20 cm), adding ribbing at the cuffs.
+ - Weave in the ends and block the sweater.",
 
-"Cast on 100 (112) sts using the Long-tail Cast on method.
-Place locking stitch markers 30 (35) sts from each edge.
-(*Note: These markers show where you’ll pick up stitches for the front panels. Place them on the fabric, not on the needle.)
+"- Cast on 100 (112) sts using the Long-tail Cast on method
+ - Place locking stitch markers 30 (35) sts from each edge.
+ - (*Note: These markers show where you’ll pick up stitches
+  for the front panels. Place them on the fabric, not on the needle.)
 
 Back Panel:
 Follow the [Cable Chart] for the back panel.
@@ -236,42 +246,133 @@ Follow the [Cable Chart] for the back panel.
    - Purl to the end.
 
 5. Rows 5-6 (RS/WS):
-   - Repeat Rows 5-6 from the [Cable Chart] until you have completed 48 (52) rows.
-     (*Note: Size S will end on Row 8 of the chart, and Size M will end on Row 4.)
+   - Repeat Rows 5-6 from the [Cable Chart] until you have completed
+   48 (52) rows. (*Note: Size S will end on Row 8 of the chart,
+   and Size M will end on Row 4.)
 
 Finish:
 - Break the yarn.
 - Place all sts on a spare cable or stitch holder.",
 
-"*Ribbing: With B and smaller needles, cast on 13 sts. Work in garter st (knit every row) until Ribbing, when slightly stretched measures 22 (24-26- 29-32-34)[56 (61-66-73.5-81.5- 86.5) cm], noting 1st row is WS and ending on a WS row. Cast off knitwise. Do not break B. Turn work sideways. With RS facing , smaller needles and B, pick up and knit 122 (132- 144-160-176-188) sts evenly across long edge of ribbing. Next row: (WS). Knit. Change to larger needles and proceed as follows: 1st row: (RS). With B, K1. *Sl1Pwyib. K1. Rep from * to last st. K1. 2nd row: K1. *Sl1Pwyif K1. Rep from * to last st. K1. 3rd row: (RS). With MC, K1. *K1. Sl1Pwyib. Rep from *39 (43-47- 52-57-61) times more. With A, rep from * to last st. K1. 4th row: With A, K1. *K1. Sl1Pwyif. Rep from * 19 (20-22-25-28-30) times more. With MC, rep from * to last st. K1. Rep 1st to 4th rows for Tweed Pat until work from pick up row measures approx 7 [18 cm], ending on a 4th row. Proceed as follows: 1st row: (RS). With MC, K1. *Sl1Pwyib. K1. Rep from * 39 (43- 47-52-57-61) times more. With A, rep from * to last st. K1. 2nd row: With A, K1. *Sl1Pwyif. K1. Rep from * 19 (20-22-25-28-30) times more. With MC, rep from * to last st. K1. 3rd row: (RS). With A, K1. *K1. Sl1Pwyib. Rep from * to last st. K1. 4th row: K1. *K1. Sl1Pwyif. Rep from * to last st. K1.** Rep 1st to 4th rows for Tweed Pat until work from beg measures 19 (20-20-22-22-23) Cast off..",
+"- Ribbing: With B and smaller needles, cast on 13 sts
+ - Work in garter st (knit every row) until Ribbing, when slightly
+stretched measures 22 (24-26- 29-32-34)[56 (61-66-73.5-81.5- 86.5) cm],
+noting 1st row is WS and ending on a WS row
+ - Cast off knitwise
+ - Do not break B. Turn work sideways. With RS facing , smaller needles
+ and B, pick up and knit 122 (132- 144-160-176-188) sts evenly across
+ long edge of ribbing. Next row: (WS). Knit.
+ - Change to larger needles and proceed as follows: 1st row: (RS).
+ With B, K1. *Sl1Pwyib. K1. Rep from * to last st. K1. 2nd row: K1.
+ *Sl1Pwyif K1. Rep from * to last st. K1. 3rd row: (RS). With MC, K1.
+ *K1. Sl1Pwyib. Rep from *39 (43-47- 52-57-61) times more. With A, rep
+ from * to last st. K1. 4th row: With A, K1. *K1. Sl1Pwyif.
+ Rep from * 19 (20-22-25-28-30) times more. With MC, rep from * to last st.
+ K1. Rep 1st to 4th rows for Tweed Pat until work from pick up row measures
+ approx 7 [18 cm], ending on a 4th row. Proceed as follows: 1st row: (RS).
+ With MC, K1. *Sl1Pwyib. K1. Rep from * 39 (43- 47-52-57-61) times more.
+ With A, rep from * to last st. K1. 2nd row: With A, K1. *Sl1Pwyif. K1.
+ Rep from * 19 (20-22-25-28-30) times more. With MC, rep from * to last st.
+ K1. 3rd row: (RS). With A, K1. *K1. Sl1Pwyib. Rep from * to last st. K1.
+ 4th row: K1. *K1. Sl1Pwyif. Rep from * to last st. K1.** Rep 1st to 4th rows
+ for Tweed Pat until work from beg measures 19 (20-20-22-22-23) Cast off..",
 
-"Cast on 64 (68, 72, 80) (84, 88, 88) stitches on 4.5mm 40cm circular needles using the longtail cast on. If you don’t use this cast on, make sure you are casting on loosely enough to get the collar over your head, and check you can once you have knitted a few centimetres. Join in the round and place a BOR marker to indicate the beginning of the round. Select one of the following neckline options. Option One: Funnel Neck Collar Work in rib (*k1 p1*, repeat *-* to end of round) until the collar measures 8cm from the cast on edge. Option Two: Folded Collar Work in rib (*k1 p1*, repeat *-* to end of round) until the collar measures 4cm from the cast on edge. P one round. Work in rib (*k1 p1*, repeat *-* to end of round) until the collar measures 8cm from the cast on edge. Now knit the live stitches together with the cast on edge. It may be helpful to check the video for help with this step. Yoke Switch to 5.5mm 40cm needles and knit one round while placing stitch markers as follows: k 11 (13, 15, 17) (18, 19, 19), place marker, k2, place marker, k 6 (4, 2, 2) (2, 2, 2), place marker, k2, place marker, k 22 (26, 30, 34) (36, 38, 38), place marker, k2, place marker, k 6 (4, 2, 2) (2, 2, 2), place marker, k2, place marker, k 11 (13, 15, 17) (18, 19, 19) to end of round. Choose whether or not to include the German short row neck shaping. For a total beginner, you may wish to exclude it. For an adventurous beginner or more experienced knitter, it may improve the fit around the neck. If you do choose to include the German short rows, when the pattern says to turn, make sure to follow the specific turning instructions in the German short row note earlier in the pattern.",
+"- Cast on 64 (68, 72, 80) (84, 88, 88) stitches on 4.5mm 40cm circular needles
+using the longtail cast on. If you don’t use this cast on, make sure you are
+casting on loosely enough to get the collar over your head, and check you can
+once you have knitted a few centimetres
+ - Join in the round and place a BOR marker to indicate the beginning of the round
+ - Select one of the following neckline options:
+     - Option One: Funnel Neck Collar Work in rib (*k1 p1*, repeat *-* to
+    end of round) until the collar measures 8cm from the cast on edge.
+     - Option Two: Folded Collar Work in rib (*k1 p1*, repeat *-* to
+    end of round) until the collar measures 4cm from the cast on edge.
+    P one round. Work in rib (*k1 p1*, repeat *-* to end of round) until
+    the collar measures 8cm from the cast on edge. Now knit the live stitches
+    together with the cast on edge. It may be helpful to check the video for help
+    with this step. Yoke Switch to 5.5mm 40cm needles and knit one round while
+    placing stitch markers as follows: k 11 (13, 15, 17) (18, 19, 19), place marker,
+    k2, place marker, k 6 (4, 2, 2) (2, 2, 2), place marker, k2, place marker, k 22
+    (26, 30, 34) (36, 38, 38), place marker, k2, place marker, k 6 (4, 2, 2) (2, 2, 2),
+    place marker, k2, place marker, k 11 (13, 15, 17) (18, 19, 19) to end of round.
 
+ - Choose whether or not to include the German short row neck shaping. For a total
+ beginner, you may wish to exclude it. For an adventurous beginner or more experienced
+ knitter, it may improve the fit around the neck. If you do choose to include the German
+ short rows, when the pattern says to turn, make sure to follow the specific turning
+ instructions in the German short row note earlier in the pattern.",
 
-"Work as for back until armhole meas 4½ (5, 5½, 5¾, 6, 6¼, 6½), ending with WS Row 4 – 69 (79, 89, 95, 105, 115, 121) sts., Cont in Waffle St, work 20 (25, 28, 31, 36, 40, 43) sts in patt, join another ball of yarn and BO center 29 (29, 33, 33, 33, 33, 35, 35) sts, work in patt to end – 20 (25, 28, 31, 36, 40, 43) sts each side., Working each side with its own ball of yarn, BO 2 sts at each neck edge 2 times, then 1 st 2 times – 14 (19, 22, 25, 30, 34, 37) sts rem each side., Work even until armhole meas 7 (7½, 8, 8¼, 8½, 8¾, 9), ending with WS Row 2., With B, BO all sts knitwise., Sleeves With A, CO 41 (43, 43, 45, 45, 47, 47) sts., Work in 1 x 1 Rib for 2 (2, 2, 2½, 2½, 2½, 2½), ending with a WS row., Work in Waffle St for 1, ending with a WS row., Shape sleeve: Cont in Waffle St, and inc 1 st each edge every 10 (10, 8, 8, 8, 8, 6) rows 12 (8, 16, 10, 1, 1, 14) time(s), then every 8 (8, 6, 6, 6, 6, 6, 4) rows 3 (8, 2, 9, 19, 19, 7) times, working new sts into patt – 71 (75, 79, 83, 85, 87, 89) sts., Work even until pc meas 21 (21, 20, 20, 19, 19, 18) from beg, ending with WS Row 4., BO all sts knitwise., Finishing Lightly block pcs to measurements., Sew shoulder seams., Sew top of sleeve to armhole edges of body, then sew upper section of each sleeve selvedge to BO sts of armhole notch., Sew side and sleeve seams.",
+"- Work as for back until armhole meas 4½ (5, 5½, 5¾, 6, 6¼, 6½), ending with
+WS Row 4 – 69 (79, 89, 95, 105, 115, 121) sts., Cont in Waffle St,
+work 20 (25, 28, 31, 36, 40, 43) sts in patt, join another ball of yarn and
+BO center 29 (29, 33, 33, 33, 33, 35, 35) sts, work in patt to end
+20 (25, 28, 31, 36, 40, 43) sts each side., Working each side with its own ball of yarn,
+BO 2 sts at each neck edge 2 times, then 1 st 2 times – 14 (19, 22, 25, 30, 34, 37) sts
+rem each side., Work even until armhole meas 7 (7½, 8, 8¼, 8½, 8¾, 9), ending with WS
+Row 2., With B, BO all sts knitwise., Sleeves With A, CO 41 (43, 43, 45, 45, 47, 47) sts.,
+Work in 1 x 1 Rib for 2 (2, 2, 2½, 2½, 2½, 2½), ending with a WS row., Work in Waffle St
+for 1, ending with a WS row., Shape sleeve: Cont in Waffle St, and inc 1 st each edge
+very 10 (10, 8, 8, 8, 8, 6) rows 12 (8, 16, 10, 1, 1, 14) time(s), then every 8
+(8, 6, 6, 6, 6, 6, 4) rows 3 (8, 2, 9, 19, 19, 7) times, working new sts into patt
+71 (75, 79, 83, 85, 87, 89) sts., Work even until pc meas 21 (21, 20, 20, 19, 19, 18)
+from beg, ending with WS Row 4., BO all sts knitwise., Finishing Lightly block pcs to
+measurements., Sew shoulder seams., Sew top of sleeve to armhole edges of body, then
+sew upper section of each sleeve selvedge to BO sts of armhole notch., Sew side and
+sleeve seams.",
 
-"Round 1: Ch 3, 2 dc in ring, (ch 3, 3 dc in ring) 3 times; ch 3, sl st in top of beg ch-3. Sl st in next 3 sts.
-Round 2: In corner, (ch 3, 2 dc, ch 3, 3 dc); *ch 1 (3 dc, ch 3, 3 dc) in next ch-3 sp; repeat from * 2 more times, ch 1, sl st in top of beg ch-3. Break off and weave in ends.
-Round 3: Using white, sl st in any corner, (ch 3, 1 dc, ch 3, 2 dc) in same corner; * dc in next 7 sts, (2 dc, ch 3, 2 dc) in next corner. Repeat from * 2 times. Dc in next 7 sts. Sl st in top of beg ch-3.
-Round 4: Sl st to corner, (ch 3, 1 dc, ch 3, 2 dc) in same corner; * dc in next 11 dc, (2 dc, ch 3, 2dc) in next corner; repeat from * 2 times; dc in next 11 dc. Sl st in top of beg ch-3.
+"Round 1: Ch 3, 2 dc in ring, (ch 3, 3 dc in ring) 3 times; ch 3, sl st in top of beg
+ch-3. Sl st in next 3 sts.
+Round 2: In corner, (ch 3, 2 dc, ch 3, 3 dc); *ch 1 (3 dc, ch 3, 3 dc) in next ch-3 sp;
+repeat from * 2 more times, ch 1, sl st in top of beg ch-3. Break off and weave in ends.
+Round 3: Using white, sl st in any corner, (ch 3, 1 dc, ch 3, 2 dc) in same corner;
+* dc in next 7 sts, (2 dc, ch 3, 2 dc) in next corner. Repeat from * 2 times. Dc in
+next 7 sts. Sl st in top of beg ch-3.
+Round 4: Sl st to corner, (ch 3, 1 dc, ch 3, 2 dc) in same corner; * dc in next
+11 dc, (2 dc, ch 3, 2dc) in next corner; repeat from * 2 times; dc in next 11 dc.
+Sl st in top of beg ch-3.
 Round 5: Ch 1, sc in every st around; sl st in first sc.
 Break off and weave in ends.,
--Size small: cast on 80 stitches (long tail cast on). -Put a stitchmarker at the beginning of the row and three more after every 20th stitch (4 total) - Knit one full row of knit stitch. (2) at the start of round stitchmarker k2 and inc1. Knit till two stitches before the next marker (k2, inc1) slip the marker (k2, inc1). Do this at every stitch marker. Repeat till row (25). Switch to 80 cm needles when The 40 cm ones get too full. punt toch • -Split the arms from the body at row (26). ",
+-Size small: cast on 80 stitches (long tail cast on). -Put a stitchmarker at the
+beginning of the row and three more after every 20th stitch (4 total) - Knit one
+full row of knit stitch. (2) at the start of round stitchmarker k2 and inc1. Knit
+till two stitches before the next marker (k2, inc1) slip the marker (k2, inc1).
+Do this at every stitch marker. Repeat till row (25). Switch to 80 cm needles when
+The 40 cm ones get too full. punt toch • -Split the arms from the body at row (26). ",
 
-"Loosely CO 140 (112) sts using needles Row 1: P1, *K1, P1 to last stitch, P1 Work in Fisherman’s Rib for 10 (8.5) inches Join for working in the round. Switch to 1x1 ribbing Work in 1x1 ribbing until piece measures 15 (13) inches Switch to other needle Continue in 1x1 ribbing until work measures 25 (21) inches. Bind off using tubular bind off or 1x1 ribbing bind off to ensure stretchy edge.",
+"- Loosely CO 140 (112) sts using needles Row 1: P1, *K1, P1 to last stitch, P1
+Work in Fisherman’s Rib for 10 (8.5) inches Join for working in the round
+ - Switch to 1x1 ribbing Work in 1x1 ribbing until piece measures 15 (13) inches
+ - Switch to other needle
+ - Continue in 1x1 ribbing until work measures 25 (21) inches.
+ - Bind off using tubular bind off or 1x1 ribbing bind off to ensure stretchy edge.",
 
 "Head:
- Start with green yarn and make 6 sc in a magic ring. Work 2 sc in each stitch around (12). Continue increasing by sc in the next st and 2 sc in the next st for each round until you have 54 stitches. Then, sc in each stitch around for rounds 10-16. Begin decreasing by sc in each of the next 7 sts, then sc2tog for round 17, and continue decreasing until you have 18 stitches. Stuff with fiberfill.
+ Start with green yarn and make 6 sc in a magic ring. Work 2 sc in each stitch around (12).
+ Continue increasing by sc in the next st and 2 sc in the next st for each round until you
+ have 54 stitches. Then, sc in each stitch around for rounds 10-16. Begin decreasing by sc
+ in each of the next 7 sts, then sc2tog for round 17, and continue decreasing until you have
+  18 stitches. Stuff with fiberfill.
 Eyes (Make 2):
- With white yarn, work 6 sc in a magic ring, then work 2 sc in each stitch around (12). Follow with 2 rounds of sc in each stitch, and decrease by sc in the next 4 sts and sc2tog for round 6. Fill with fiberfill and sew onto the head. Make black pupils by working 6 sc in a magic ring and finishing with a sl st.
+ With white yarn, work 6 sc in a magic ring, then work 2 sc in each stitch around (12).
+ Follow with 2 rounds of sc in each stitch, and decrease by sc in the next 4 sts and sc2tog
+ for round 6. Fill with fiberfill and sew onto the head. Make black pupils by working 6 sc
+   in a magic ring and finishing with a sl st.
 Body:
- Start with green yarn and work 6 sc in a magic ring. Increase by sc in each stitch and adding 2 sc in the next stitch until you have 54 stitches. Continue with sc in each stitch for rounds 8-10. Switch to gray and white yarn every two rounds, then decrease until you have 18 stitches. Stuff with fiberfill and sew onto the head.
+ Start with green yarn and work 6 sc in a magic ring. Increase by sc in each stitch and
+ adding 2 sc in the next stitch until you have 54 stitches. Continue with sc in each
+ stitch for rounds 8-10. Switch to gray and white yarn every two rounds, then decrease
+ until you have 18 stitches. Stuff with fiberfill and sew onto the head.
 Legs (Make 2):
- With green yarn, start with 6 sc in a magic ring. Increase as before until you reach 24 stitches, then sc in each stitch for rounds 5-7. Begin decreasing and stuff the leg as you go, continuing until 9 stitches remain.
+ With green yarn, start with 6 sc in a magic ring. Increase as before until you reach
+ 24 stitches, then sc in each stitch for rounds 5-7. Begin decreasing and stuff the leg
+ as you go, continuing until 9 stitches remain.
 Arms (Make 2):
- With green yarn, start with 6 sc in a magic ring. Increase to 18 stitches, then sc in each stitch for rounds 4-5. Decrease until 9 stitches remain, then stuff the arm and finish with the remaining decrease rounds.
+ With green yarn, start with 6 sc in a magic ring. Increase to 18 stitches, then sc in
+ each stitch for rounds 4-5. Decrease until 9 stitches remain, then stuff the arm and
+ finish with the remaining decrease rounds.
 Assembly:
- Attach the arms and legs to the body, add a ribbon around the neck, and your bright, happy frog is complete!",
+ Attach the arms and legs to the body, add a ribbon around the neck, and your bright,
+ happy frog is complete!",
 
 "Head:
 Start with medium grey
@@ -285,38 +386,77 @@ Start with medium grey
 9. Sc 5 [in black: sc 4] {in white: sc 3} [in black: sc 4] in grey:sc 14(30)
 10. Sc 4 [in black: sc 4] {in white: sc 5} [in black: sc 4] in grey: sc 13(30)
 11. Sc 3 [in black: sc 4] {in white: sc 7} [in black: sc 4] in grey: sc 12(30)
-12. Dec, sc 1 [in black: sc 2, dec] {in white: sc 3, dec, sc 2} [in black: sc, dec, sc] in grey: sc 2, dec, sc 3, dec, sc3 (24)
+12. Dec, sc 1 [in black: sc 2, dec] {in white: sc 3, dec, sc 2} [in black: sc, dec, sc]
+in grey: sc 2, dec, sc 3, dec, sc3 (24)
 13. (Sc 2, dec)x6 (18)
 FO and leave tail for sewing
 Sew nose between round 8 and 9. Insert eyes between rounds 7 and 8.
 ",
 
-"Find the stitch right below the working stitch on the left needle, lift it’s right leg onto the left needle and knit it trough the right leg. Video LLI (left lifted increase) - find the stitch 2 rows below the just knitted stitch on the right needle, lift it’s left leg onto the left needle and knit trough the back loop. Video ssk (slip slip knit) - slip the next 2 stitches one at a time knitwise to the right needle (to change their direction), slide them back to the left needle and knit together through the back loop. Video k2tog (knit 2 together) - knit 2 stitches together through the front loop. p2tog (purl 2 together) - purl 2 stitches together. Neckline On size 4 (3.5 mm) 16″ (40 cm) circular needles with the main color CO 78/84/90/96 stitches. Join knitting in the round, place BOR marker and knit the following 1×1 ribbing until the neckline measures 1.5″ (3.5 cm): *k1 tbl, p1*, repeat between ** to the end of row.",
+"Find the stitch right below the working stitch on the left needle, lift it’s right leg
+onto the left needle and knit it trough the right leg. Video LLI (left lifted increase),
+find the stitch 2 rows below the just knitted stitch on the right
+needle, lift it’s left leg onto the left needle and knit trough the back loop. Video ssk
+(slip slip knit) - slip the next 2 stitches
+one at a time knitwise to the right needle (to change their direction), slide them back
+to the left needle and knit together through
+the back loop. Video k2tog (knit 2 together) - knit 2 stitches together through the front
+loop. p2tog (purl 2 together) - purl 2 stitches together.
+Neckline On size 4 (3.5 mm) 16″ (40 cm) circular needles with the main color CO 78/84/90/96
+stitches. Join knitting in the round, place BOR marker and knit the following 1×1 ribbing
+until the neckline measures 1.5″ (3.5 cm): *k1 tbl, p1*, repeat between ** to the end of row.",
 
-"Using circular needle, CO 81, (91, 101) sts. Row 1 (WS): Knit 5, sl1 wyif, *k4, sl1 wyif, repeat from * to last 6 st, sl1 wyif, k5. Row 2 (RS): Knit. Repeat these two rows for a total of 15 rows, ending with a WS row. (approx. 2”) Break yarn. Place stitches on stitch holder. Left Front: Using size 8 circular needle, CO 40, (45, 50) sts. Row 1 (WS): *K4, sl1 wyif, repeat from * to last 5, k5. Row 2 (RS): Knit. Repeat these two rows for a total of 15 rows, ending with a WS row. (approx. 2”) Break yarn. Place stitches on stitch holder. Right Front: Using size 8 circular needle, CO 40, (45, 50) sts. Row 1 (WS): Knit 5, sl1 wyif, *k4, sl1 wyif, repeat from * to last 4st, k4. Row 2 (RS): Knit. Repeat these two rows for a total of 15 rows, ending with a WS row. (approx. 2”). Do not break yarn. Joining: 0970000P May we suggest: 209 236 127 119 205 You are now going to join all 3 pieces into one onto the same circular needle. 1. (RS) Work across Right Front to the last stitch. Slip the last stitch purlwise onto the right hand needle. 2. Slip the last stitch on the righthand needle over to the lefthand needle and k2tog. (This joins the two pieces and reinforces the join at the same time.) Work across Back to the last stitch. Slip the last stitch purlwise onto the right hand needle. 3. Slip the last stitch on the righthand needle over to the lefthand needle and k2tog. Knit across Left Front stitches to the end. 159 (179, 199) sts",
+"Using circular needle, CO 81, (91, 101) sts. Row 1 (WS): Knit 5, sl1 wyif, *k4, sl1 wyif,
+repeat from * to last 6 st, sl1 wyif, k5. Row 2 (RS): Knit. Repeat these two rows for a total
+of 15 rows, ending with a WS row. (approx. 2”) Break yarn. Place stitches on stitch holder.
+Left Front: Using size 8 circular needle, CO 40, (45, 50) sts. Row 1 (WS): *K4, sl1 wyif, repeat
+from * to last 5, k5. Row 2 (RS): Knit. Repeat these two rows for a total of 15 rows, ending with
+a WS row. (approx. 2”) Break yarn. Place stitches on stitch holder. Right Front: Using size 8
+circular needle, CO 40, (45, 50) sts. Row 1 (WS): Knit 5, sl1 wyif, *k4, sl1 wyif, repeat
+from * to last 4st, k4. Row 2 (RS): Knit. Repeat these two rows for a total of 15 rows, ending
+with a WS row. (approx. 2”). Do not break yarn. Joining: 0970000P May we suggest: 209 236 127 119
+05 You are now going to join all 3 pieces into one onto the same circular needle. 1.
+(RS) Work across Right Front to the last stitch. Slip the last stitch purlwise onto the right
+hand needle. 2. Slip the last stitch on the righthand needle over to the lefthand needle and k2tog.
+This joins the two pieces and reinforces the join at the same time.) Work across Back to the last
+stitch. Slip the last stitch purlwise onto the right hand needle. 3. Slip the last stitch on the
+righthand needle over to the lefthand needle and k2tog. Knit across Left Front stitches to the end.
+159 (179, 199) sts",
 
 "Cast On:
  Cast on 3 sts.
  1: Knit 3 and slip sts back onto the left-hand needle (LHN).
  2: Repeat the previous step once more to create a mini i-cord.
  3: Knit 3, pick up 3 sts along the i-cord, turn (6 sts).
- 4: Pick up 3 sts along the cast-on edge, knit 3, and slip 3 sts with yarn in front (wyif) (9 sts).
+ 4: Pick up 3 sts along the cast-on edge, knit 3, and slip 3 sts with yarn in
+ front (wyif) (9 sts).
 Increase:
- Row 1 (RS): Knit to the last 3 sts, make 1 right (m1R), slip 3 sts with yarn in front (+1 st).
+ Row 1 (RS): Knit to the last 3 sts, make 1 right (m1R), slip 3 sts with yarn in
+ front (+1 st).
  Rows 2, 3, 4: Knit to the last 3 sts, slip 3 sts with yarn in front.
  Repeat the four rows until half of the yarn is used. Then start decreasing.
- To track when to increase, place a progress keeper at the beginning of the last increase row.
+ To track when to increase, place a progress keeper at the beginning of the last
+ increase row.
 Decrease:
-Row 1 (RS): Knit to the last 5 sts, knit 2 together (k2tog), slip 3 sts with yarn in front (-1 st).
+Row 1 (RS): Knit to the last 5 sts, knit 2 together (k2tog), slip 3 sts with yarn
+in front (-1 st).
 Rows 2, 3, 4: Knit to the last 3 sts, slip 3 sts with yarn in front.
 Repeat the four rows until 9 sts remain.
-To track when to decrease, place a progress keeper at the beginning of the last decrease row.
+To track when to decrease, place a progress keeper at the beginning of the last
+decrease row.
 Bind Off:
 Bind off on a right-side (RS) row.
-Knit 2, knit 2 together through the back loop (k2tog tbl), slip 3 sts back onto the LHN (8 sts).
+Knit 2, knit 2 together through the back loop (k2tog tbl), slip 3 sts back onto
+the LHN (8 sts).
 Knit 2, knit 2 together through the back loop, slip 3 sts back onto the LHN (7 sts).
 Knit 2, knit 2 together through the back loop (3 sts on LHN, 3 sts on RHN).”,
-Row 1 - Using (Colour A) chain 75 (74, plus 1 for turning). SC in the 2nd chain from the hook, and all the way along (74 stitches). Fasten off and snip your yarn. • Row 2 - Using (Colour B) start from the right-hand side of your work and create your border stitch (BS) by working a single crochet (SC) through both loops of the first stitch. Then continue SC in the back loop of each stitch until you have one stitch left. Then create your last BS, again working a SC through both loops. Fasten off.",
+Row 1 - Using (Colour A) chain 75 (74, plus 1 for turning). SC in the 2nd chain
+from the hook, and all the way along (74 stitches). Fasten off and snip your yarn.
+• Row 2 - Using (Colour B) start from the right-hand side of your work and create
+your border stitch (BS) by working a single crochet (SC) through both loops of the
+ first stitch. Then continue SC in the back loop of each stitch until you have one
+ stitch left. Then create your last BS, again working a SC through both loops.
+ Fasten off.",
 
 " Work in spiral rounds, starting with yellow yarn.
 Rnd 1: Make a magic ring (MR) and work 7 sc into the ring [7].
@@ -387,33 +527,35 @@ Cut the yarn and fasten off."
 "https://res.cloudinary.com/ducax2ucs/image/upload/v1741631790/IMG_9379_small2_vtvgpv.jpg"
     ]
 
-
-
 User.create(
   email: 'a@a.a',
   password: "123456",
-  username: 'jasper'
+  username: 'Jasper'
 )
 
-  users = usernames.shuffle.take(14).map do |username|
-    user = User.create!(
-      email: Faker::Internet.unique.email,
-      password: "password",
-      username: username,
-      bio: bios.sample
-    )
+User.create(
+  email: 'b@b.b',
+  password: "password",
+  username: 'Pierre-Paul'
+)
 
-      avatar_url = avatar_images.sample
-      file = URI.open(avatar_url)
-      user.avatar.attach(io: file, filename: "avatar_#{user.id}.jpg", content_type: "image/jpeg")
 
-    user
-  end
+users = usernames.shuffle.take(14).map do |username|
+  user = User.create!(
+    email: Faker::Internet.unique.email,
+    password: "password",
+    username: username,
+    bio: bios.sample
+  )
 
+  avatar_url = avatar_images.shuffle.take(1).first
+  file = URI.open(avatar_url)
+  user.avatar.attach(io: file, filename: "avatar_#{user.id}.jpg", content_type: "image/jpeg")
+
+  user
+end
   for i in 0..13
     user = users.sample
-
-
 
     post = Post.new(
       title: post_titles[i],
@@ -421,7 +563,6 @@ User.create(
       user: user,
       pattern: false
     )
-
 
     file = URI.parse(upload_images[i % upload_images.length]).open
     post.image.attach(io: file, filename: "post_image_#{i}.jpg", content_type: "image/jpeg")
@@ -435,7 +576,17 @@ User.create(
         post: post
       )
     end
+
+    CommentLike.create!(
+      user: User.last,
+      comment: post.comments.first
+    )
+    CommentLike.create!(
+      user: User.third,
+      comment: post.comments.first
+    )
   end
+
   for i in 0..10
     user = users.sample
     pattern = Post.new(
@@ -454,6 +605,7 @@ User.create(
     pattern.image.attach(io: file, filename: "pattern_image_#{i}.jpg", content_type: "image/jpeg")
     pattern.save!
   end
+
   User.all.each do |user|
     sender = user
     recipient = users.reject { |u| u == sender }.sample

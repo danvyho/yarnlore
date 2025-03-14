@@ -18,7 +18,7 @@
                                                 <%#   <img class="img-fluid" src="" alt="user img"> %>
                                                 <%# </div> %>
                                                 <div class="flex-grow-1 ms-3">
-                                                    <h3><%= @chat.title %></h3>
+                                                    <h3><%= @chat.memberships.map(&:user).reject{|u| u.id == current_user.id}.first.username%></h3>
                                                     <p></p>
                                                 </div>
                                             </div>
@@ -62,7 +62,7 @@
 
                                 <%= simple_form_for([@chat, @message],
                                   html: { class: "", data: { controller: "reset-form", action: "turbo:submit-end->reset-form#reset" } })  do |form| %>
-                                  <div class="send-box d-flex mb-3">
+                                  <div class="send-box d-flex mb-3" style="background-color: primary;">
                                     <%= form.input :content, placeholder: "Write message…", label: false, wrapper: false  %>
                                     <%= button_tag(type: 'submit', class: 'btn btn-primary') do %>
                                       <i class="fas fa-paper-plane"></i> Send

@@ -1,0 +1,76 @@
+
+<section class="pt-5 pb-2 mt-5">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-6 position-relative" style="background-image: url('<%= asset_path('yarn.jpg') %>'); background-size: cover; background-position: center; height: 380px;">
+        <div class="position-absolute top-0 start-0 w-100 h-100" style="background: rgba(110, 27, 125, 0.7);"></div>
+        <div class="position-absolute top-50 start-50 translate-middle text-center text-white">
+          <%= image_tag "yarnlore.png", alt: "Logo Text", height: 110, class: "mb-3" %>
+          <h1 class="display-6 pt-3">Where every stitch <br> tells a story.</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="py-4">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card h-100 border-0 shadow-sm">
+          <div class="card-body text-center">
+            <div class="mb-3">
+              <i class="fas fa-compass fa-3x text-primary"></i>
+            </div>
+            <p class="card-text">
+              Browse stunning projects, uncover new techniques, and get inspired by fiber artists from around the world. Whether you're looking for fresh ideas or the perfect next challenge, you'll find it here.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card h-100 border-0 shadow-sm">
+          <div class="card-body text-center">
+            <div class="mb-3">
+              <i class="fas fa-pencil-alt fa-3x text-primary"></i>
+            </div>
+            <p class="card-text">
+              Start new projects, experiment with fresh techniques, and showcase your work. Whether you're following a pattern or designing your own, this is your space to create, craft, and grow.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card h-100 border-0 shadow-sm">
+          <div class="card-body text-center">
+            <div class="mb-3">
+              <i class="fas fa-handshake fa-3x text-primary"></i>
+            </div>
+            <p class="card-text">
+              Join communities, share ideas, and engage with fellow fiber artists. Collaborate and connect to grow your skills and passion.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="bg-primary text-white py-5">
+  <div class="container text-center">
+    <h2>Ready?</h2>
+    <p class="mb-4">Join us and start enjoying all Yarnlore has to offer!</p>
+    <%= link_to new_user_registration_path, class: "btn btn-light btn-lg" do %>
+      Sign Up Now
+    <% end %>
+  </div>
+</section>
+
+<footer class="bg-light py-3 mt-5">
+  <div class="container text-center">
+  </div>
+</footer>

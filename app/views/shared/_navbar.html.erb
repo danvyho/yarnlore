@@ -1,21 +1,40 @@
 <nav class="navbar navbar-lewagon navbar-expand-lg fixed-bottom container-fluid">
   <div class="container d-flex justify-content-around">
-    <%= link_to root_path, class: "nav-link" do %>
-      <i class="fas fa-house" style="color: #ffffff"></i>
+    <%= link_to posts_path, class: "nav-link" do %>
+      <% if controller_name == "posts" && action_name == "index" %>
+        <i class="fas fa-house" style="color: #392F5A"></i>
+      <% else %>
+        <i class="fas fa-house" style="color: #ffffff"></i>
+      <% end %>
     <% end %>
-
     <% if user_signed_in? %>
         <%= link_to trend_patterns_path || "#", class: "nav-link" do %>
-          <i class="fas fa-search" style="color: #ffffff"></i>
+          <% if controller_name == "posts" && action_name == "patterns" %>
+            <i class="fas fa-search" style="color: #392F5A"></i>
+          <% else %>
+            <i class="fas fa-search" style="color: #ffffff"></i>
+          <% end %>
         <% end %>
         <%= link_to new_post_path || "#", class: "nav-link" do %>
-          <i class="fas fa-plus" style="color: #ffffff"></i>
+          <% if controller_name == "posts" && action_name == "new" %>
+            <i class="fas fa-plus" style="color: #392F5A"></i>
+          <% else %>
+            <i class="fas fa-plus" style="color: #ffffff"></i>
+          <% end %>
         <% end %>
         <%= link_to favorites_path || "#", class: "nav-link" do %>
-          <i class="fas fa-bookmark" style="color: #ffffff"></i>
+          <% if controller_name == "favorites" && action_name == "index" %>
+            <i class="fas fa-bookmark" style="color: #392F5A"></i>
+          <% else %>
+            <i class="fas fa-bookmark" style="color: #ffffff"></i>
+          <% end %>
         <% end %>
         <%= link_to my_profile_path || "#", class: "nav-link" do %>
-          <i class="fas fa-user" style="color: #ffffff"></i>
+          <% if controller_name == "users" && action_name == "my_profile" %>
+            <i class="fas fa-user" style="color: #392F5A"></i>
+          <% else %>
+            <i class="fas fa-user" style="color: #ffffff"></i>
+          <% end %>
         <% end %>
     <% else %>
         <%= link_to new_user_session_path  || "#",  class: "nav-link" do %>
@@ -31,6 +50,5 @@
           <i class="fas fa-user" style="color: #ffffff"></i>
         <% end %>
     <% end %>
-
   </div>
 </nav>
