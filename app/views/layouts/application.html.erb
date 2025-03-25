@@ -49,7 +49,7 @@
 <meta name="twitter:title" content="<%= meta_title %>">
 <meta name="twitter:description" content="<%= meta_description %>">
 <meta name="twitter:creator" content="<%= DEFAULT_META["twitter_account"] %>">
-<meta name="twitter:image:src" content="<%= meta_image %>">
+<meta name="twitter:image:src" content="<%= meta_image || asset_path('default_image.png') %>">
   </head>
 
 <body data-current-user-id="<%= current_user ? current_user.id : "" %>">
